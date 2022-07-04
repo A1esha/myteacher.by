@@ -72,24 +72,34 @@ a {
 
 <form action="/action_page.php">
   <div class="container">
-    <h1>Оставьте свои контакты</h1>
-    <p>В ближайшее время вам позвонят</p>
-    <hr>
+        <h1>Оставьте свои контакты</h1>
+        <p>В ближайшее время вам позвонят</p>
+        <hr>
 
-    <label for="email"><b>Имя</b></label>
-    <input type="text" placeholder="Введите ваше имя" name="email" required>
+        <label for="email"><b>Телефон</b></label>
+        <input type="text" placeholder="Введите ваш номер телефона" name="email" required>
 
-    <label for="psw"><b>Введите ваш номер телефона</b></label>
-    <input type="text" placeholder="+375 33 123 45 67" name="psw" required>
-    
-    <hr>
+        <label for="psw"><b>Введите ваше имя</b></label>
+        <input type="text" class = "example">
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                const inputElement = document.querySelector('input');
+                const maskOptions = {
+                    mask: '+{375} (00) 000-00-00'
+                }
+                 IMask(inputElement, maskOptions);
+                })
+            </script>
+            <script src="js/imask.js"></script>
+            <script src="js/main.js"></script>
 
-    <button type="submit" class="registerbtn">Оставить заявку</button>
-  </div>
-  
-  <div class="container signin">
-    <p>Что-то не так? Позвоните нам  <a href="#">+375 25 957 59 93</a>.</p>
-  </div>
+            <hr>
+            <button type="submit" class="registerbtn">Оставить заявку</button>
+        </div>
+
+        <div class="container signin">
+        <p>Что-то не так? Позвоните нам  <a href="#">+375 25 957 59 93</a>.</p>
+        </div>
 </form>
 
 </body>
