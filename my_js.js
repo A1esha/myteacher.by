@@ -1,3 +1,11 @@
+function fun1() {
+  var sel=document.getElementById('select-box1').selectedIndex;
+  var options=document.getElementById('select-box1').options;
+  var sub = options[sel].text;
+  document.getElementById('label1').innerHTML = sub;
+}
+
+
 $("select").on("click" , function() {
   
   $(this).parent(".select-box").toggleClass("open");
