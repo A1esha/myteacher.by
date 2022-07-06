@@ -240,9 +240,10 @@ p{
 }
 
 .image{
-    background-size: cover;
+    /*  background-size: cover;
     background-position: center;
-    padding-bottom: 62.5%;
+    padding-bottom: 62.5%;*/
+    width: 60%;
 }
 
 @media only screen 
