@@ -250,6 +250,7 @@ p{
     border-radius: 10px; /* Радиус скругления */
    }
 .image{
-    width: 60%;
-    height: 60%;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 62.5%;
 }
