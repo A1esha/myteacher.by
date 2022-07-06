@@ -243,11 +243,11 @@ p{
     /*  background-size: cover;
     background-position: center;
     padding-bottom: 62.5%;*/
-    width: 60%;
+   width: 60%;
 }
 
 @media only screen 
-and (min-width : 1224px) {
+and (min-width : 900px) {
 .outline {
     font-size: 50%;
     font-family: "Helvetica";
@@ -261,23 +261,16 @@ and (min-width : 1224px) {
 }
 @media only screen 
 and (max-width : 540px) {
-/* Styles */
 
-h1{
-	height: 40px;
-}
-h2{
-	margin-top: 20%;
-}
 .outline {
-	text-align: center;
+    text-align: center;
 
-	/*padding-left: 25%;*/
+    /*padding-left: 25%;*/
     font-size: 50%;
     font-family: "Helvetica";
     padding-top: 1.5%;
     width: 100%;  
-	height: 100%; /* Размеры */
+    height: 100%; /* Размеры */
     background: #fc0; /* Цвет фона */
     outline: 2px solid #000; /* Чёрная рамка */
     border: 3px solid #fff; /* Белая рамка */
