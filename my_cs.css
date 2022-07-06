@@ -145,7 +145,7 @@ body {
   cursor: pointer;
   position : relative;
   max-width:  20em;
-  margin: 5em auto;
+  margin: 0.7em auto;
   width: 100%;
 }
 
@@ -187,4 +187,69 @@ body {
   top: 0;
   padding: 5px 15px;
   border-left: 5px solid #fff;
+}
+
+.button {
+    margin: 0 auto;
+    display: block;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: rgb(53, 167, 110); 
+}
+.button active{
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+}
+.leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
+   }
+
+
+.repbutton {
+  margin-top: 4%;
+  border-color: #36b320;
+  color: #ADFF2F;
+  background-image: -webkit-linear-gradient(45deg, #36b320 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #36b320 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.repbutton:hover {
+  background-position: 0;
+}
+
+p{
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: #ffffff; /* Фоновый цвет*/
+    border: 2px solid #D4D4D4; /* Ширина и цвет границ*/
+    border-radius: 10px; /* Радиус границ*/
+    box-shadow: 0 0 15px #A9A9A9; /* Размер и цвет тени блока*/
+}
+
+.outline {
+    font-size: 50%;
+    font-family: "Helvetica";
+    margin-top: 4%;
+    width: 40%;   height: 10%; /* Размеры */
+    background: #fc0; /* Цвет фона */
+    outline: 2px solid #000; /* Чёрная рамка */
+    border: 3px solid #fff; /* Белая рамка */
+    border-radius: 10px; /* Радиус скругления */
+   }
+.image{
+    width: 60%;
+    height: 60%;
 }
