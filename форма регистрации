@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang = "ru">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="my_style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-  
-<form action = "check.php" metod = "post">
+
+<form action = "check.php" method = "POST">
   <div class="container">
         <h1>Оставьте свои контакты</h1>
         <p>В ближайшее время вам позвонят</p>
         <hr>
 
-        <label for="email"><b>Телефон (00) 999-99-99</b></label>
-        <input type="text" placeholder="Введите ваш номер телефона" name="phone" required>
+        <label><b>Телефон (00) 999-99-99</b></label>
+        <input type="text" placeholder="Введите ваш номер телефона" name = "phone"
+         id = "phone" required>
 
-        <label for="psw"><b>Введите ваше имя</b></label>
-        <input type="text" placeholder = "Имя" name = "name">
+        <label><b>Введите ваше имя</b></label>
+        <input type="text" placeholder = "Имя" name = "name"
+        id = "name" required>
 
-        <label for = "psw"><b>E-mail</b></label>
-        <input type = "text" placeholder = "my_tutor@gmail.com" name = "email">
+        <label><b>E-mail</b></label>
+        <input type = "text" placeholder = "my_tutor@gmail.com" name = "email"
+        id = "email" required>
             <script>
                document.addEventListener('DOMContentLoaded', () => {
                 const inputElement = document.querySelector('input');
