@@ -1,9 +1,146 @@
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+/*body{
+	margin: 0;
+}
+h1,
+h2 {
+  width: 100%;
+  font-size: 100%;
 }
 
+h1 {
+  animation: right_to_left 3s ease;
+}
+
+h2 {
+  text-align: right;
+  animation: left_to_right 3s ease;
+}
+*/
+/*
+*{
+	overflow: hidden;
+}
+*/
+/*
+* {
+  margin: 0;
+}
+*/
+button {
+  position: fixed;
+  z-index: 1;
+}
+
+
+
+.moveright {
+  animation-name: moveright;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.moverightU {
+  animation-name: moverightU;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.moveleftU {
+  animation-name: moveleftU;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.moveleft {
+  animation-name: moveleft;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveright {
+  0% {
+    /*transform: translateX(0);*/
+	opacity: 1;
+	transform: translateX(0);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(20vw);
+  }
+  /*
+  50.002% {
+    opacity: 0;
+    /*transform: translateX(100vw);
+  }
+  */
+}
+@keyframes moverightU {
+  0% {
+	opacity 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /*
+  50.002% {
+    opacity: 0;
+    /*transform: translateX(100vw);
+  }
+  */
+}
+@keyframes moveleftU {
+  0% {
+	opacity 0;
+    transform: translateX(100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /*
+  50.002% {
+    opacity: 0;
+    /*transform: translateX(100vw);
+  }
+  */
+}
+@keyframes moveleft {
+  0% {
+    transform: translateX(0);
+	
+  }
+  
+  100% {
+    opacity: 0.4;
+    transform: translateX(-20vw);
+  }
+  
+}
+
+@keyframes right_to_left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes left_to_right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+}
 * {
     box-sizing: border-box;
 }
@@ -14,12 +151,23 @@ body {
     background-color: white;
 }
 
-/* Full-width input fields */
+/* Full-width input fields 
+
+
+.mytutors{
+	transition: transform 1s;
+}
+
+.mytutors:hover{
+	transform: translateX(100%);
+	display: none;
+}
+*/
 input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
-    display: inline-block;
+	display: block;
     border: none;
     background: #f1f1f1;
 }
@@ -126,9 +274,7 @@ a {
   color: rgba(0,0,0,.4);
 }
 
-select::-ms-expand {
-    display: none;
-}
+
 
 /*########################################################*/
 
@@ -250,6 +396,7 @@ p{
    width: 35%;
 }
 
+
 @media only screen 
 and (min-width : 900px) {
 .outline {
@@ -275,7 +422,7 @@ and (min-width : 900px) {
     background: rgb(117, 181, 230);
     box-shadow: 0 -3px rgb(71, 133, 181); inset;
     transition: 0.2s;
-    top:80%;
+    top:90%;
     left:50%;
     z-index:99999999;
     border-radius: 50px;
@@ -303,7 +450,7 @@ and (min-width : 900px) {
     background: rgb(117, 181, 230);
     box-shadow: 0 -3px rgb(71, 133, 181); inset;
     transition: 0.2s;
-    top:80%;
+    top:90%;
     left:38%;
     z-index:99999999;
     border-radius: 50px;
@@ -338,7 +485,7 @@ and (max-width : 540px) {
 { 
     margin: 0 auto;
     display: block;
-    font-weight:400 ;
+    font-weight:700 ;
     color: white;
     text-decoration: none;
     padding: .8em 1em calc(.8em + 3px);
@@ -346,11 +493,14 @@ and (max-width : 540px) {
     background: rgb(117, 181, 230);
     box-shadow: 0 -3px rgb(71, 133, 181); inset;
     transition: 0.2s;
-    top:80%;
-    left:57%;
+    top:80vh;
+    left:57vw;
      z-index:99999999;
     border-radius: 50px;
     position: fixed;
+	
+	
+
 }
 
 .button_next:hover {
@@ -373,8 +523,8 @@ and (max-width : 540px) {
     background: rgb(117, 181, 230);
     box-shadow: 0 -3px rgb(71, 133, 181); inset;
     transition: 0.2s;
-    top:80%;
-    left:10%;
+    top:80vh;
+    left:10vw;
     z-index:99999999;
     border-radius: 50px;
     position: fixed;
