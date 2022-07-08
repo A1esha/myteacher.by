@@ -30,19 +30,7 @@
               async:false,
               
               success: function(a_data){
-                    //console.log(a_data);
-                    //console.log(typeof(a_data));
-
                     Ans = a_data;
-
-                    //Ans = JSON.parse(a_data);
-
-                   // console.log(Ans);console.log(a_data);
-                    //console.log($.parseJSON(a_data));  
-
-              },
-              beforeSend: function () {
-                    console.log(jsonStr);
               },
               error: function (jqXHR, exception) {
                     if (jqXHR.status === 0) {
@@ -62,14 +50,9 @@
                     }
                }
           });
-          //console.log(Ans);
-          //Ans = JSON.parse(Ans);
 
-          //console.log(Ans);
 
           var real_Ans = [];
-
-          console.log(Ans);
 
           
           for(let i = 1; i <= Object.keys(Ans).length; i += 1){
