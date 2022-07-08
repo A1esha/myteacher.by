@@ -22,7 +22,7 @@
           var jsonStr = JSON.stringify(data_t);
           var Ans;
           $.ajax({
-              url:'map.php',
+              url:'worker_with_db.php',
               method :'get',
               dataType: 'json',
               contentType: "application/json; charset=utf-8",
@@ -31,7 +31,11 @@
               
               success: function(a_data){
                     //console.log(a_data);
+                    //console.log(typeof(a_data));
+
                     Ans = a_data;
+
+                    //Ans = JSON.parse(a_data);
 
                    // console.log(Ans);console.log(a_data);
                     //console.log($.parseJSON(a_data));  
@@ -58,11 +62,52 @@
                     }
                }
           });
-          return Ans;
+          //console.log(Ans);
+          //Ans = JSON.parse(Ans);
+
+          //console.log(Ans);
+
+          var real_Ans = [];
+
+          console.log(Ans);
+
+          
+          for(let i = 1; i <= Object.keys(Ans).length; i += 1){
+             
+               let cur_data = {
+                    'Имя' : Ans[i][0],
+                    'Предмет' : Ans[i][1],
+                    'Рейтинг' : Ans[i][2],
+                    'Описание' : Ans[i][3]
+               }
+             
+               real_Ans.push(cur_data);
+          }
+     
+
+          return real_Ans;
      }
      
 
-     console.log(Get_Candidates("Предмет", "Информатика"));
+
+     function Choose(Ans, Name, L, R){
+
+          const arr = Ans || [];
+
+          var real_Ans = [];
+          for(let i = 0; i < arr?.length; i += 1){
+               if(Ans[i][Name] >= L && Ans[i][Name] <=R)
+                    real_Ans.push(Ans[i]);
+          }
+          return real_Ans;
+     }
+
+
+     let Candidates = Get_Candidates('Предмет', 'Информатика');
+
+     console.log(Candidates);
+     console.log(Choose(Candidates, 'Рейтинг', 7, 10));
+
     
 
         
