@@ -1,5 +1,8 @@
 var tutorIndex = 1;
 
+
+
+
 function showTutor(pl) {
 	
   
@@ -8,8 +11,6 @@ function showTutor(pl) {
   let dt;
   
   const div = tutors[tutorIndex-1];
-  
-  
   
   
   if(pl == +1){
@@ -24,6 +25,7 @@ function showTutor(pl) {
 	dt.classList.remove('moverightU');
 	
 	dt.removeEventListener('animationend', temp1);
+	moveup();
   }
   
   function temp(){
@@ -36,9 +38,6 @@ function showTutor(pl) {
     if (tutorIndex < 1) {tutorIndex = tutors.length;}
 
 
-	
-	
-   
    dt = tutors[tutorIndex-1];
    dt.style.display = "block";
     
@@ -54,44 +53,34 @@ function showTutor(pl) {
 	
 	div.removeEventListener('animationend', temp);
   }
-  
-  
-  div.addEventListener('animationend', temp);
-  
-  
-	
-  
-  /*
-  if(pl == -1){
-	  tutors[tutorIndex-1].style.animation = "left_to_right 0.5s ease";
-  }else{
-	  tutors[tutorIndex-1].style.animation = "right_to_left 0.5s ease";
-  }
-  */
- 
-  
-  
-  
+  div.addEventListener('animationend', temp); 
 }
 function moveup(){
 	window. scroll({
 	top: 0,
 	left: 0,
-	behavior: 'auto'
+	behavior: 'smooth'
 	});
 }
 
 
 function next(){
-
-setTimeout(showTutor(+1), 0);
-
-moveup();
+	showTutor(+1);
 }
 function prev(){
-	setTimeout(showTutor(-1), 0);
-	moveup();
+	showTutor(-1);
 }
 
 
 
+$(function() {
+   $(".mytutors").swipe( { fingers:'all', swipeLeft:swipeleft, swipeRight:swiperight, allowPageScroll:"auto"} );
+
+    function swipeleft(event, direction, distance, duration, fingerCount) {
+		next();
+	}
+	function swiperight(event, phase, direction, distance) {
+		prev();
+	}
+
+});
