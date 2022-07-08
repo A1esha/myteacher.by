@@ -484,7 +484,7 @@ and (max-width : 540px) {
 .button_next
 { 
     margin: 0 auto;
-    display: block;
+    display: none;
     font-weight:700 ;
     color: white;
     text-decoration: none;
@@ -514,7 +514,7 @@ and (max-width : 540px) {
 .button_back
 { 
     margin: 0 auto;
-    display: block;
+    display: none;
     font-weight: 700;
     color: white;
     text-decoration: none;
