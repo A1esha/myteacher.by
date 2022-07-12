@@ -9,22 +9,22 @@
 </head>
 <body>
 
-<form action = "check.php" method = "POST">
+<form action = "check.php" method = "POST" autocomplete="off">
   <div class="container">
         <h1>Оставьте свои контакты</h1>
         <p>В ближайшее время вам позвонят</p>
         <hr>
 
         <label><b>Телефон (00) 999-99-99</b></label>
-        <input type="text" placeholder="Введите ваш номер телефона" name = "phone"
+        <input type="text" class = "_req" placeholder="Введите ваш номер телефона" name = "phone"
          id = "phone" required>
 
         <label><b>Введите ваше имя</b></label>
-        <input type="text" placeholder = "Имя" name = "name"
+        <input type="text" class = "_req" placeholder = "Имя" name = "name"
         id = "name" required>
 
         <label><b>E-mail</b></label>
-        <input type = "text" placeholder = "my_tutor@gmail.com" name = "email"
+        <input type = "text" class ="_req email" placeholder = "my_tutor@gmail.com" name = "email"
         id = "email" required>
             <script>
                document.addEventListener('DOMContentLoaded', () => {
@@ -35,17 +35,31 @@
                  IMask(inputElement, maskOptions);
                 })
             </script>
+
             <script src="js/imask.js"></script>
             <script src="js/main.js"></script>
 
             <hr>
+
             <button type="submit" class="registerbtn">Оставить заявку</button>
+
         </div>
+
 
         <div class="container signin">
         <p>Что-то не так? Позвоните нам  <a href="#">+375 25 957 59 93</a>.</p>
         </div>
 </form>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type = "text/javascript">
+  $(function(){
+    Swal.fire(
+      'Ваша заявка отправлена',
+      'Наши сотрудники свяжутся с Вами в ближайшее время',
+      'success'
+    )
+  });
+</script>
 </body>
 </html>
