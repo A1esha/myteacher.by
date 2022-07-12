@@ -60,17 +60,25 @@
                let cur_data = {
                     'Имя' : Ans[i][0],
                     'Предмет' : Ans[i][1],
-                    'Рейтинг' : Ans[i][2],
-                    'Описание' : Ans[i][3]
+                    'Рейтинг' : Number(Ans[i][2]),
+                    'Описание' : Ans[i][3],
+                    'Мин класс' : Number(Ans[i][4]),
+                    'Макс класс' : Number(Ans[i][5])
                }
              
                real_Ans.push(cur_data);
           }
      
 
+          real_Ans.sort(function(a, b){
+               return b['Рейтинг'] - a['Рейтинг'];
+          });
+
+
           return real_Ans;
      }
      
+
 
 
      function Choose(Ans, Name, L, R){

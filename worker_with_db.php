@@ -42,12 +42,12 @@
 
   while($myrow = mysqli_fetch_assoc($res)){
     $key = (++$i);
-    $data->$key = array($myrow['Имя'], $myrow['Предмет'], $myrow['Рейтинг'], $myrow['Описание']);
+    $data->$key = array($myrow['Имя'], $myrow['Предмет'], $myrow['Рейтинг'], $myrow['Описание'], $myrow['Мин класс'], $myrow['Макс класс']);
   }
   
   header('Content-Type: application/json; charset = uft-8');
 
-  //var_dump($data);
+  var_dump($data);
   ob_end_clean(); // очищает буфер вывода
 
   echo json_encode($data);
