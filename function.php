@@ -81,13 +81,13 @@
 
 
 
-     function Choose(Ans, Name, L, R){
+     function Choose(Ans, Grade){
 
           const arr = Ans || [];
 
           var real_Ans = [];
           for(let i = 0; i < arr?.length; i += 1){
-               if(Ans[i][Name] >= L && Ans[i][Name] <=R)
+               if(Ans[i]['Мин класс'] <= Grade && Ans[i]['Макс класс'] >= Grade)
                     real_Ans.push(Ans[i]);
           }
           return real_Ans;
@@ -97,7 +97,7 @@
      let Candidates = Get_Candidates('Предмет', 'Информатика');
 
      console.log(Candidates);
-     console.log(Choose(Candidates, 'Рейтинг', 7, 10));
+     console.log(Choose(Candidates, 1));
 
     
 
