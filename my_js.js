@@ -5,6 +5,13 @@ function fun1() {
   document.getElementById('label1').innerHTML = sub;
 }
 
+function fun2() {
+  var sel=document.getElementById('select-box2').selectedIndex;
+  var options=document.getElementById('select-box2').options;
+  var sub = options[sel].text;
+  document.getElementById('label2').innerHTML = sub;
+}
+
 
 $("select").on("click" , function() {
   
