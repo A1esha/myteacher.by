@@ -11,4 +11,7 @@
   $mysql->query("INSERT INTO `users` (`phone`,`name`,`email`) VALUES('$phone','$name','$email')");
 
   $mysql->close();
+
+  header('Location: /');
+
  ?>
