@@ -26,13 +26,89 @@ h2 {
   margin: 0;
 }
 */
+
+
+
+ol{
+	list-style= none;
+
+	text-align: center;
+  margin-left: auto; 
+  margin-right: 0;
+
+	
+	
+}
+li{
+	background: #888;
+	border-radius: 50%;
+	display: inline-block;
+	width:20px;
+	height:20px;
+	margin-left: 10px;
+	
+}
+*{
+  max-width:100%;
+
+}
+*{
+  overflow-x: hidden;
+}
+.cent{
+  height: 100vh;
+  width: 100vw;
+}
+.Lslide{
+  display:inline-block;
+  width:15%;
+  height: 100%;
+  padding-left:0;
+  background-color: #008000;
+  overflow-x: hidden;
+}
+.Rslide{
+  display:inline-block;
+  width:15%;
+  height: 100%;
+  margin-left:0;
+  padding-left:0;
+  background-color: #FFFF00;
+
+}
+.Cslide{
+  display:inline-block;
+  width:70%;
+  height:100%;
+  margin-left: 0;
+  padding-left: 0;
+  background-color:#808000;
+}
+
+
+
 button {
   position: fixed;
   z-index: 1;
 }
 
+img{
+	border-radius: 50%;
+}
 
+.fadeout{
+	animation-name: fadeout;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
+.fadein{
+	animation-name: fadein;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 .moveright {
   animation-name: moveright;
   animation-duration: 0.3s;
@@ -58,6 +134,45 @@ button {
   animation-fill-mode: forwards;
 }
 
+
+.form1{
+	margin-top: 20vh;
+}
+.form2{
+	margin-top: 15vh;
+}
+@keyframes fadeout {
+  0% {
+    /*transform: translateX(0);*/
+	opacity: 1;
+	
+  }
+  100% {
+    opacity: 0.3;
+  }
+  /*
+  50.002% {
+    opacity: 0;
+    /*transform: translateX(100vw);
+  }
+  */
+}
+@keyframes fadein {
+  0% {
+    /*transform: translateX(0);*/
+	opacity: 0.3;
+	
+  }
+  100% {
+    opacity: 1;
+  }
+  /*
+  50.002% {
+    opacity: 0;
+    /*transform: translateX(100vw);
+  }
+  */
+}
 @keyframes moveright {
   0% {
     /*transform: translateX(0);*/
@@ -128,7 +243,9 @@ button {
     margin-left: 0;
   }
 }
-
+form{
+	margin-top: 20vh;
+}
 @keyframes left_to_right {
   from {
     margin-left: -100%;
@@ -141,17 +258,34 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
 }
-* {
-    box-sizing: border-box;
-}
+
 
 /* Add padding to containers */
-.container {
-    padding: 16px;
-    background-color: white;
-}
 
+div{
+
+  width:100%;
+
+}
+.alltutors, .mytutors{
+position:absolute;
+display: inline-block;
+
+    max-width:100%; 
+     
+  }
+.container{
+
+
+ 
+}
 /* Full-width input fields 
+ overflow-x: hidden;
+ overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+ overflow-x: hidden;
 
 
 .mytutors{
@@ -389,16 +523,49 @@ p{
     box-shadow: 0 0 15px #A9A9A9; /* Размер и цвет тени блока*/
 }
 
-.image{
+img{
     /*  background-size: cover;
     background-position: center;
-    padding-bottom: 62.5%;*/
+    padding-bottom: 62.5%;
+overflow: hidden;
+
+    */
    width: 35%;
+}
+
+ .mytutors{
+  
 }
 
 
 @media only screen 
 and (min-width : 900px) {
+.nxt{
+
+  margin-left: 10px;
+  display: inline-block;
+  opacity: 0.15;
+  width: 100vw;
+ transform: translateX(70vw);
+ /*transform: translateY(0vh);*/
+  z-index:0;
+}
+.prv{
+  display: inline-block;
+  width: 100vw;
+  opacity: 0.15;
+  /*transform: translate(-90vw, 0);*/
+  z-index:0;
+
+}
+.activ{
+  display: inline-block;
+  opacity: 1;
+  width: 80vw;
+  transform: translate(10vw, 0);
+  
+  z-index:1;
+}
 .outline {
     font-size: 50%;
     font-family: "Helvetica";
@@ -468,6 +635,16 @@ and (min-width : 900px) {
 }
 @media only screen 
 and (max-width : 540px) {
+
+
+.nxt{
+  opacity: 0.2;
+  transform: translateX(90vw);
+}
+.prv{
+  opacity: 0.2;
+  transform: translateX(-90vw);
+}
 
 .outline {
     text-align: center;
