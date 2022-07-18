@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+     <meta charset="UTF-8">
+     <title>  Оставьте отзыв   </title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+       
+   <style>
+        html{height: 100%; overflow:auto;font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+        body{margin:0;height: 100%;}
+          .re-container{
+               max-width:600px;
+               margin:0 auto;
+               display: none;
+               z-index : 2;
+               position: relative;
+          }
+          .re-form-block::-webkit-scrollbar{
+               display: none;
+         }
+          .re-label{
+              font-weight: bold;
+              margin-bottom: 10px;
+              text-align: left;
+          }
+          .re-body{
+               background-color: transparent;     
+               width: 100vh;
+               min-width: 100%; 
+               zoom: 1;
+               -webkit-font-smoothing:antialiased;
+               -moz-osx-font-smoothing:grayscale;
+               font-family:"Roboto",sans-serif;
+               font-size:15px;
+
+          }
+          .re-close{
+               cursor:pointer;
+               position:absolute;
+               right:12px;
+               top:12px;
+               z-index:3;
+          }
+          .re-pseudo-form-block{
+                 box-shadow: none;
+                 margin: 0 auto;
+                 max-height: 100vh;
+                 overflow-y: scroll;
+                 scroll-behavior: smooth;    
+          }
+          .re-form-block{
+               margin:0;
+               height:100vh;
+
+
+               background-color:#fff;
+               border-radius:8px;
+               box-shadow:0 0 15px rgba(0,0,0,0.1);
+               padding:50px 30px;
+               position:relative;
+               margin:20px;
+
+                overflow-y: scroll;    
+
+             
+          }
+          .re-footer-text{color:#9ca0ac;font-size:14px;text-align:center}
+          .re-title{
+               font-size:32px;
+               font-weight:800;
+               margin:0 0 15px 0;
+               text-align:center;
+          }
+          .row{
+              margin-left: -7.5px;
+              margin-right: -7.5px;
+          }
+          .form-group{
+              margin-bottom: 30px;
+
+          }
+          .re-required-field{
+               color:#ff3636;
+               display:block;
+               font-size:14px;
+               margin-top:0px;
+               text-align:left;
+               margin-bottom: 5px;
+          }
+          .re-close-btn{
+               background-image:url("data:image/svg+xml,%0A%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.0327 8L15.5814 3.45136C16.1395 2.89318 16.1395 1.98818 15.5814 1.42955L14.5705 0.418636C14.0123 -0.139545 13.1073 -0.139545 12.5486 0.418636L8 4.96727L3.45136 0.418636C2.89318 -0.139545 1.98818 -0.139545 1.42955 0.418636L0.418636 1.42955C-0.139545 1.98773 -0.139545 2.89273 0.418636 3.45136L4.96727 8L0.418636 12.5486C-0.139545 13.1068 -0.139545 14.0118 0.418636 14.5705L1.42955 15.5814C1.98773 16.1395 2.89318 16.1395 3.45136 15.5814L8 11.0327L12.5486 15.5814C13.1068 16.1395 14.0123 16.1395 14.5705 15.5814L15.5814 14.5705C16.1395 14.0123 16.1395 13.1073 15.5814 12.5486L11.0327 8Z' fill='%239CA0AC'/%3E%3C/svg%3E%0A");
+               border-radius:0;
+               display:block;
+               height:16px;
+               position:relative;
+               width:16px;
+          }
+          @media screen and (max-width: 576px) {  
+               .re-body {
+                    background-color: #ffffff;   
+               }
+          } 
+          .col-xs-24{
+              width: 100%;
+              float: left;
+              position: relative;
+              min-height: 1px;
+              padding-left: 7.5px;
+              padding-right: 7.5px;
+          }
+          .text-center{
+              text-align: center;
+          }
+          .re-submit-btn {
+              background-color: #0081ff;
+              border-radius: 3px;
+              border: 1px solid transparent;
+              color: #fff;
+              display: inline-block;
+              font-weight: 600;
+              padding: 12px 30px;
+              position: relative;
+              width: 100%;
+              margin-top:  20px;
+              margin-bottom: 20px;
+          }
+          .form-control {
+               border-radius: 3px;
+               border: 1px solid #d6dae4;
+               -webkit-box-shadow: none;
+               box-shadow: none;
+               color: #000;
+               display: block;
+               font-size: 14px;
+               height: 48px;
+               padding: 10px 16px;
+               width: 100%;
+               margin: 0;
+               overflow: visible;
+               box-sizing: border-box;
+               writing-mode: horizontal-tb !important;text-rendering: auto;    
+               letter-spacing: normal;
+               word-spacing: normal;
+               line-height: normal;
+               text-transform: none;
+               text-indent: 0px;
+               text-shadow: none;
+               text-align: start;
+               appearance: auto;
+               -webkit-rtl-ordering: logical;
+               cursor: text;
+               background-color: field;
+               margin-bottom: 5px;
+
+          }
+          .push-50 {
+              margin-bottom: 50px;
+          }
+          .form-textarea{
+                            
+
+              border-radius: 3px;
+              border: 1px solid #d6dae4;
+              -webkit-box-shadow: none;
+              box-shadow: none;
+              font-size: 14px;
+              min-height: 120px;
+              padding: 10px 16px;
+              resize: none;
+              width: 100%;
+              overflow : auto;
+              margin : 0;
+              font : inherit;
+              box-sizing: border-box;
+              writing-mode: horizontal-tb !important;
+              cursor: text;
+              white-space: pre-wrap;
+              overflow-wrap: break-word;
+              background-color: field;
+              column-count: initial !important;
+              text-rendering: auto;
+              color: fieldtext;
+              letter-spacing: normal;
+              word-spacing: normal;
+              text-transform: none;
+              text-indent: 0px;
+              text-shadow: none;
+              display: inline-block;
+              text-align: start;
+              appearance: auto;
+              -webkit-rtl-ordering: logical;
+                margin-bottom: 5px;
+          }
+        #shadow { 
+                position: fixed;
+                width:100%;
+                height:100%;
+                z-index: 1; /* поверх всех  кроме окна*/
+                background:#000;
+                opacity: 0.5; /*прозрачность*/
+                left:0;
+                top:0;
+        }
+        .open-form-button{
+                padding: 15px 70px;
+                font-size: 13px;
+                font-family: 'Open Sans',sans-serif;
+                cursor: pointer;
+                display: inline-block;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 600;
+                position: relative;
+                transition: all .3s ease;
+                text-align: center;
+                line-height: 1.42857143;
+                border: 2px solid transparent;
+                margin-bottom: 5px;
+                margin-top: 5px;
+                white-space: nowrap;
+                vertical-align: middle;
+                -ms-touch-action: manipulation;
+                touch-action: manipulation;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-image: none;
+                border-radius: 4px;
+                color: #ffffff;
+                background-color: #0083ff;
+                margin-left: 5px;
+                margin-right: 5px;
+            
+        }
+        .open-form-button:hover{
+            outline : 4px solid #63b3ff;
+        }
+
+
+</style>
+
+
+</head>
+      <script type="text/javascript">
+            var darkLayer, reviewForm;
+            function ShowForm() {
+                
+
+                darkLayer = document.createElement('div'); // слой затемнения
+                darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+                document.body.appendChild(darkLayer); // включаем затемнение
+ 
+                reviewForm = document.getElementById('Review-form'); // находим наше "окно"
+                reviewForm.style.display = 'block'; // "включаем" его
+ 
+               
+            }
+            function CloseForm() {
+                darkLayer.parentNode.removeChild(darkLayer); // удаляем затемнение
+                reviewForm.style.display = 'none'; // делаем окно невидимым
+                return false;
+            }
+        </script>
+        <body class="re-body">
+          <button class="open-form-button" onclick="ShowForm()">Оставить отзыв</button>
+          <div class="re-container" id="Review-form">
+               <div class="re-form-block">
+                    <div id="close-btn" class="re-close">
+                         <div class="re-close-btn" onclick = "CloseForm()"></div>
+                     </div>
+                    <div class="row form-group">
+                         <h1 class="re-title">Оставьте отзыв</h1>
+                    </div>
+
+                    <div class="row form-group">
+                         <label class="re-label text-center col-xs-24">Выберите оценку *</label>
+                         <div align="center">
+                              <img id = "img1" src = "unchecked_star.png" margin-right = "10px" margin-left="10px" width= "32px" height="32px">
+                              <img id = "img2" src = "unchecked_star.png" margin-right = "10px" margin-left="10px" width= "32px" height="32px">
+                              <img id = "img3" src = "unchecked_star.png" margin-right = "10px" margin-left="10px" width= "32px" height="32px">
+                              <img id = "img4" src = "unchecked_star.png" margin-right = "10px" margin-left="10px" width= "32px" height="32px">
+                              <img id = "img5" src = "unchecked_star.png" margin-right = "10px" margin-left="10px" width= "32px" height="32px">
+                         </div>
+                         <span id="required-field-stars" class="re-required-field text-center" style="display:none;"></span>
+                    </div>    
+                    <div class="row form-group">
+                          <label class="re-label col-xs-24">Имя *</label>
+                          <div class="col-xs-24">
+                              <input id="reviewer-name" class="form-control" name="reviewer-name" placeholder="Введите имя...">
+                              <span id="required-field-name" class="re-required-field" style="display:none;"></span>
+                          </div>
+                    </div>
+
+                    <div class="row form-group">
+                          <label class="re-label col-xs-24">Email *</label>
+                          <div class="col-xs-24">
+                              <input id="reviewer-email" class="form-control" name="reviewer-email" placeholder="Введите email...">
+                              <span id="required-field-email" class="re-required-field" style="display:none;"></span>
+                          </div>
+                    </div>
+
+                    <div class="row form-group">
+                          <label class="re-label col-xs-24">Отзыв *</label>
+                          <div class="col-xs-24">
+                              <textarea id="review-text" class="form-textarea" name="review-text" placeholder="Напишите свой отзыв... "></textarea>
+                              <span id="required-field-text" class="re-required-field" style="display:none;"></span>
+                          </div>
+                    </div>
+               
+                      
+                    <div class="row form-group push-50 f-submit">
+                          <div class="col-xs-24 text-center">
+                              <button id="submit-button" class="re-submit-btn" onclick="checkReview('email')">Отправить отзыв</button>
+                          </div>
+                           <div class="re-footer-text row">* Необходимые для заполнения поля </div>
+                    </div>
+                   
+                </div>
+          </div>
+
+
+
+<script>
+     let stars = 0;
+     function paint(cnt){
+            document.getElementById('required-field-stars').style.display = 'none';
+            for(let i = 1; i <= 5; i++){
+               let name = "img" + String(i);
+               if(i <= cnt){  
+                    console.log(document.getElementById(name));
+                    document.getElementById(name).src = "checked_star.png";
+               }
+               else{
+                    document.getElementById(name).src = "unchecked_star.png";
+               }
+          }
+     }
+
+     for(let i = 1; i <= 5; i++){
+           let name = "img" + String(i);
+
+           document.getElementById(name).onmouseover = function() {mouseOver(i)};
+           document.getElementById(name).onmouseout = function() {mouseOut(i)};
+           document.getElementById(name).onclick = function() {mouseClick(i)};
+     }
+
+     function mouseOver(i) {
+          //console.log(i);
+          paint(Math.max(i, stars));
+     }
+
+     function mouseOut(i){
+          paint(stars);
+     }
+
+     function mouseClick(i){
+          stars = i;
+          paint(stars);
+     }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js"></script>
+
+<script>
+    var hasTextError = false;
+    var hasNameError = false;
+    var hasEmailError = false;
+     var collectLightboxData = {
+          tag: null,
+          tagIsIterable: false,
+          collectPhotos: false,
+          lang: 'en',
+          langShortcode: 'en_US',
+          requiredFieldMsg: 'Необходимое для заполнения поле.',
+          wrongEmailMsg : 'Неверно указана почта'
+      }
+
+     function checkReview(submitType) {
+        var rating = 0;
+        var reviewText = $('#review-text').val().trim();
+        reviewText = reviewText.replace(/\r\n|\r|\n/g, '<br />');
+        var lang = collectLightboxData.lang;
+        var name = $('#reviewer-name').val().trim();
+        var email = $('#reviewer-email').val().trim();
+        var acceptTerms = 0;
+        var valid = false;
+
+        rating = stars;
+
+        var review = {
+            lang : lang,
+            rating : rating,
+            source : collectLightboxData.source,
+            text : encodeURIComponent(reviewText),
+            form : 'lightbox'
+        };
+
+        
+       review.email = email;
+       review.name = name;
+       review.acceptTerms = acceptTerms;
+       if (collectLightboxData.tag) {
+           review.tag = collectLightboxData.tag;
+       }
+
+        if (rating >= 1 && rating <= 5) {
+            valid = true;
+        } else {
+            $('#required-field-stars').show();
+            $('#required-field-stars').html(collectLightboxData.requiredFieldMsg);
+        }
+
+        if (reviewText.length === 0) {  
+            valid = false;
+            $('#review-text').addClass('error-field');
+            $('#required-field-text').show();
+            $('#required-field-text').html(collectLightboxData.requiredFieldMsg);
+            hasTextError = true;
+        }
+
+        var fd = new FormData();
+        for (var key in review) {
+            if (review[key] instanceof Array) {
+                for (var rdk = 0; rdk < review[key].length; rdk++) {
+                    fd.append(key + '[]', review[key][rdk]);
+                }
+            } else {
+                fd.append(key, review[key]);
+            }
+        }
+
+        
+       if (name.length === 0) {
+           valid = false;
+           $('#reviewer-name').addClass('error-field');
+           $('#required-field-name').show();
+           $('#required-field-name').html(collectLightboxData.requiredFieldMsg);
+           hasNameError = true;
+       }
+       if (email.length === 0) {
+           valid = false;
+           $('#reviewer-email').addClass('error-field');
+           $('#required-field-email').show();
+           $('#required-field-email').html(collectLightboxData.requiredFieldMsg);
+           hasEmailError = true;
+       }
+       if(!Validate(email)){
+            valid = false;
+            $('#reviewer-email').addClass('error-field');
+            $('#required-field-email').show();
+            $('#required-field-email').html(collectLightboxData.wrongEmailMsg);
+            hasEmailError = true;
+       }
+
+        if (valid) {
+          submitReview(fd); 
+        } else {
+          document.querySelector('.re-form-block').scrollTo(0, document.querySelector('.re-form-block').offsetTop - 10);
+        }
+    }
+
+    $('#review-text').on('input', function (e) {
+        if (hasTextError && e.target.value.length > 0) {
+            $('#review-text').removeClass('error-field');
+            $('#required-field-text').hide();
+            $('#required-field-text').html('');
+            hasTextError = false;
+        }
+    });
+
+    $('#reviewer-name').on('input', function (e) {
+        if (hasNameError && e.target.value.length > 0) {
+            $('#reviewer-name').removeClass('error-field');
+            $('#required-field-name').hide();
+            $('#required-field-name').html('');
+            hasNameError = false;
+        }
+    });
+
+    $('#reviewer-email').on('input', function (e) {
+        if (hasEmailError && e.target.value.length > 0) {
+            hasEmailError = false;
+            $('#reviewer-email').removeClass('error-field');
+            $('#required-field-email').hide();
+            $('#required-field-email').html('');
+        }
+
+    });
+
+
+
+    function Validate(email){
+        let cnt = 0;
+        for(let i = 0; i < email.length; i++){
+            if(email[i] == '@') cnt++;
+            if(email[i] == '[' || email[i] == ']' || email[i] == '\\' || email[i] == ';' || email[i] == ',')
+                return false;
+        }
+        if(cnt != 1) 
+            return false;
+        let indx = email.indexOf('@');
+        let indx1 = email.indexOf('.');
+        if(indx1 == email.length)
+            return false;
+        let name = email.substr(0, indx);
+        let domain = email.substr(indx1, indx1 - indx - 1);
+        let other = email.substr(indx1 + 1, email.length - indx1);
+        if(other.length == 0 || name.length == 0 || domain.length == 0)
+            return false;
+        /// I can add other checkers, for example add base of popular domains and others.
+
+        return true;
+    }
+
+     document.getElementById('close-btn').addEventListener('click', function() {
+        closeLightbox();
+    });
+
+    function closeLightbox(element) {
+        var msgData = {
+            'action' : "close_lightbox"
+        };
+
+        if ('parentIFrame' in window) {
+            parentIFrame.sendMessage(msgData);
+        }
+    }
+    function sendMail(Name, Email, Review) {
+        $.ajax({
+          type: 'POST', 
+          url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+          data: {
+            'key': 'YOUR API KEY HERE',
+            'message': {
+              'from_email': 'YOUR@EMAIL.HERE',
+              'to': [
+                  {
+                    'email': 'RECIPIENT@EMAIL.HERE',
+                    'name': 'RECIPIENT NAME (OPTIONAL)',
+                    'type': 'to'
+                  }
+                ],
+              'autotext': 'true',
+              'subject': 'YOUR SUBJECT HERE!',
+              'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+            }
+          }
+         }).done(function(response) {
+           console.log(response); // if you're into that sorta thing
+         });
+    }
+
+</script>
+
+</body>
+</html>
