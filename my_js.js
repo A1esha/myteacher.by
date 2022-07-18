@@ -42,6 +42,83 @@ function get_tutor(id){
 } 
 
 
+
+var tutorIndex = 1;
+
+
+
+
+var first = 1;
+
+function showTutor(pl) {
+
+  dots[(tutorIndex)%dots.length].classList.remove("fadeout"); 
+  dots[(tutorIndex)%dots.length].classList.add("fadein");
+
+
+  let i;
+  let dt;
+  
+  var div = get_tutor(tutorIndex-1);
+
+  //div.style.display = "block";
+
+  if(pl == +1){
+	  div.classList.add('moveleft');
+  }else{
+	  div.classList.add('moveright');
+  }
+ 	
+
+  function temp1(){
+	dt.classList.remove('moveleftU');
+	dt.classList.remove('moverightU');
+
+	dt.removeEventListener('animationend', temp1);
+	moveup();
+  }
+  
+  function temp(){
+  	
+	div.classList.remove('moveleft');
+	div.classList.remove('moveright');
+	div.style.display = "none";	
+   
+	tutorIndex += pl;
+    if (tutorIndex > currentlyshow.length) {tutorIndex = 1;}
+    if (tutorIndex < 1) {tutorIndex = currentlyshow.length;}
+
+
+   dt = document.getElementById("t"+currentlyshow[tutorIndex-1]["Описание"]);
+   dt.style.display = "block";
+    
+   dots[(tutorIndex)%dots.length].classList.remove("fadein");
+   dots[(tutorIndex)%dots.length].classList.add("fadeout");
+
+
+
+
+
+   if(pl == +1){
+	   dt.classList.add('moveleftU');
+   }else{
+	   dt.classList.add('moverightU');
+   }
+   
+	dt.addEventListener('animationend', temp1);
+	
+	
+	
+	div.removeEventListener('animationend', temp);
+  }
+  div.addEventListener('animationend', temp); 
+
+
+}
+
+
+
+
 function represent(id){
 
 	var widget = document.getElementById("tutor-widget");
@@ -103,8 +180,7 @@ function chosen(){
 	let tutors = document.getElementsByClassName("tutor-widget");
 	tutors[0].style.dipslay = "inline-block";
 */
-	represent(0);
-
+	(get_tutor(0)).style.display = "block";
 	/// there is no check that currentlyshow can be empty
 	let form1 = document.getElementsByClassName("form1");
 	let form2 = document.getElementsByClassName("form2");
@@ -137,7 +213,19 @@ function chosen(){
 	dots[0].classList.add("active");
 	dots[(tutorIndex)%dots.length].classList.add("fadeout");
 
+	var inst = document.getElementById("instruction");
+	inst.style.display = "inline-block";
+
+
+	setTimeout(()=> showTutor(+1), 1000);
+	setTimeout(()=> showTutor(-1), 2000);
 	
+    setTimeout(()=> showTutor(-1), 3000);
+	   
+	
+	setTimeout(()=> showTutor(+1), 4000);
+	   
+	setTimeout(()=> 	inst.style.display = "none", 4100);	
 
 
 }
