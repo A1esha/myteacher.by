@@ -313,7 +313,8 @@
                       
                     <div class="row form-group push-50 f-submit">
                           <div class="col-xs-24 text-center">
-                              <button id="submit-button" class="re-submit-btn" onclick="checkReview('email')">Отправить отзыв</button>
+                             <input type="button" id="submit-button" class = "re-submit-btn" value="Отправить отзыв" onclick="checkReview('email')" />
+                            
                           </div>
                            <div class="re-footer-text row">* Необходимые для заполнения поля </div>
                     </div>
@@ -456,7 +457,8 @@
        }
 
         if (valid) {
-          submitReview(fd); 
+          //submitReview(fd); 
+          sendMail(name, email, reviewText, rating);
         } else {
           document.querySelector('.re-form-block').scrollTo(0, document.querySelector('.re-form-block').offsetTop - 10);
         }
@@ -515,42 +517,65 @@
         return true;
     }
 
-     document.getElementById('close-btn').addEventListener('click', function() {
-        closeLightbox();
-    });
-
-    function closeLightbox(element) {
-        var msgData = {
-            'action' : "close_lightbox"
+    
+    function sendMail(Name, Email, Review, Rating) {
+        var data_js = {
+            "access_token": "mog8ifqrlzs3ifxymocc5lsw" // sent after you sign up
         };
 
-        if ('parentIFrame' in window) {
-            parentIFrame.sendMessage(msgData);
+        function js_onSuccess() {
+            CloseForm();
+              // remove this to avoid redirect
+            //window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
         }
-    }
-    function sendMail(Name, Email, Review) {
-        $.ajax({
-          type: 'POST', 
-          url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-          data: {
-            'key': 'YOUR API KEY HERE',
-            'message': {
-              'from_email': 'YOUR@EMAIL.HERE',
-              'to': [
-                  {
-                    'email': 'RECIPIENT@EMAIL.HERE',
-                    'name': 'RECIPIENT NAME (OPTIONAL)',
-                    'type': 'to'
-                  }
-                ],
-              'autotext': 'true',
-              'subject': 'YOUR SUBJECT HERE!',
-              'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+
+         function js_onError(error) {
+            // remove this to avoid redirect
+            window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+         }
+
+
+        var sendButton = document.getElementById("submit-button");
+
+        function js_send() {
+            //console.log('DS');
+
+            sendButton.value='Отправляем…';
+            sendButton.disabled=true;
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+                if (request.readyState == 4 && request.status == 200) {
+                    js_onSuccess();
+                } else
+                if(request.readyState == 4) {
+                    js_onError(request.response);
+                }
+            };
+
+       
+            data_js['subject'] = Rating;
+            data_js['text'] = "Rating : " + Rating + "; Name : " + Name  + "; Email : " + Email +"; Text :" + Review ;
+            console.log(data_js['text']);
+            var params = toParams(data_js);
+
+            request.open("POST", "https://postmail.invotes.com/send", true);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            request.send(params);
+
+            return false;
+        }
+
+        js_send();
+
+        function toParams(data_js) {
+            var form_data = [];
+            for ( var key in data_js ) {
+                form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
             }
-          }
-         }).done(function(response) {
-           console.log(response); // if you're into that sorta thing
-         });
+
+            return form_data.join("&");
+        }
     }
 
 </script>
