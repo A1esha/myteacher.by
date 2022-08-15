@@ -1,484 +1,350 @@
 <!DOCTYPE html>
 <html>
-
-
 <head>
-
-  <title>Анкета репетитора</title>
-	
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<link href="my_cs.css" rel="stylesheet">
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ia-edge">
+	<title>Doc</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<div id = "instruction" style="display:none"class = "instruction" >
-    <h3 class="insttext">Листайте влево и вправо чтобы увидеть репетиторов</h3>
-</div>
-
-<ol class="dots">
-        
-		
- </ol>
- 
- 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="jquery.touchSwipe.min.js"></script>
-<script src="findthem.js"></script>
-<script src="my_js.js"></script>
-<script src="move.js"></script>
-
-<form action = "#" class = "form1">
-    <div class="select-box">
-    <label  for="select-box1" class="label select-box1"><span id = "label1" class="label-desc">Выберите предмет</span> </label>
-
-    <select id="select-box1" onchange = "fun1()"class="select">
-
-    <option value="1">Английский язык</option>
-    <option value="2">Белорусский язык</option>
-    <option value="3">Немецкий язык</option>
-    <option value="4">Польский язык</option>
-    <option value="5">Русский язык</option>
-
-
-    <option value="6">Математика</option>
-    <option value="7">Физика</option>
-    <option value="8">Информатика</option>
-    <option value="9">Программирование</option>
-
-    <option value="10">Биология</option>
-    <option value="11">Химия</option>
-
-    <option value="12">Дошкольная подготовка</option>
-    <option value="13">Начальная школа</option>
-
-    <option value="14">История Беларуси</option>
-
-    <option value = "15"> Подготовка в ЦТ</option>
-
-    </select>
-
-    </div>
-</form>
-<form action="#" class = "form2">
-    <div class="select-box">
-    <label  for="select-box2" class="label select-box1"><span id = "label2" class="label-desc">Класс обучения</span> </label>
-    <select id="select-box2" onchange = "fun2()"class="select">
-
-    <option value = "k1">1 класс</option>
-    <option value = "k2">2 класс</option>
-    <option value = "k3">3 класс</option>
-    <option value = "k4">4 класс</option>
-    <option value = "k5">5 класс</option>
-    <option value = "k6">6 класс</option>
-    <option value = "k7">7 класс</option>
-    <option value = "k8">8 класс</option>
-    <option value = "k9">9 класс</option>
-    <option value = "k10">10 класс</option>
-    <option value = "k11">11 класс</option>
-
-    </select>
-    </div>
-
-</form>
-
-<div align = "center">
-<button  id = "button_find" class = "button" style="margin-left:43%;margin-top:7%" onclick = "chosen()"align = "center">Искать репетитора</button>
-</div>
-
-
-
-
-
-<button onclick="prev()" class = "button_back" style="display:none">
-	Предыдущий
-</button>
-
-<button onclick="next()" class = "button_next" style="display:none">
-	Следующий
-</button>
-
-
-
-
-<div class = "tutor-data"> 
-
-    <div class = "mytutors" id = "t5" style="display:none" >
-
-			<h1>
-				<img src = "https://profile.protutor.by/static/avatars/s_b0434560af42926b7f591fc91a73cb0e.jpg"  > 
-				Иванов Иван
-
-					<p class = "outline">Рейтинг <b>9.7/10.0</b></p>
-
-				
-			
-			</h1>
-
-			<h2>Обо мне</h2>
-
-			<p>Педагогический стаж - более 13 лет. Учитель 1 квалификационной категории. Индивидуальные и групповые онлайн-занятия по физике и математике (Zoom) с использованием графического планшета, электронных учебников, сборников ЦТ и ЕГЭ, а также других необходимых для обучения методических материалов. Подготовка к контрольным и самостоятельным работам, устранение пробелов по учебным темам. 
-			</p>
-
-			<h2>Образование</h2>
-
-			<p>
-				Могилевский государственный университет им. А.А. Кулешова, физико-математический факультет, специальность – учитель физики и математики (2007 г.).
-			</p>
-
-			<h2>Цены</h2>
-
-			<p>
-				• 5 — 9 классы (60 мин): 25 руб<br>
-				• 10— 11 классы (60 мин): 25 руб<br>
-				• Подготовка к ЦТ(60 мин): 25 руб<br>
-			</p>
-    </div>
-	<div class = "mytutors"  id = "t4" style="display:none">
-		
-
-
-					<h1>
-						<img src = "https://profile.protutor.by/static/avatars/s_1c7c32acac60c133816bb90ba6eee45a.jpg" aling = "middle" > 
-						Оксана Леонидовна
-
-							<p class = "outline">Рейтинг <b>9.3/10.0</b></p>
-
+<body>
+	<div class="form">
+		<h1 class="info__nickname">
+			Забавская Валерия
+		</h1>
+		<p class="info__profession">
+			репетитор по английскому
+		</p>
+		<div class="info__merged_statistics">
+			<div class="info__photo">
+				<a class="info__photo-link">
+					<img src="./img/jpg/photo__student.jpg" class="info__photo-pic"></img>
+				</a>
+			</div>
+			<ul class="info__rating">
+				<li class="form__statistic-li">
+					<div class="form__statistic">
+						<div class="form__name_value">	
+							<div class="form__name">
+								<p class="statistic__name">
+									Стоимость - 
+								</p>
+							</div>
+							<div class="form__value">
+								<p class="statistic__value">
+									35 рублей
+								</p>
+							</div>
+						</div>
+						<div class="info__progress-bar">
+							<svg width = "700" height = "29">
+								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
+							</svg>
+						</div>
+					</div>
+				</li>
+				<li class="form__statistic-li">
+					<div class="form__statistic">
+						<div class="form__name_value">
+							<div class="form__name">
+								<p class="statistic__name">
+									Рейтинг -  
+								</p>
+							</div>
+							<div class="form__value">
+								<p class="statistic__value">
+									 4.85
+								</p>
+							</div>
+						</div>
+						<div class="info__progress-bar">
+							<svg width = "700" height = "29">
+								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
+							</svg>
+						</div>
+					</div>
+				</li>
+				<li class="form__statistic-li">
+					<div class="form__statistic">
+						<div class="form__name_value">
 						
-					</h1>
+							<div class="form__name">
+								<p class="statistic__name">
+									Опыт - 
+								</p>
+							</div>
+							<div class="form__value">
+								<p class="statistic__value">
+									20 лет
+								</p>
+							</div>
 
-					<h2>Обо мне</h2>
-
-					<p>Практикующий специалист в изучении английского языка. Работаю с дошкольниками, школьниками всех возрастов, взрослыми. Методику проведения занятий подбираю индивидуально в зависимости от уровня ученика и в соответствии с Вашими пожеланиями. При проведении занятий с дошкольниками работа организуется на основе игровых методик. При проведении занятий по школьной программе устраняются пробелы в знаниях по темам, которые ученик проходит в школе, углубляя знания по ним. При желании опережаем школьную программу, постоянно совершенствуемся в полученных знаниях. Ставим правильную и красивую устную речь. При проведении занятий по подготовке к ЦТ не бездумно учим теорию, а учимся решать практические задания и тесты. Таким образом знания упорядочиваются в голове ученика. Тщательно прорабатываем отдельные темы, в которых есть пробелы.</p>
-
-					<h2>Образование</h2>
-
-					<p>
-						БГПУ им. М. Танка, факультет социально-педагогических технологий.
-						</p>
-
-					<h2>Цены</h2>
-
-					<p>
-						• 1 — 4 классы (45 мин): 19,76 руб.<br>
-						• 5 — 9 классы (60 мин): 24,32 руб.<br>
-						• 10 — 11 классы (60 мин): 27,36 руб.<br>
-						• Программа ВУЗа(60 мин): 27,36 руб.<br>
-						• Взрослые(60 мин): 27,36 руб<br>
-					</p>
-		
+						</div>
+						<div class="info__progress-bar">
+							<svg width = "700" height = "29">
+								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
+							</svg>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="info__table">
+			<ul class="info__table_form">
+				<li class="info__item">
+					<div class="info__item-name">
+						Обо мне
+					</div>
+					<div class="info__item-value">
+						Практикующий специалист в изучении английского языка. Работаю с дошкольниками, школьниками всех возрастов, взрослыми. Методику проведения занятий подбираю индивидуально в зависимости от уровня ученика и в соответствии с Вашими пожеланиями. При проведении занятий с дошкольниками работа организуется на основе игровых методик. При проведении занятий по школьной программе устраняются пробелы в знаниях по темам, которые ученик проходит в школе, углубляя знания по ним. Cтаж работы - 20 лет.
+					</div>
+				</li>
+				<li class="info__item">
+					<div class="info__item-name">
+						Стаж и образование
+					</div>
+					<div class="info__item-value">
+						Stanford University class 2002. PhD in English literature.
+					</div>
+				</li>
+				<li class="info__item">
+					<div class="info__item-name">
+						Прайс-лист
+					</div>
+					<ul class="info__price_list">
+						<li class="info__price_item-li">
+							<div class="info__price_item">
+								<div class="info__price_item-name">
+									Единая цена -
+								</div>
+								<div class="info__price_item-value">
+									35 рублей урок.
+								</div>
+							</div>
+						</li>
+						<li class="info__price_item-li">
+							<div class="info__price_item">
+								<div class="info__price_item-name">
+									Продолжительность урока -
+								</div>
+								<div class="info__price_item-value">
+									1 академический час (45 минут).
+								</div>
+							</div>
+						</li>
+					</ul>
+					
+				</li>
+			</ul>
+		</div>
+		<div class="info__button-div">
+			
+			<p class="info__button-text">
+				Выбрать репетитора
+			</p>
+			
+		</div>
 	</div>
-    <div class = "mytutors" id = "t3" style="display:none">
-	
-	
-			<h1>
-                    <img src = "https://profile.protutor.by/static/avatars/s_0a02532b4377dccff2d5a07a166e8057.jpg" aling = "middle" > 
-                    Юлия Игоревна
-
-                        <p class = "outline">Рейтинг <b>9.7/10.0</b></p>
-
-                    
-                </h1>
-
-                <h2>Обо мне</h2>
-
-                <p>
-		Добрый день! :) Я выпускница лингвистического университета, которая обожает английский язык, а еще больше - преподавать его! У меня есть опыт в работе с учениками: как с маленькими, так и взрослыми. Делаю изучение языка простым и увлекательным. Применяю индивидуальный подход к своим ученикам. Если ты открытый и весёлый человек, как я, то с нетерпением жду знакомства с тобой! :)</p>
-
-                <h2>Образование</h2>
-
-                <p>
-					2004-2008: МГПК им. Максима Танка.Учитель английского языка<br>2008-2012: МГЛУ. Иностранный язык, английский. Преподаватель.				
-				</p>
-
-                <h2>Цены</h2>
-
-                <p>
-                    • 1 — 4 классы (45 мин): 22,80 руб.<br>
-                    • 5 — 9 классы (60 мин): 27,36 руб.<br>
-					• 10 — 11 классы (60 мин): 31,92 руб.<br>
-					• Программа ВУЗа(60 мин): 31,92 руб.<br>
-                    • Взрослые(60 мин): 31,92 руб<br>
-                </p>
-	
-    </div>
-	<div class = "mytutors" id = "t2" style="display:none">
-	
-	
-			<h1>
-                    <img src = "https://sun9-58.userapi.com/impf/c9982/v9982497/e3c/SE0-ad8GRpE.jpg?size=320x240&quality=96&sign=3ba875e0e0a70203aa1530d9b2022b78&type=album" aling = "middle" > 
-                    Даниил Забавский
-
-                        <p class = "outline">Рейтинг <b>1/10.0</b></p>
-
-                    
-                </h1>
-
-                <h2>Обо мне</h2>
-
-                <p>
-		Добрый день! :) Я гений, преподчитаю  лингвистического университета, которая обожает английский язык, а еще больше - преподавать его! У меня есть опыт в работе с учениками: как с маленькими, так и взрослыми. Делаю изучение языка простым и увлекательным. Применяю индивидуальный подход к своим ученикам. Если ты открытый и весёлый человек, как я, то с нетерпением жду знакомства с тобой! :)</p>
-
-                <h2>Образование</h2>
-
-                <p>
-					2004-2008: МГПК им. Максима Танка.Учитель английского языка<br>2008-2012: МГЛУ. Иностранный язык, английский. Преподаватель.				
-				</p>
-
-                <h2>Цены</h2>
-
-                <p>
-                    • 1 — 4 классы (45 мин): 22,80 руб.<br>
-                    • 5 — 9 классы (60 мин): 27,36 руб.<br>
-					• 10 — 11 классы (60 мин): 31,92 руб.<br>
-					• Программа ВУЗа(60 мин): 31,92 руб.<br>
-                    • Взрослые(60 мин): 31,92 руб<br>
-                </p>
-	
-    </div>
-	<div class = "mytutors" id = "t1" style="display:none">
-	
-	
-	
-	
-			<h1>
-                    <img src = "https://profile.protutor.by/static/avatars/s_c5339f60badb1771cbcb0069785d2c97.jpg" aling = "middle" > 
-					Алексей
-
-                        <p class = "outline">Рейтинг <b>7.8/10.0</b></p>
-
-                    
-                </h1>
-
-                <h2>Обо мне</h2>
-
-                <p>
-		Добрый день! :) Я гений, преподчитаю  лингвистического университета, которая обожает английский язык, а еще больше - преподавать его! У меня есть опыт в работе с учениками: как с маленькими, так и взрослыми. Делаю изучение языка простым и увлекательным. Применяю индивидуальный подход к своим ученикам. Если ты открытый и весёлый человек, как я, то с нетерпением жду знакомства с тобой! :)</p>
-
-                <h2>Образование</h2>
-
-                <p>
-					2004-2008: МГПК им. Максима Танка.Учитель английского языка<br>2008-2012: МГЛУ. Иностранный язык, английский. Преподаватель.				
-				</p>
-
-                <h2>Цены</h2>
-
-                <p>
-                    • 1 — 4 классы (45 мин): 22,80 руб.<br>
-                    • 5 — 9 классы (60 мин): 27,36 руб.<br>
-					• 10 — 11 классы (60 мин): 31,92 руб.<br>
-					• Программа ВУЗа(60 мин): 31,92 руб.<br>
-                    • Взрослые(60 мин): 31,92 руб<br>
-                </p>
-	
-    </div>
-	<div class = "mytutors" id = "t6" style="display:none">
-	
-	
-			<h1>
-                    <img src = "https://sun1-94.userapi.com/s/v1/ig2/L6isrhDmASCRcaTN8Yn-7xdhJ02-IlF53lMrIPJF02AwKzVmn5R-3psAsMYw5TW3aMfUN8qsNo5vhB9oQKVXkXOM.jpg?size=400x400&quality=96&crop=158,172,793,793&ava=1" aling = "middle" > 
-					Михаил
-
-                        <p class = "outline">Рейтинг <b>5.9/10.0</b></p>
-
-                    
-                </h1>
-
-                <h2>Обо мне</h2>
-
-                <p>
-		Добрый день! :) Я гений, преподчитаю  лингвистического университета, которая обожает английский язык, а еще больше - преподавать его! У меня есть опыт в работе с учениками: как с маленькими, так и взрослыми. Делаю изучение языка простым и увлекательным. Применяю индивидуальный подход к своим ученикам. Если ты открытый и весёлый человек, как я, то с нетерпением жду знакомства с тобой! :)</p>
-
-                <h2>Образование</h2>
-
-                <p>
-					2004-2008: МГПК им. Максима Танка.Учитель английского языка<br>2008-2012: МГЛУ. Иностранный язык, английский. Преподаватель.				
-				</p>
-
-                <h2>Цены</h2>
-
-                <p>
-                    • 1 — 4 классы (45 мин): 22,80 руб.<br>
-                    • 5 — 9 классы (60 мин): 27,36 руб.<br>
-					• 10 — 11 классы (60 мин): 31,92 руб.<br>
-					• Программа ВУЗа(60 мин): 31,92 руб.<br>
-                    • Взрослые(60 мин): 31,92 руб<br>
-                </p>
-	
-    </div>
-	
-	
-	
-	
-	
-	<div class = "mytutors" id = "t7" style="display:none">
-	
-	
-			<h1>
-                    <img src = "https://www.sb.by/upload/iblock/bb8/bb891d1de277f767542d4c12d259634b.jpg" aling = "middle" > 
-					Дмитрий
-
-                        <p class = "outline">Рейтинг <b>8.6/10.0</b></p>
-
-                    
-                </h1>
-
-                <h2>Обо мне</h2>
-
-                <p>
-		Добрый день! :) Я гений, преподчитаю  лингвистического университета, которая обожает английский язык, а еще больше - преподавать его! У меня есть опыт в работе с учениками: как с маленькими, так и взрослыми. Делаю изучение языка простым и увлекательным. Применяю индивидуальный подход к своим ученикам. Если ты открытый и весёлый человек, как я, то с нетерпением жду знакомства с тобой! :)</p>
-
-                <h2>Образование</h2>
-
-                <p>
-					2004-2008: МГПК им. Максима Танка.Учитель английского языка<br>2008-2012: МГЛУ. Иностранный язык, английский. Преподаватель.				
-				</p>
-
-                <h2>Цены</h2>
-
-                <p>
-                    • 1 — 4 классы (45 мин): 22,80 руб.<br>
-                    • 5 — 9 классы (60 мин): 27,36 руб.<br>
-					• 10 — 11 классы (60 мин): 31,92 руб.<br>
-					• Программа ВУЗа(60 мин): 31,92 руб.<br>
-                    • Взрослые(60 мин): 31,92 руб<br>
-                </p>
-	
-    </div>
-		
-	
-
-    <div class = "mytutors" id = "t8" style="display:none">
-	
-			<h1>
-                    <img src = "https://repetitor-minsk.by/wp-content/uploads/2016/08/yrii-georgievich.jpg" aling = "middle" > 
-					Богдан
-
-                        <p class = "outline">Рейтинг <b>6.0/10.0</b></p>
-
-                    
-                </h1>
-
-                <h2>Обо мне</h2>
-
-                <p>
-		Добрый день! :) Я гений, преподчитаю  лингвистического университета, которая обожает английский язык, а еще больше - преподавать его! У меня есть опыт в работе с учениками: как с маленькими, так и взрослыми. Делаю изучение языка простым и увлекательным. Применяю индивидуальный подход к своим ученикам. Если ты открытый и весёлый человек, как я, то с нетерпением жду знакомства с тобой! :)</p>
-
-                <h2>Образование</h2>
-
-                <p>
-					2004-2008: МГПК им. Максима Танка.Учитель английского языка<br>2008-2012: МГЛУ. Иностранный язык, английский. Преподаватель.				
-				</p>
-
-                <h2>Цены</h2>
-
-                <p>
-                    • 1 — 4 классы (45 мин): 22,80 руб.<br>
-                    • 5 — 9 классы (60 мин): 27,36 руб.<br>
-					• 10 — 11 классы (60 мин): 31,92 руб.<br>
-					• Программа ВУЗа(60 мин): 31,92 руб.<br>
-                    • Взрослые(60 мин): 31,92 руб<br>
-                </p>
-	
-    </div>
-
-
-
-    <div class = "mytutors" id = "t9" style="display:none">
-    
-    
-            <h1>
-                    <img src = "https://kiev.zagranitsa.com/images/ck/b2cfe758f54503a3d2286be1542f6a11.jpg" aling = "middle" > 
-                    Віктор
-
-                        <p class = "outline">Рейтинг <b>8.5/10.0</b></p>
-
-                    
-                </h1>
-
-                <h2>Обо мне</h2>
-
-                <p>
-        Добрый день! :) Я гений, преподчитаю  лингвистического университета, которая обожает английский язык, а еще больше - преподавать его! У меня есть опыт в работе с учениками: как с маленькими, так и взрослыми. Делаю изучение языка простым и увлекательным. Применяю индивидуальный подход к своим ученикам. Если ты открытый и весёлый человек, как я, то с нетерпением жду знакомства с тобой! :)</p>
-
-                <h2>Образование</h2>
-
-                <p>
-                    2004-2008: МГПК им. Максима Танка.Учитель английского языка<br>2008-2012: МГЛУ. Иностранный язык, английский. Преподаватель.                
-                </p>
-
-                <h2>Цены</h2>
-
-                <p>
-                    • 1 — 4 классы (45 мин): 22,80 руб.<br>
-                    • 5 — 9 классы (60 мин): 27,36 руб.<br>
-                    • 10 — 11 классы (60 мин): 31,92 руб.<br>
-                    • Программа ВУЗа(60 мин): 31,92 руб.<br>
-                    • Взрослые(60 мин): 31,92 руб<br>
-                </p>
-    
-    </div>
-
-
-
-
-    <!-- images here -->
-    <div class = "mytutors" id = "ti5" style="display:none" >
-    <img src = "https://kiev.zagranitsa.com/images/ck/b2cfe758f54503a3d2286be1542f6a11.jpg" aling = "middle" > 
-    <br>            Иванов Иван
-</div>
-<div class = "mytutors"  id = "ti4" style="display:none">
-<img src = "https://profile.protutor.by/static/avatars/s_1c7c32acac60c133816bb90ba6eee45a.jpg" aling = "middle" >
-  <br>                      Оксана Леонидовна
-</div>
-<div class = "mytutors" id = "ti3" style="display:none">
-<img src = "https://profile.protutor.by/static/avatars/s_0a02532b4377dccff2d5a07a166e8057.jpg" aling = "middle" > 
-   <br>                 Юлия Игоревна
-</div>
-<div class = "mytutors" id = "ti2" style="display:none">
-<img src = "https://sun9-58.userapi.com/impf/c9982/v9982497/e3c/SE0-ad8GRpE.jpg?size=320x240&quality=96&sign=3ba875e0e0a70203aa1530d9b2022b78&type=album" aling = "middle" >
-                    Даниил Забавский
-</div>
-<div class = "mytutors" id = "ti1" style="display:none">
-<img src = "https://profile.protutor.by/static/avatars/s_c5339f60badb1771cbcb0069785d2c97.jpg" aling = "middle" > 
-                    Алексей
-
-</div>
-
-<div class = "mytutors" id = "ti6" style="display:none">
-<img src = "https://sun1-94.userapi.com/s/v1/ig2/L6isrhDmASCRcaTN8Yn-7xdhJ02-IlF53lMrIPJF02AwKzVmn5R-3psAsMYw5TW3aMfUN8qsNo5vhB9oQKVXkXOM.jpg?size=400x400&quality=96&crop=158,172,793,793&ava=1" aling = "middle" > 
-                    Михаил
-</div>
-    <div class = "mytutors" id = "ti7" style="display:none">
-   
-<img src = "https://www.sb.by/upload/iblock/bb8/bb891d1de277f767542d4c12d259634b.jpg" aling = "middle" >      
-
-
-</div>
- <div class = "mytutors" id = "ti8" style="display:none">
-<img src = "https://repetitor-minsk.by/wp-content/uploads/2016/08/yrii-georgievich.jpg" aling = "middle" >
-   <br>                 Богдан
-    
-
-</div>
-
-
- <div class = "mytutors" id = "ti9" style="display:none">
-<img src = "https://kiev.zagranitsa.com/images/ck/b2cfe758f54503a3d2286be1542f6a11.jpg" aling = "middle" > 
-   <br>                 Віктор
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
+	<div class="recommend">
+		<div class="recommend__name">
+			Нас рекомендуют родители, студенты и репетиторы!
+		</div>
+		<div class="recommend__table">
+			<div class="recommend__left-button">
+				<a class="recommend-left-link">
+					<img src="./img/svg/button_left.svg" class="recommend-left-pic"></img>
+				</a>
+			</div>
+			<ul class="recommend__table-ul">
+				<li class="recommend__recommendation-li">
+					<div class="recommend__recommendation">
+						<div class="recommendation__rating-date">
+							<div class="recommendation__rating">
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>			
+							</div>
+							<div class="recommendation__date">
+								5 дней назад
+							</div>
+						</div>
+						<div class="recommendation__name">
+							Лера Забавская Супер
+						</div>
+						<div class="recommendation__value">
+							Лера Забавская отличный педагог. Я бы отдала ей все свои деньги!
+						</div>
+						<div class="recommendation__nickname">
+							vika007
+						</div>
+					</div>
+				</li>
+				<li class="recommend__recommendation-li">
+					<div class="recommend__recommendation">
+						<div class="recommendation__rating-date">
+							<div class="recommendation__rating">
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>			
+							</div>
+							<div class="recommendation__date">
+								8 дней назад
+							</div>
+						</div>
+						<div class="recommendation__name">
+							Отличный сервис
+						</div>
+						<div class="recommendation__value">
+							Благодаря ему я подготовилась к ЦТ на 99 баллов! Фантастика! Однозначно рекомендую!
+						</div>
+						<div class="recommendation__nickname">
+							zabaleraa
+						</div>
+					</div>
+				</li>
+				<li class="recommend__recommendation-li">
+					<div class="recommend__recommendation">
+						<div class="recommendation__rating-date">
+							<div class="recommendation__rating">
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>			
+							</div>
+							<div class="recommendation__date">
+								2 месяца назад
+							</div>
+						</div>
+						<div class="recommendation__name">
+							Нашёл крутого репетитора!
+						</div>
+						<div class="recommendation__value">
+							На этом сайте я нашёл свою Валентину Ивановну, с которой работаем уже 1 год :)
+						</div>
+						<div class="recommendation__nickname">
+							danbalan123
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="recommend__right-button">
+				<a class="recommend-right-link">
+					<img src="./img/svg/button_right.svg" class="recommend-right-pic"></img>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="team">
+		<div class="team__title">
+			О нашей команде
+		</div>
+		<div class="team__stuff">
+			<div class="stuff__person">
+				<div class="stuff__photo">
+					<a class="stuff__person-link">
+						<img src="./img/jpg/person1.jpg" class="stuff__person-pic"></img>
+					</a>
+				</div>
+				<div class="stuff__name">
+					Мендес Шон
+				</div>
+				<div class="stuff__value">
+					CEO
+				</div>
+			</div>
+			<div class="stuff__person">
+				<div class="stuff__photo">
+					<a class="stuff__person-link">
+						<img src="./img/jpg/person2.jpg" class="stuff__person-pic"></img>
+					</a>
+				</div>
+				<div class="stuff__name">
+					Сальваторе Дэймон
+				</div>
+				<div class="stuff__value">
+					designer
+				</div>
+			</div>
+			<div class="stuff__person">
+				<div class="stuff__photo">
+					<a class="stuff__person-link">
+						<img src="./img/jpg/person3.jpg" class="stuff__person-pic"></img>
+					</a>
+				</div>
+				<div class="stuff__name">
+					Забавский Даниэль
+				</div>
+				<div class="stuff__value">
+					developer
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
