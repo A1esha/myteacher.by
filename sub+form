@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/my_cs.css" rel="stylesheet">
+  <script type = "text/javascript"src="my_js.js"></script>
+</head>
+
+<body>
+
+<form action = "#">
+
+
+    <div class = "select-box">
+
+      <select id="select-box1" class = "select-box1">
+      <option value="1" class = "select-box1">Английский язык</option>
+      <option value="2" class = "select-box1">Белорусский язык</option>
+      <option value="3" class = "select-box1">Немецкий язык</option>
+      <option value="4" class = "select-box1">Польский язык</option>
+      <option value="5" class = "select-box1">Русский язык</option>
+      <option value="6" class = "select-box1">Математика</option>
+      <option value="7" class = "select-box1">Физика</option>
+      <option value="8" class = "select-box1">Информатика</option>
+      <option value="9" class = "select-box1">Программирование</option>
+      <option value="10" class = "select-box1">Биология</option>
+      <option value="11" class = "select-box1">Химия</option>
+      <option value="12" class = "select-box1">Дошкольная подготовка</option>
+      <option value="13" class = "select-box1">Начальная школа</option>
+      <option value="14" class = "select-box1">История Беларуси</option>
+      <option value ="15" class = "select-box1"> Подготовка в ЦТ</option>
+    </select>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+      <div class="select-box">
+
+
+      <select id="select-box2"class="select-box1">
+
+      <option value = "k1" class = "select-box1">1 класс</option>
+      <option value = "k2" class = "select-box1">2 класс</option>
+      <option value = "k3" class = "select-box1">3 класс</option>
+      <option value = "k4" class = "select-box1">4 класс</option>
+      <option value = "k5" class = "select-box1">5 класс</option>
+      <option value = "k6" class = "select-box1">6 класс</option>
+      <option value = "k7" class = "select-box1">7 класс</option>
+      <option value = "k8" class = "select-box1">8 класс</option>
+      <option value = "k9" class = "select-box1">9 класс</option>
+      <option value = "k10" class = "select-box1">10 класс</option>
+      <option value = "k11" class = "select-box1">11 класс</option>
+
+      </select>
+
+    </div>
+
+</form>
+
+<button  class = "button">
+Искать репетитора
+</button>
+
+</body>
+</html>
