@@ -227,7 +227,7 @@ html{
     margin: 0 auto;
 }
 .wrapper{
-   
+  
     margin: 0 auto;
     font-family: 'SF Pro Display';
     font-style: normal;
@@ -372,23 +372,27 @@ color: #131235;
    justify-content: space-between;
 }
 .choice{
-    width: 500px;
+    width: 600px;
+   
 }
 .choice_wrap{
     margin-top: 40px;
 }
 .regular{
-    font-size: 28px;
+    font-size: 30px;
 }
 .headline_price{
     padding-left:0;
     text-align:left;
 }
+.cards{
+    width: 600px;
+}
 .prices{
 
 }
 .price_text{
-    width: 500px;
+    width: 600px;
 
 }
 .endl{
@@ -396,12 +400,20 @@ color: #131235;
 
 }
 .competence_text{
-    width: 500px;
+    width: 600px;
 }
 .highlight{
     color: #28257A;
     background-color: white;
     font-weight: 600;
+}
+.put_left{
+    margin-left: 0;
+}
+.put_right{
+   
+    margin-right: 0;
+
 }
 .percent_pic{
 
