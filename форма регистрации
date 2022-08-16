@@ -35,31 +35,60 @@
                  IMask(inputElement, maskOptions);
                 })
             </script>
+            <input type = "hidden" type = "text" name = "teacher" id = "teacher" >
 
             <script src="js/imask.js"></script>
             <script src="js/main.js"></script>
 
             <hr>
 
-            <button type="submit" class="registerbtn">Оставить заявку</button>
-
+            <button id = "register"  name="create" class="registerbtn">Оставить заявку</button>
+            <button> press </button>
         </div>
-
 
         <div class="container signin">
         <p>Что-то не так? Позвоните нам  <a href="#">+375 25 957 59 93</a>.</p>
         </div>
 </form>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type = "text/javascript">
-  $(function(){
-    Swal.fire(
-      'Ваша заявка отправлена',
-      'Наши сотрудники свяжутся с Вами в ближайшее время',
-      'success'
-    )
+ document.getElementById('register').addEventListener(
+     'click', function(evt){evt.preventDefault();}
+ );
+
+  $('#register').click(function(){
+
+    var dta = {
+      phone : document.getElementById("phone").value,
+      name : document.getElementById("name").value,
+      email : document.getElementById("email").value,
+      teacher : document.getElementById("teacher").value
+
+    };
+
+    alert(phone);
+     $.ajax({
+        url:'check.php',
+        type: 'post',
+        data: dta,
+        success: function()
+        {
+          Swal.fire(
+         'Ваша заявка отправлена',
+         'Наши сотрудники свяжутся с Вами в ближайшее время',
+         'success')
+       },
+       error: function()
+               {
+               alert('Failed to send email.');
+               }
+
+      });
   });
+
+//});
 </script>
 </body>
 </html>
