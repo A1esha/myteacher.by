@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ia-edge">
+    <title>Doc</title>
+   
+    <link rel="stylesheet" type="text/css" href="./css/his_style.css">
+</head>
+<body>
+    <script type="text/javascript">
+        var darkLayer, reviewForm;
+        function ShowForm() {
+            
+            darkLayer = document.createElement('div'); // слой затемнения
+            darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+            document.body.appendChild(darkLayer); // включаем затемнение
+
+            reviewForm = document.getElementById('Review-form'); // находим наше "окно"
+            reviewForm.style.display = 'block'; // "включаем" его
+
+           
+        }
+        function CloseForm() {
+            darkLayer.parentNode.removeChild(darkLayer); // удаляем затемнение
+            reviewForm.style.display = 'none'; // делаем окно невидимым
+            return false;
+        }
+
+    </script>
+     <button class="open-form-button" onclick="ShowForm()">Оставить отзыв</button>
+    <div class="contact__form" id = "Review-form">
+        <div class="contact__info">
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Ваше имя
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите имя..." name = "name"
+                    id = "name" required>
+                    
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Телефон
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите телефон..." name = "phone"
+                    id = "phone" required>
+                    
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Email
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите email..." name = "email"
+                    id = "email" required>
+                    
+                </div>
+        </div>
+        <div class="contact__button">
+        
+                <input type="button" name="create" id="register" value="Отправить" class = "contact__button-submit" onclick = "Send()">
+              
+    
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type = "text/javascript">
+
+
+  function Send(){
+    var dta = {
+      phone : document.getElementById("phone").value,
+      name : document.getElementById("name").value,
+      email : document.getElementById("email").value,
+      teacher : 'NONE'
+
+    };
+
+    $.ajax({
+        url:'form.php',
+        type: 'post',
+        data: dta,
+        success: function()
+        {
+          Swal.fire(
+         'Ваша заявка отправлена',
+         'Наши сотрудники свяжутся с Вами в ближайшее время',
+         'success')
+          CloseForm();
+       },
+       error: function()
+               {
+               alert('Failed to send email.');
+               }
+
+      });
+  }
+
+//});
+</script>
+</body>
+</html>
+
