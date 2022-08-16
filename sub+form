@@ -14,6 +14,7 @@
     <div class = "select-box">
 
       <select id="select-box1" class = "select-box1">
+      <option value="0" class = "select-box1">Выберите предмет</option>
       <option value="1" class = "select-box1">Английский язык</option>
       <option value="2" class = "select-box1">Белорусский язык</option>
       <option value="3" class = "select-box1">Немецкий язык</option>
@@ -42,7 +43,7 @@
 
 
       <select id="select-box2"class="select-box1">
-
+      <option value = "k0" class = "select-box1">Выберите класс</option>
       <option value = "k1" class = "select-box1">1 класс</option>
       <option value = "k2" class = "select-box1">2 класс</option>
       <option value = "k3" class = "select-box1">3 класс</option>
@@ -61,8 +62,8 @@
 
 </form>
 
-<button  class = "button">
-Искать репетитора
+<button  class = "button" >
+  Найти репетитора
 </button>
 
 </body>
