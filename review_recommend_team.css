@@ -283,8 +283,17 @@ body{
 .form__value{
     margin-left: 10px;
 }
-.info__progress-bar-rect{
-    fill :  #DDDDDD;
+.info__progress-bar{
+    background-color:  #DDDDDD;
+    width: 700px;
+    height: 29px;
+    border-radius: 100px;
+}
+.info__progress-value{
+    background-color:  #000000;
+    width: 0px;
+    height: 29px;
+    border-radius: 100px;
 }
 .info__table{
     margin-top: 81px;
@@ -361,16 +370,18 @@ body{
     font-weight: 700;
     font-size: 60px;
     line-height: 71.6px;
-    padding-left: 200px;
     max-width: 1402px;
     padding-top: 104px;
+    text-align: center;
 }
 .recommend__table{
-    margin-top: 236px;
-     display: flex;
+ margin-top: 186px;
+display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 100px;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 .recommend__table-ul{
   display: flex;
@@ -378,8 +389,8 @@ body{
   align-items: flex-start;
 }
 .recommend__recommendation-li{
-    margin-right: 75px;
-    width: 389px;
+    margin-right: 2.5vw;
+    max-width: 20.3vw;
 }
 .recommend__recommendation-li:last-child{
     margin-right: 0px;
@@ -393,7 +404,7 @@ body{
 
 }
 .recommend__recommendation{
-      padding-left: 27.79px;
+      padding-left: 1.78vw;
       border-radius: 20px;
       border: solid;
       border-color: #FFFFFF;
@@ -421,9 +432,9 @@ body{
 .recommendation__value{
     font-weight: 400;
     font-size: 24px;
-    line-height: 28.64px;
-    max-width: 360px;
+    line-height: 28.64px;   
     padding-top: 10px;
+    padding-right: 1.2vw;
 }
 .recommendation__nickname{
     line-height: 23.87px;
@@ -434,14 +445,10 @@ body{
     padding-bottom: 15px;
 }
 .recommend__left-button{
-    margin-left: 29.92px;
-    margin-right: 46.92px;
-    padding-top: 100px;
+    margin-right: 2vw;
 }
 .recommend__right-button{
-    margin-right: 29.92px;
-    margin-left: 46.92px;
-    padding-top: 100px;
+    margin-left: 2vw;
 }
 
 .team{
@@ -451,7 +458,6 @@ body{
     font-style: normal;
     font-size: 16px;
     line-height: 1.2;
-    font-weight: normal;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -459,28 +465,21 @@ body{
     margin-bottom: 100px;
 }
 .team__title{
-    margin-left: 199px;
+    text-align: center;
     font-weight: 700;
     font-size: 60px;
     line-height: 72px;
-    text-align: center;
-    width: 1202px;
 }
 .team__stuff{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     margin-top: 147px;
+    margin-left: 126px;
 }
 .stuff__person{
     margin-right: 108px;
     width: 377px;
-}
-.stuff__person:last-child{
-    margin-right: 127px;
-}
-.stuff__person:first-child{
-    margin-left: 126px;
 }
 .stuff__name{
     font-weight: 700;
@@ -496,4 +495,41 @@ body{
     text-align: center;
     color: #28257A;
     margin-top: 10px;
+}
+
+.socials{
+    background-color: #F2F2F2;
+    color: #000000;
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+}
+.socials__icons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-left: 32vw;
+    padding-top: 43px;
+}
+.socials__icon{
+    margin-right: 34px;
+}
+.socials__icon : last-child{
+    margin-right: 0px;
+}
+.socials__copyright{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    height: 87px;
+    margin-top: 16px;
+    padding-left: 27vw;
+}
+.socials__copyright-value{
+    padding-top: 20px;
+}
+.socials__inside{
+    padding-left: 3vw;
 }
