@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ia-edge">
 	<title>Doc</title>
@@ -38,9 +39,8 @@
 							</div>
 						</div>
 						<div class="info__progress-bar">
-							<svg width = "700" height = "29">
-								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
-							</svg>
+							<div id="info__progress-1" class="info__progress-value">
+							</div>
 						</div>
 					</div>
 				</li>
@@ -59,9 +59,9 @@
 							</div>
 						</div>
 						<div class="info__progress-bar">
-							<svg width = "700" height = "29">
-								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
-							</svg>
+							<div id="info__progress-2"
+							class="info__progress-value">
+							</div>
 						</div>
 					</div>
 				</li>
@@ -82,9 +82,8 @@
 
 						</div>
 						<div class="info__progress-bar">
-							<svg width = "700" height = "29">
-								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
-							</svg>
+							<div id="info__progress-3"class="info__progress-value">
+							</div>
 						</div>
 					</div>
 				</li>
@@ -184,7 +183,7 @@
 								<div class="recommendation__star">
 									<a class="recommendation__star-link">
 										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
+									 </a>
 								</div>			
 							</div>
 							<div class="recommendation__date">
@@ -346,5 +345,64 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="socials">
+		<div class="socials__inside">
+			<div class="socials__icons">
+				<div class="socials__icon">
+					<a class="icon__youtube-link">
+						<img src="./img/svg/youtube.svg" class="icon__youtube-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__instagram-link">
+						<img src="./img/svg/instagram.svg" class="icon__instagram-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__tiktok-link">
+						<img src="./img/svg/tiktok.svg" class="icon__tiktok-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__telegram-link">
+						<img src="./img/svg/telegram.svg" class="icon__telegram-pic"></img>
+					</a>
+				</div>
+			</div>
+			<div class="socials__copyright">
+				<div class="socials__copyright-value">
+					COPYRIGHT 2022 - YOUNG.BY - ALL RIGHTS RESERVED
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	     let stars = 0;
+	     var progress__bar_maxval = [];
+	     progress__bar_maxval.push(50);
+	     progress__bar_maxval.push(5);
+	     progress__bar_maxval.push(20);
+	     function fill__progress__bar(i, cnt){
+	     		let name = "info__progress-" + String(i+1);
+	     		cnt = Math.max(cnt, 0);
+	     		cnt = Math.min(cnt,progress__bar_maxval[i]);
+	     		let value = 700*(cnt/progress__bar_maxval[i]);
+	     		document.getElementById(name).style.width=String(value)+'px';
+	     		if(i == 0){
+	     			document.getElementById(name).style.backgroundColor='#63CE51';
+	     		}
+	     		else if(i == 1){
+	  			  document.getElementById(name).style.backgroundColor='#FFC800';
+	  			}
+	  			else{
+	  			 	document.getElementById(name).style.backgroundColor='#1AA5F3';
+	  			}
+	     }
+	     fill__progress__bar(0,35);
+	     fill__progress__bar(1,4.85);
+	     fill__progress__bar(2,20);
+	</script>
+
 </body>
 </html>
