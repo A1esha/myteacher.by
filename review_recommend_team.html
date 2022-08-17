@@ -303,44 +303,47 @@
 		<div class="team__title">
 			О нашей команде
 		</div>
-		<div class="team__stuff">
-			<div class="stuff__person">
-				<div class="stuff__photo">
-					<a class="stuff__person-link">
-						<img src="./img/jpg/person1.jpg" class="stuff__person-pic"></img>
-					</a>
+		<div class="team__stuff-pseudo">
+	
+			<div class="team__stuff">
+				<div class="stuff__person">
+					<div class="stuff__photo">
+						<a class="stuff__person-link">
+							<img src="./img/jpg/person1.jpg" class="stuff__person-pic"></img>
+						</a>
+					</div>
+					<div class="stuff__name">
+						Мендес Шон
+					</div>
+					<div class="stuff__value">
+						CEO
+					</div>
 				</div>
-				<div class="stuff__name">
-					Мендес Шон
+				<div class="stuff__person">
+					<div class="stuff__photo">
+						<a class="stuff__person-link">
+							<img src="./img/jpg/person2.jpg" class="stuff__person-pic"></img>
+						</a>
+					</div>
+					<div class="stuff__name">
+						Сальваторе Дэймон
+					</div>
+					<div class="stuff__value">
+						designer
+					</div>
 				</div>
-				<div class="stuff__value">
-					CEO
-				</div>
-			</div>
-			<div class="stuff__person">
-				<div class="stuff__photo">
-					<a class="stuff__person-link">
-						<img src="./img/jpg/person2.jpg" class="stuff__person-pic"></img>
-					</a>
-				</div>
-				<div class="stuff__name">
-					Сальваторе Дэймон
-				</div>
-				<div class="stuff__value">
-					designer
-				</div>
-			</div>
-			<div class="stuff__person">
-				<div class="stuff__photo">
-					<a class="stuff__person-link">
-						<img src="./img/jpg/person3.jpg" class="stuff__person-pic"></img>
-					</a>
-				</div>
-				<div class="stuff__name">
-					Забавский Даниэль
-				</div>
-				<div class="stuff__value">
-					developer
+				<div class="stuff__person">
+					<div class="stuff__photo">
+						<a class="stuff__person-link">
+							<img src="./img/jpg/person3.jpg" class="stuff__person-pic"></img>
+						</a>
+					</div>
+					<div class="stuff__name">
+						Забавский Даниэль
+					</div>
+					<div class="stuff__value">
+						developer
+					</div>
 				</div>
 			</div>
 		</div>
@@ -387,7 +390,7 @@
 	     		let name = "info__progress-" + String(i+1);
 	     		cnt = Math.max(cnt, 0);
 	     		cnt = Math.min(cnt,progress__bar_maxval[i]);
-	     		let value = 700*(cnt/progress__bar_maxval[i]);
+	     		let value = document.querySelector('.info__progress-bar').getBoundingClientRect().width*(cnt/progress__bar_maxval[i]);
 	     		document.getElementById(name).style.width=String(value)+'px';
 	     		if(i == 0){
 	     			document.getElementById(name).style.backgroundColor='#63CE51';
