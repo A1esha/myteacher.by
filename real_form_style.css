@@ -294,50 +294,64 @@ li {
     color: #FFFFFF;
     display: block;
     text-align: center;
-    padding-top: 14px;
+    padding-top: 7px;
+    border-width: 0px;
 }
+
 .contact__button{
     padding-bottom: 91px;
-}
-.contact__button-submit:hover,.contact__button-submit:focus,
-.contact__button-submit:active{
-    background-color: #A4BFD8;
 }
 .contact__field-value{
     padding-left: 20px;
 }
 .open-form-button{
-        padding: 15px 70px;
-        font-size: 13px;
-        font-family: 'Open Sans',sans-serif;
-        cursor: pointer;
-        display: inline-block;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 600;
-        position: relative;
-        transition: all .3s ease;
-        text-align: center;
-        line-height: 1.42857143;
-        border: 2px solid transparent;
-        margin-bottom: 5px;
-        margin-top: 5px;
-        white-space: nowrap;
-        vertical-align: middle;
-        -ms-touch-action: manipulation;
-        touch-action: manipulation;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-image: none;
-        border-radius: 4px;
-        color: #ffffff;
-        background-color: #0083ff;
-        margin-left: 5px;
-        margin-right: 5px;
+    padding: 15px 70px;
+    font-size: 13px;
+    font-family: 'Open Sans',sans-serif;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    transition: all .3s ease;
+    text-align: center;
+    line-height: 1.42857143;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #0083ff;
+    margin-left: 5px;
+    margin-right: 5px;
     
 }
 .open-form-button:hover{
     outline : 4px solid #63b3ff;
+}
+.re-required-field{
+   color:#ff3636;
+   display:block;
+   font-size:14px;
+   margin-top:0px;
+   text-align:left;
+   margin-bottom: 5px;
+   margin-left: 20px;
+}
+@media only screen 
+and (max-width : 700px){
+    .contact__field-value{
+        width: 80vw;
+    }
+
 }

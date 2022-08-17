@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ia-edge">
     <title>Doc</title>
    
-    <link rel="stylesheet" type="text/css" href="./css/his_style.css">
+    <link rel="stylesheet" type="text/css" href="./css/real_form_style.css">
 </head>
 <body>
     <script type="text/javascript">
@@ -37,30 +37,33 @@
                     <div class="contact__field-caption">
                         Ваше имя
                     </div>
-                    <input type="text" class = "contact__field-value" placeholder = "Введите имя..." name = "name"
-                    id = "name" required>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите имя..." name = "reviewer-name"
+                    id = "reviewer-name" required>
+                    <span id="required-field-name" class="re-required-field" style="display:block;"></span>
                     
                 </div>
                 <div class="contact__field">
                     <div class="contact__field-caption">
                         Телефон
                     </div>
-                    <input type="text" class = "contact__field-value" placeholder = "Введите телефон..." name = "phone"
-                    id = "phone" required>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите телефон..." name = "reviewer-phone"
+                    id = "reviewer-phone" required>
+                    <span id="required-field-phone" class="re-required-field" style="display:block;"></span>
                     
                 </div>
                 <div class="contact__field">
                     <div class="contact__field-caption">
                         Email
                     </div>
-                    <input type="text" class = "contact__field-value" placeholder = "Введите email..." name = "email"
-                    id = "email" required>
-                    
+                    <input type="text" class = "contact__field-value" placeholder = "Введите email..." name = "reviewer-email"
+                    id = "reviewer-email" required>
+                    <span id="required-field-email" class="re-required-field" style="display:block;"></span>
                 </div>
         </div>
+         <input type = "hidden" type = "text" name = "reviewer-teacher" id = "reviewer-teacher" >
         <div class="contact__button">
         
-                <input type="button" name="create" id="register" value="Отправить" class = "contact__button-submit" onclick = "Send()">
+                <input type="button" name="create" id="register" value="Отправить" class = "contact__button-submit" onclick = "CheckReview()">
               
     
         </div>
@@ -73,10 +76,10 @@
 
   function Send(){
     var dta = {
-      phone : document.getElementById("phone").value,
-      name : document.getElementById("name").value,
-      email : document.getElementById("email").value,
-      teacher : 'NONE'
+      phone : document.getElementById("reviewer-phone").value,
+      name : document.getElementById("reviewer-name").value,
+      email : document.getElementById("reviewer-email").value,
+      teacher : document.getElementById("reviewer-teacher").value
 
     };
 
@@ -101,6 +104,128 @@
   }
 
 //});
+</script>
+<script src="https://unpkg.com/imask">
+    
+    ///#WARNING maybe won't work, therefore we need to include it from file :)
+</script>
+<script>
+       document.addEventListener('DOMContentLoaded', () => {
+        const inputElement = document.querySelector('#reviewer-phone');
+        console.log(inputElement);
+        const maskOptions = {
+            mask: '+{375} (00) 000-00-00'
+        }
+         IMask(inputElement, maskOptions);
+        });
+
+    var hasPhoneError = false;
+    var hasNameError = false;
+    var hasEmailError = false;
+     var collectLightboxData = {
+          lang: 'ru',
+          requiredFieldMsg: 'Необходимое для заполнения поле',
+          wrongEmailMsg : 'Неверно указана почта'
+      }
+    document.getElementById("register").onmouseover = function() {document.getElementById("register").style.backgroundColor="#A4BFD8";console.log("onmouse");};
+    document.getElementById("register").onmouseout = function() {document.getElementById("register").style.backgroundColor="#214C72";};
+    var need_phone='+375 (22) 332-32-32';
+     function CheckReview() {
+        var phone = $('#reviewer-phone').val().trim();
+        /*phone = phone.replace(/\r\n|\r|\n/g, '<br />');*/
+        var lang = collectLightboxData.lang;
+        var name = $('#reviewer-name').val().trim();
+        var email = $('#reviewer-email').val().trim();
+        var valid = true;
+        console.log(phone);
+        if (phone.length != need_phone.length) {  
+            valid = false;
+            $('#reviewer-phone').addClass('error-field');
+            $('#required-field-phone').show();
+            $('#required-field-phone').html(collectLightboxData.requiredFieldMsg);
+            hasPhoneError = true;
+        }
+        
+       if (name.length === 0) {
+           valid = false;
+           $('#reviewer-name').addClass('error-field');
+           $('#required-field-name').show();
+           $('#required-field-name').html(collectLightboxData.requiredFieldMsg);
+           hasNameError = true;
+       }
+       if (email.length === 0) {
+           valid = false;
+           $('#reviewer-email').addClass('error-field');
+           $('#required-field-email').show();
+           $('#required-field-email').html(collectLightboxData.requiredFieldMsg);
+           hasEmailError = true;
+       }
+       if(!Validate(email)){
+            valid = false;
+            $('#reviewer-email').addClass('error-field');
+            $('#required-field-email').show();
+            $('#required-field-email').html(collectLightboxData.wrongEmailMsg);
+            hasEmailError = true;
+       }
+       document.getElementById("register").style.backgroundColor="#214C72";
+        if (valid) {
+          Send();
+        } 
+    }
+
+    $('#reviewer-phone').on('input', function (e) {
+
+        if (hasPhoneError && e.target.value.length > 0) {
+            $('#reviewer-phone').removeClass('error-field');
+            $('#required-field-phone').hide();
+            $('#required-field-phone').html('');
+            hasPhoneError = false;
+        }
+    });
+
+    $('#reviewer-name').on('input', function (e) {
+        if (hasNameError && e.target.value.length > 0) {
+            $('#reviewer-name').removeClass('error-field');
+            $('#required-field-name').hide();
+            $('#required-field-name').html('');
+            hasNameError = false;
+        }
+    });
+
+    $('#reviewer-email').on('input', function (e) {
+        if (hasEmailError && e.target.value.length > 0) {
+            hasEmailError = false;
+            $('#reviewer-email').removeClass('error-field');
+            $('#required-field-email').hide();
+            $('#required-field-email').html('');
+        }
+
+    });
+
+
+
+    function Validate(email){
+        let cnt = 0;
+        for(let i = 0; i < email.length; i++){
+            if(email[i] == '@') cnt++;
+            if(email[i] == '[' || email[i] == ']' || email[i] == '\\' || email[i] == ';' || email[i] == ',')
+                return false;
+        }
+        if(cnt != 1) 
+            return false;
+        let indx = email.indexOf('@');
+        let indx1 = email.indexOf('.');
+        if(indx1 == email.length)
+            return false;
+        let name = email.substr(0, indx);
+        let domain = email.substr(indx1, indx1 - indx - 1);
+        let other = email.substr(indx1 + 1, email.length - indx1);
+        if(other.length == 0 || name.length == 0 || domain.length == 0)
+            return false;
+        /// I can add other checkers, for example add base of popular domains and others.
+
+        return true;
+    }
 </script>
 </body>
 </html>
