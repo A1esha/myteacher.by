@@ -7,9 +7,11 @@ let nowshow = 0;
 
 let dots;
     
-
+let first_search = false;
 let Lslide,Rslide,Cslide;
 
+let avai = ['prv', 'cur', 'nxt', 'sec','fir'];
+let ida = 0;
 
 function fun1() {
   var sel=document.getElementById('select-box1').selectedIndex;
@@ -35,15 +37,64 @@ function get_img(id){
 	id = (id + currentlyshow.length) % (currentlyshow.length);
 	return document.getElementById("ti"+currentlyshow[id]["Описание"]);
 } 
+function load(id){
+	
+	id = (id + currentlyshow.length) % currentlyshow.length;
+	prvid = id-1;
+	nxtid = id+1;
 
-function get_tutor(id){
-	id = (id + currentlyshow.length) % (currentlyshow.length);
-	return document.getElementById("t"+currentlyshow[id]["Описание"]);
+	prvid = (prvid + currentlyshow.length) % currentlyshow.length;
+	nxtid = (nxtid + currentlyshow.length) % currentlyshow.length;
+	
+	cur = document.getElementById('cur');
+	prv =  document.getElementById('prv');
+	nxt = document.getElementById('nxt');
+	
+
+	var xhr = new XMLHttpRequest();
+	var xhr1 = new XMLHttpRequest();
+	var xhr2 = new XMLHttpRequest();
+	
+
+
+	text = './tutors/'+ currentlyshow[id]['Описание'].toString()+'.html';
+	
+	//alert(1);
+	xhr.open('GET', text); 
+	xhr.onload = function(){
+		console.log('done')
+		cur.innerHTML = xhr.response + '<div onclick="ShowForm()" class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
+	}
+	xhr.send();
+
+	//alert(2);
+
+	text = './tutors/'+ currentlyshow[prvid]['Описание']+'.html';
+	xhr2.open('GET', text);
+		xhr2.onload = function(){
+		console.log('done')
+		prv.innerHTML = xhr2.response + '<div class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
+	}
+	xhr2.send();
+
+
+
+}
+
+
+function get_prev(){
+	return document.getElementById('prv');
+}
+function get_next(){
+	return document.getElementById('nxt');
+}
+function get_tutor(){
+	return document.getElementById('cur');
 } 
 
 
 
-var tutorIndex = 1;
+var tutorIndex = 0;
 
 
 
@@ -59,7 +110,7 @@ function showTutor(pl) {
   let i;
   let dt;
   
-  var div = get_tutor(tutorIndex-1);
+  var div = get_tutor();
 
   //div.style.display = "block";
 
@@ -88,8 +139,8 @@ function showTutor(pl) {
     if (tutorIndex > currentlyshow.length) {tutorIndex = 1;}
     if (tutorIndex < 1) {tutorIndex = currentlyshow.length;}
 
-
-   dt = document.getElementById("t"+currentlyshow[tutorIndex-1]["Описание"]);
+    load(tutorIndex);
+   dt = get_tutor(tutorIndex);
    dt.style.display = "block";
     
    dots[(tutorIndex)%dots.length].classList.remove("fadein");
@@ -160,7 +211,14 @@ function delete_represent(id){
 	Lslide.innerHTML = "";
 }
 
+
+
 function chosen(){
+
+	if(first_search == true){
+		let dt = document.getElementsByClassName("dots");
+		dt[0].innerHTML = "";
+	}
 
 
 	let Candidates = Get_Candidates('Предмет', subject);
@@ -173,22 +231,9 @@ function chosen(){
 
 	
 	
-	let but = document.getElementById("button_find");
-	but.style.display = "none";
-	
-/*
-	let tutors = document.getElementsByClassName("tutor-widget");
-	tutors[0].style.dipslay = "inline-block";
-*/
-	(get_tutor(0)).style.display = "block";
-	/// there is no check that currentlyshow can be empty
-	let form1 = document.getElementsByClassName("form1");
-	let form2 = document.getElementsByClassName("form2");
-	
-	form1[0].style.display = "none";
-	form2[0].style.display = "none";
-	
-	
+	(get_tutor()).style.display = "none";	
+	load(tutorIndex);
+	(get_tutor()).style.display = "block";
 	let buttonnext = document.getElementsByClassName("button_next");
 	let buttonback = document.getElementsByClassName("button_back");
 	
@@ -204,29 +249,33 @@ function chosen(){
 	
 	
 	for(; j < currentlyshow.length; j += 1){
-		dt[0].innerHTML += "<li></li>";
+		dt[0].innerHTML += '<li class="special_li"></li>';
 	}
+
+	moveup();
 	//alert(currentlyshow.length);
-	dots = document.getElementsByTagName("li");
-	
+	dots = document.getElementsByClassName("special_li");
+	for(let xi = 0; xi < dots.length; xi += 1){
+		dots[xi].classList.add("fadein");
+	}
 	
 	dots[0].classList.add("active");
 	dots[(tutorIndex)%dots.length].classList.add("fadeout");
 
-	var inst = document.getElementById("instruction");
-	inst.style.display = "inline-block";
 
-
-	setTimeout(()=> showTutor(+1), 1000);
-	setTimeout(()=> showTutor(-1), 2000);
+	if(first_search == false){
 	
-    setTimeout(()=> showTutor(-1), 3000);
-	   
-	
-	setTimeout(()=> showTutor(+1), 4000);
-	   
-	setTimeout(()=> 	inst.style.display = "none", 4100);	
 
+		setTimeout(()=> showTutor(+1), 1500);
+		setTimeout(()=> showTutor(-1), 2500);
+		
+	    setTimeout(()=> showTutor(-1), 3500);
+		   
+		
+		setTimeout(()=> showTutor(+1), 4500);
+		   
+	}
+	first_search = true;
 
 }
 
