@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ia-edge">
+    <title>Doc</title>
+   
+    <link rel="stylesheet" type="text/css" href="./css/real_form_style.css">
+</head>
+<body>
+    <script type="text/javascript">
+        var darkLayer, reviewForm;
+        function ShowForm() {
+            
+            darkLayer = document.createElement('div'); // слой затемнения
+            darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+            document.body.appendChild(darkLayer); // включаем затемнение
+
+            reviewForm = document.getElementById('Review-form'); // находим наше "окно"
+            reviewForm.style.display = 'block'; // "включаем" его
+
+           
+        }
+        function CloseForm() {
+            darkLayer.parentNode.removeChild(darkLayer); // удаляем затемнение
+            reviewForm.style.display = 'none'; // делаем окно невидимым
+            return false;
+        }
+
+    </script>
+     <button class="open-form-button" onclick="ShowForm()">Оставить отзыв</button>
+    <div class="contact__form" id = "Review-form">
+        <div class="contact__info">
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Индекс преподавателя
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите индекс..." id="review-index" required></textarea>
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Фамилия и имя
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите фамилия и имя..."  id="review-name" required> </textarea>    
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Профессия
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите профессию..." id="review-prof" required> </textarea>
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Стоимость
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите стоимость..." id="review-cost" required></textarea>
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Рейтинг
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите рейтинг..."
+                    id="review-rate"  required></textarea>
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Опыт
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите опыт..." id="review-exp" required></textarea>
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        О себе
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите о себе..." id="review-info" required></textarea>
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Стаж и образование
+                    </div>
+                    <textarea type="text" class = "contact__field-value" placeholder = "Введите стаж и образование..."
+                    id="review-edu"  required></textarea>
+                </div>
+                
+                 
+        </div>
+         <input type = "hidden" type = "text" name = "reviewer-teacher" id = "reviewer-teacher" >
+        <div class="contact__button">
+        
+                <input type="button" name="create" id="register" value="Отправить" class = "contact__button-submit" onclick = "CheckReview()">
+              
+    
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type = "text/javascript">
+
+
+  function Send(){
+    var dta = {
+        name : document.getElementById("review-name").value,
+        education : document.getElementById("review-edu").value,
+        experience : document.getElementById("review-exp").value,
+        information : document.getElementById("review-info").value,
+        profession : document.getElementById("review-prof").value,
+        cost : document.getElementById('review-cost').value,
+        rating : document.getElementById('review-rate').value,
+        index : document.getElementById('review-index').value
+    };
+    /*
+    dta.education = dta.education.replace(/\r\n|\r|\n/g, '<br />');
+    dta.experience = dta.experience.replace(/\r\n|\r|\n/g, '<br />');
+    dta.information = dta.information.replace(/\r\n|\r|\n/g, '<br />');
+    */
+    $.ajax({
+        url:'create_html.php',
+        type: 'POST',
+        data: dta,
+        success: function()
+        {
+            console.log(dta);
+          Swal.fire(
+         'Ваша заявка отправлена',
+         'Наши сотрудники свяжутся с Вами в ближайшее время',
+         'success')
+          //CloseForm();
+       },
+       error: function()
+               {
+               alert('Failed to send email.');
+               }
+
+      });
+  }
+
+</script>
+<script>
+    document.getElementById("register").onmouseover = function() {document.getElementById("register").style.backgroundColor="#A4BFD8";console.log("onmouse");};
+    document.getElementById("register").onmouseout = function() {document.getElementById("register").style.backgroundColor="#214C72";};
+   
+     function CheckReview() { 
+        /*  
+        var name = $("#review-name").val().trim();
+        var education = $("#review-edu").val().trim();
+        var experience = $("#review-exp").val().trim();
+        var information = $("#review-info").val().trim();
+        var profession = $("#review-prof").val().trim();
+
+        education = education.replace(/\r\n|\r|\n/g, '<br />');
+        experience = experience.replace(/\r\n|\r|\n/g, '<br />');
+        information = information.replace(/\r\n|\r|\n/g, '<br />');
+        */
+
+       document.getElementById("register").style.backgroundColor="#214C72";
+        Send();
+    }
+</script>
+</body>
+</html>
+
