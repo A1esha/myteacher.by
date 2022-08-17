@@ -9,15 +9,72 @@
 	<meta http-equiv="X-UA-Compatible" content="ia-edge">
 
 	<link rel="stylesheet" href="./css/reset.css">
-
+	<link rel="stylesheet" href="./my_cs.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./half.css">
-	<script src="./js/nav.js"></script>
+	<link rel="stylesheet" href="./form.css">
 	
+	
+
+
+	<script src="./js/nav.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="jquery.touchSwipe.min.js"></script>
+	<script src="findthem.js"></script>
+	<script src="my_js.js"></script>
+	<script src="move.js"></script>
 </head>
 
 <body>
-	<!--add navigation script -->
+
+
+
+  <div class="contact__form" id = "Review-form">
+        <div class="contact__info">
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Ваше имя
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите имя..." name = "reviewer-name"
+                    id = "reviewer-name" required>
+                    <span id="required-field-name" class="re-required-field" style="display:block;"></span>
+                    
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Телефон
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите телефон..." name = "reviewer-phone"
+                    id = "reviewer-phone" required>
+                    <span id="required-field-phone" class="re-required-field" style="display:block;"></span>
+                    
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Email
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите email..." name = "reviewer-email"
+                    id = "reviewer-email" required>
+                    <span id="required-field-email" class="re-required-field" style="display:block;"></span>
+                </div>
+        </div>
+         <input type = "hidden" type = "text" name = "reviewer-teacher" id = "reviewer-teacher" >
+        <div class="contact__button">
+        
+                <input type="button" name="create" id="register" value="Отправить" class = "contact__button-submit" onclick = "CheckReview()">
+              
+    
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+	<!--add navigation script  -->
 	<header class="header">
 		<div class = "wrapper center">
 
@@ -74,7 +131,7 @@
 				</p>
 				
 				<div class = "first-button">
-					<p class = "first-button-text">
+							<p class = "first-button-text">
 						Выбор репетитора
 					</p>
 				</div>
@@ -168,14 +225,102 @@
 	
 
 
+<div class="add_align">
+<form action = "#">
+
+    <div class = "add_align">
+
+        <div class = "select-box">
+
+          <select id="select-box1" class = "select-box1"  onchange="fun1()">
+          <option value="0" class = "select-box1">Выберите предмет</option>
+          <option value="1" class = "select-box1">Английский язык</option>
+          <option value="2" class = "select-box1">Белорусский язык</option>
+          <option value="3" class = "select-box1">Немецкий язык</option>
+          <option value="4" class = "select-box1">Польский язык</option>
+          <option value="5" class = "select-box1">Русский язык</option>
+          <option value="6" class = "select-box1">Математика</option>
+          <option value="7" class = "select-box1">Физика</option>
+          <option value="8" class = "select-box1">Информатика</option>
+          <option value="9" class = "select-box1">Программирование</option>
+          <option value="10" class = "select-box1">Биология</option>
+          <option value="11" class = "select-box1">Химия</option>
+          <option value="12" class = "select-box1">Дошкольная подготовка</option>
+          <option value="13" class = "select-box1">Начальная школа</option>
+          <option value="14" class = "select-box1">История Беларуси</option>
+          <option value ="15" class = "select-box1"> Подготовка в ЦТ</option>
+        </select>
+        </div>
+    
+        <div class="select-box add_align choose_grade">
+
+
+          <select id="select-box2"class="select-box1 choose_grade" onchange="fun2()" >
+          <option value = "k0" class = "select-box1">Выберите класс</option>
+          <option value = "k1" class = "select-box1">1 класс</option>
+          <option value = "k2" class = "select-box1">2 класс</option>
+          <option value = "k3" class = "select-box1">3 класс</option>
+          <option value = "k4" class = "select-box1">4 класс</option>
+          <option value = "k5" class = "select-box1">5 класс</option>
+          <option value = "k6" class = "select-box1">6 класс</option>
+          <option value = "k7" class = "select-box1">7 класс</option>
+          <option value = "k8" class = "select-box1">8 класс</option>
+          <option value = "k9" class = "select-box1">9 класс</option>
+          <option value = "k10" class = "select-box1">10 класс</option>
+          <option value = "k11" class = "select-box1">11 класс</option>
+
+          </select>
+
+        </div>
+
+    </div>
+    
+
+</form>
+</div>
 
 
 
 
 
 
+<div class = "add_align">
+<button  class = "button" id = "button" onclick="chosen()" >
+  Найти репетитора
+</button>
+</div>
+
+<div id = "instruction" style="display:none"class = "instruction" >
+    <h class = "headline" style="width:900px"> Листайте влево и вправо чтобы увидеть репетиторов! </h>
+</div>
+
+<ol class="dots">
+        
+		
+ </ol>
+
+<div id = "prv" style="display: none">
+
+</div>
+<div id = "nxt" style="display: none">
+</div>
+
+<div class = "in_row">
+	<div onclick="prev()" class = "button_back" style="display:none">
+		
+		<img alt="влево"  src="./img/svg/leftarr.svg"></img>
+
+	</div>
+
+	<div id = "cur" style="display: none">
+
+	</div>
 
 
+	<div onclick="next()" class = "button_next" style="display:none">
+		<img alt="вправо" src="./img/svg/rightarr.svg"></img>
+	</div>
+</div>
 
 
 
@@ -186,140 +331,7 @@
 
 	
 <div class="form">
-		<h1 class="info__nickname">
-			Забавская Валерия
-		</h1>
-		<p class="info__profession">
-			репетитор по английскому
-		</p>
-		<div class="info__merged_statistics">
-			<div class="info__photo">
-				<a class="info__photo-link">
-					<img src="./img/jpg/photo__student.jpg" class="info__photo-pic"></img>
-				</a>
-			</div>
-			<ul class="info__rating">
-				<li class="form__statistic-li">
-					<div class="form__statistic">
-						<div class="form__name_value">	
-							<div class="form__name">
-								<p class="statistic__name">
-									Стоимость - 
-								</p>
-							</div>
-							<div class="form__value">
-								<p class="statistic__value">
-									35 рублей
-								</p>
-							</div>
-						</div>
-						<div class="info__progress-bar">
-							<div id="info__progress-1" class="info__progress-value">
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="form__statistic-li">
-					<div class="form__statistic">
-						<div class="form__name_value">
-							<div class="form__name">
-								<p class="statistic__name">
-									Рейтинг -  
-								</p>
-							</div>
-							<div class="form__value">
-								<p class="statistic__value">
-									 4.85
-								</p>
-							</div>
-						</div>
-						<div class="info__progress-bar">
-							<div id="info__progress-2"
-							class="info__progress-value">
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="form__statistic-li">
-					<div class="form__statistic">
-						<div class="form__name_value">
-						
-							<div class="form__name">
-								<p class="statistic__name">
-									Опыт - 
-								</p>
-							</div>
-							<div class="form__value">
-								<p class="statistic__value">
-									20 лет
-								</p>
-							</div>
-
-						</div>
-						<div class="info__progress-bar">
-							<div id="info__progress-3"class="info__progress-value">
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="info__table">
-			<ul class="info__table_form">
-				<li class="info__item">
-					<div class="info__item-name">
-						Обо мне
-					</div>
-					<div class="info__item-value">
-						Практикующий специалист в изучении английского языка. Работаю с дошкольниками, школьниками всех возрастов, взрослыми. Методику проведения занятий подбираю индивидуально в зависимости от уровня ученика и в соответствии с Вашими пожеланиями. При проведении занятий с дошкольниками работа организуется на основе игровых методик. При проведении занятий по школьной программе устраняются пробелы в знаниях по темам, которые ученик проходит в школе, углубляя знания по ним. Cтаж работы - 20 лет.
-					</div>
-				</li>
-				<li class="info__item">
-					<div class="info__item-name">
-						Стаж и образование
-					</div>
-					<div class="info__item-value">
-						Stanford University class 2002. PhD in English literature.
-					</div>
-				</li>
-				<li class="info__item">
-					<div class="info__item-name">
-						Прайс-лист
-					</div>
-					<ul class="info__price_list">
-						<li class="info__price_item-li">
-							<div class="info__price_item">
-								<div class="info__price_item-name">
-									Единая цена -
-								</div>
-								<div class="info__price_item-value">
-									35 рублей урок.
-								</div>
-							</div>
-						</li>
-						<li class="info__price_item-li">
-							<div class="info__price_item">
-								<div class="info__price_item-name">
-									Продолжительность урока -
-								</div>
-								<div class="info__price_item-value">
-									1 академический час (45 минут).
-								</div>
-							</div>
-						</li>
-					</ul>
-					
-				</li>
-			</ul>
-		</div>
-		<div class="info__button-div">
-			
-			<p class="info__button-text">
-				Выбрать репетитора
-			</p>
-			
-		</div>
-	</div>
+	
 	<div class="recommend">
 		<div class="recommend__name">
 			Нас рекомендуют родители, студенты и репетиторы!
@@ -579,9 +591,187 @@
 	     fill__progress__bar(2,20);
 	</script>
 
+    <script type="text/javascript">
+        var darkLayer, reviewForm;
+        function ShowForm() {
+            
+            darkLayer = document.createElement('div'); // слой затемнения
+            darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+            document.body.appendChild(darkLayer); // включаем затемнение
+
+            reviewForm = document.getElementById('Review-form'); // находим наше "окно"
+            reviewForm.style.display = 'block'; // "включаем" его
+
+           
+        }
+        function CloseForm() {
+            darkLayer.parentNode.removeChild(darkLayer); // удаляем затемнение
+            reviewForm.style.display = 'none'; // делаем окно невидимым
+            return false;
+        }
+
+    </script>
+     <button class="open-form-button" onclick="ShowForm()">Оставить отзыв</button>
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type = "text/javascript">
+
+
+  function Send(){
+    var dta = {
+      phone : document.getElementById("reviewer-phone").value,
+      name : document.getElementById("reviewer-name").value,
+      email : document.getElementById("reviewer-email").value,
+      teacher : document.getElementById("reviewer-teacher").value
+
+    };
+
+    $.ajax({
+        url:'form.php',
+        type: 'post',
+        data: dta,
+        success: function()
+        {
+          Swal.fire(
+         'Ваша заявка отправлена',
+         'Наши сотрудники свяжутся с Вами в ближайшее время',
+         'success')
+          CloseForm();
+       },
+       error: function()
+               {
+               alert('Failed to send email.');
+               }
+
+      });
+  }
+
+//});
+</script>
+<script src="https://unpkg.com/imask">
+    
+    ///#WARNING maybe won't work, therefore we need to include it from file :)
+</script>
+<script>
+       document.addEventListener('DOMContentLoaded', () => {
+        const inputElement = document.querySelector('#reviewer-phone');
+        console.log(inputElement);
+        const maskOptions = {
+            mask: '+{375} (00) 000-00-00'
+        }
+         IMask(inputElement, maskOptions);
+        });
+
+    var hasPhoneError = false;
+    var hasNameError = false;
+    var hasEmailError = false;
+     var collectLightboxData = {
+          lang: 'ru',
+          requiredFieldMsg: 'Необходимое для заполнения поле',
+          wrongEmailMsg : 'Неверно указана почта'
+      }
+    document.getElementById("register").onmouseover = function() {document.getElementById("register").style.backgroundColor="#A4BFD8";console.log("onmouse");};
+    document.getElementById("register").onmouseout = function() {document.getElementById("register").style.backgroundColor="#214C72";};
+    var need_phone='+375 (22) 332-32-32';
+     function CheckReview() {
+        var phone = $('#reviewer-phone').val().trim();
+        /*phone = phone.replace(/\r\n|\r|\n/g, '<br />');*/
+        var lang = collectLightboxData.lang;
+        var name = $('#reviewer-name').val().trim();
+        var email = $('#reviewer-email').val().trim();
+        var valid = true;
+        console.log(phone);
+        if (phone.length != need_phone.length) {  
+            valid = false;
+            $('#reviewer-phone').addClass('error-field');
+            $('#required-field-phone').show();
+            $('#required-field-phone').html(collectLightboxData.requiredFieldMsg);
+            hasPhoneError = true;
+        }
+        
+       if (name.length === 0) {
+           valid = false;
+           $('#reviewer-name').addClass('error-field');
+           $('#required-field-name').show();
+           $('#required-field-name').html(collectLightboxData.requiredFieldMsg);
+           hasNameError = true;
+       }
+       if (email.length === 0) {
+           valid = false;
+           $('#reviewer-email').addClass('error-field');
+           $('#required-field-email').show();
+           $('#required-field-email').html(collectLightboxData.requiredFieldMsg);
+           hasEmailError = true;
+       }
+       if(!Validate(email)){
+            valid = false;
+            $('#reviewer-email').addClass('error-field');
+            $('#required-field-email').show();
+            $('#required-field-email').html(collectLightboxData.wrongEmailMsg);
+            hasEmailError = true;
+       }
+       document.getElementById("register").style.backgroundColor="#214C72";
+        if (valid) {
+          Send();
+        } 
+    }
+
+    $('#reviewer-phone').on('input', function (e) {
+
+        if (hasPhoneError && e.target.value.length > 0) {
+            $('#reviewer-phone').removeClass('error-field');
+            $('#required-field-phone').hide();
+            $('#required-field-phone').html('');
+            hasPhoneError = false;
+        }
+    });
+
+    $('#reviewer-name').on('input', function (e) {
+        if (hasNameError && e.target.value.length > 0) {
+            $('#reviewer-name').removeClass('error-field');
+            $('#required-field-name').hide();
+            $('#required-field-name').html('');
+            hasNameError = false;
+        }
+    });
+
+    $('#reviewer-email').on('input', function (e) {
+        if (hasEmailError && e.target.value.length > 0) {
+            hasEmailError = false;
+            $('#reviewer-email').removeClass('error-field');
+            $('#required-field-email').hide();
+            $('#required-field-email').html('');
+        }
+
+    });
 
 
 
+    function Validate(email){
+        let cnt = 0;
+        for(let i = 0; i < email.length; i++){
+            if(email[i] == '@') cnt++;
+            if(email[i] == '[' || email[i] == ']' || email[i] == '\\' || email[i] == ';' || email[i] == ',')
+                return false;
+        }
+        if(cnt != 1) 
+            return false;
+        let indx = email.indexOf('@');
+        let indx1 = email.indexOf('.');
+        if(indx1 == email.length)
+            return false;
+        let name = email.substr(0, indx);
+        let domain = email.substr(indx1, indx1 - indx - 1);
+        let other = email.substr(indx1 + 1, email.length - indx1);
+        if(other.length == 0 || name.length == 0 || domain.length == 0)
+            return false;
+        /// I can add other checkers, for example add base of popular domains and others.
+
+        return true;
+    }
+</script>
 
 </body>
 
