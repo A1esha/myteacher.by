@@ -373,6 +373,8 @@ body{
     max-width: 1402px;
     padding-top: 104px;
     text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 .recommend__table{
  margin-top: 186px;
@@ -474,12 +476,20 @@ display: flex;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-top: 147px;
-    margin-left: 126px;
+     margin-top: 147px;
+
+}
+.team__stuff-pseudo{
+    display: block;
+    margin: 0 auto;
+    width: 68vw;
 }
 .stuff__person{
     margin-right: 108px;
     width: 377px;
+}
+.stuff__person:last-child{
+    margin-right: 0px;
 }
 .stuff__name{
     font-weight: 700;
@@ -532,4 +542,77 @@ display: flex;
 }
 .socials__inside{
     padding-left: 3vw;
+}
+
+@media only screen
+and (max-width: 1550px){
+    .info__progress-bar{
+        width: 500px;
+        margin-top: 10px;
+    }
+    .form__statistic-li{
+        margin-bottom: 13px;
+    }
+    .form__statistic-li:last-child{
+        margin-bottom: 0px;
+    }
+    .statistic__name{
+        font-size: 34px;
+    }
+    .statistic__value{
+        font-size: 34px;
+    }
+
+    .info__nickname{
+        font-size: 50px;
+    }
+    .info__profession{
+        font-size: 28px;
+    }
+    .info__item-name{
+        font-size: 50px;
+    }
+    .info__item-value{
+        font-size: 28px;
+    }
+    .recommendation__star-pic{
+        width: 25px;
+    }
+    .recommendation__star{
+        width: 25px
+    }
+    .recommend__name{
+        font-size: 50px;
+    }
+    .recommendation__date{
+        font-size: 16px;
+    }
+    .recommendation__name{
+        font-size: 20px;
+    }
+    .recommendation__value{
+        font-size: 20px;
+    }
+    .recommend__recommendation-li{
+        width: 430px;
+    }
+    .recommend__left-button{
+        width: 50px;
+    }
+    .recommend-left-pic{
+        width: 50px;
+    }
+     .recommend__right-button{
+        width: 50px;
+    }
+    .recommend-right-pic{
+        width: 50px;
+    }
+    .stuff__person-pic{
+        width: 250px;
+    }
+    .stuff__person{
+        width: 250px;
+    }
+
 }
