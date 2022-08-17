@@ -1,248 +1,3 @@
-/*body{
-	margin: 0;
-}
-h1,
-h2 {
-  width: 100%;
-  font-size: 100%;
-}
-
-h1 {
-  animation: right_to_left 3s ease;
-}
-
-h2 {
-  text-align: right;
-  animation: left_to_right 3s ease;
-}
-*/
-/*
-*{
-	overflow: hidden;
-}
-*/
-/*
-* {
-  margin: 0;
-}
-*/
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Medium.eot');
-    src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
-        url('../fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Medium.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Medium.woff') format('woff'),
-        url('../fonts/SFProDisplay-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Heavy.eot');
-    src: local('SF Pro Display Heavy'), local('SFProDisplay-Heavy'),
-        url('../fonts/SFProDisplay-Heavy.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Heavy.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Heavy.woff') format('woff'),
-        url('../fonts/SFProDisplay-Heavy.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-UltralightItalic.eot');
-    src: local('SF Pro Display UltralightItalic'), local('SFProDisplay-UltralightItalic'),
-        url('../fonts/SFProDisplay-UltralightItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-UltralightItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-UltralightItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-UltralightItalic.ttf') format('truetype');
-    font-weight: 200;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-RegularItalic.eot');
-    src: local('SF Pro Display Regular Italic'), local('SFProDisplay-RegularItalic'),
-        url('../fonts/SFProDisplay-RegularItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-RegularItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-RegularItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-RegularItalic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Thin.eot');
-    src: local('SF Pro Display Thin'), local('SFProDisplay-Thin'),
-        url('../fonts/SFProDisplay-Thin.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Thin.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Thin.woff') format('woff'),
-        url('../fonts/SFProDisplay-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Light.eot');
-    src: local('SF Pro Display Light'), local('SFProDisplay-Light'),
-        url('../fonts/SFProDisplay-Light.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Light.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Light.woff') format('woff'),
-        url('../fonts/SFProDisplay-Light.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-BlackItalic.eot');
-    src: local('SF Pro Display Black Italic'), local('SFProDisplay-BlackItalic'),
-        url('../fonts/SFProDisplay-BlackItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-BlackItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-BlackItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Bold.eot');
-    src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
-        url('../fonts/SFProDisplay-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Bold.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Bold.woff') format('woff'),
-        url('../fonts/SFProDisplay-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Black.eot');
-    src: local('SF Pro Display Black'), local('SFProDisplay-Black'),
-        url('../fonts/SFProDisplay-Black.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Black.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Black.woff') format('woff'),
-        url('../fonts/SFProDisplay-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-SemiboldItalic.eot');
-    src: local('SF Pro Display SemiboldItalic'), local('SFProDisplay-SemiboldItalic'),
-        url('../fonts/SFProDisplay-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-SemiboldItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-SemiboldItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-SemiboldItalic.ttf') format('truetype');
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Ultralight.eot');
-    src: local('SF Pro Display Ultralight'), local('SFProDisplay-Ultralight'),
-        url('../fonts/SFProDisplay-Ultralight.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Ultralight.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Ultralight.woff') format('woff'),
-        url('../fonts/SFProDisplay-Ultralight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-LightItalic.eot');
-    src: local('SF Pro Display LightItalic'), local('SFProDisplay-LightItalic'),
-        url('../fonts/SFProDisplay-LightItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-LightItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-LightItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-LightItalic.ttf') format('truetype');
-    font-weight: 200;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-ThinItalic.eot');
-    src: local('SF Pro Display ThinItalic'), local('SFProDisplay-ThinItalic'),
-        url('../fonts/SFProDisplay-ThinItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-ThinItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-ThinItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-ThinItalic.ttf') format('truetype');
-    font-weight: 100;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-MediumItalic.eot');
-    src: local('SF Pro Display MediumItalic'), local('SFProDisplay-MediumItalic'),
-        url('../fonts/SFProDisplay-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-MediumItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-MediumItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Semibold.eot');
-    src: local('SF Pro Display Semibold'), local('SFProDisplay-Semibold'),
-        url('../fonts/SFProDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Semibold.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Semibold.woff') format('woff'),
-        url('../fonts/SFProDisplay-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-HeavyItalic.eot');
-    src: local('SF Pro Display HeavyItalic'), local('SFProDisplay-HeavyItalic'),
-        url('../fonts/SFProDisplay-HeavyItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-HeavyItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-HeavyItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-HeavyItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-Regular.eot');
-    src: local('SF Pro Display Regular'), local('SFProDisplay-Regular'),
-        url('../fonts/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-Regular.woff') format('woff'),
-        url('../fonts/SFProDisplay-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('../fonts/SFProDisplay-BoldItalic.eot');
-    src: local('SF Pro Display BoldItalic'), local('SFProDisplay-BoldItalic'),
-        url('../fonts/SFProDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SFProDisplay-BoldItalic.woff2') format('woff2'),
-        url('../fonts/SFProDisplay-BoldItalic.woff') format('woff'),
-        url('../fonts/SFProDisplay-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
 
 *,
 *:before,
@@ -254,27 +9,30 @@ h2 {
     text-overflow: ellipsis;
     white-space: nowrap;
     border: 1px solid #000;
-    overflow: hidden;
+    overflow: hidden;    
 }
 
 ol{
 	list-style= none;
 
 	text-align: center;
-  margin-left: auto;
+  margin-left: auto; 
   margin-right: 0;
 
-
-
+	
+	
 }
-li{
+.choose__grade{
+    margin-top: 190px;
+}
+.special_li{
 	background: #888;
 	border-radius: 50%;
 	display: inline-block;
 	width:20px;
 	height:20px;
 	margin-left: 10px;
-
+	
 }
 
 
@@ -292,11 +50,23 @@ li{
   position: fixed;
 
 }
-
-img{
-  width:300px;
-  height:300px;
+.instruction{
+  opacity: 0.4;
+  width:300vw;
+  height:300vh;
+  position:absolute;
+  background-color:   #000000;
+  z-index: 300;
+  transform: translate(0,0);
 }
+.isnttext{
+  opacity: 1;
+  position:absolute;
+  transform: translate(50, 50);
+  text-align: center;
+   font: 400 17px/2em 'Source Sans Pro', sans-serif;
+}
+
 .Rslide{
   display:inline-block;
   width:50vw;
@@ -309,20 +79,13 @@ img{
   display:inline-block;
   width:70vw;
   height:100%;
-
+  
   transform: translate(15vw, 0);
 }
 
 
 
-button {
-  position: fixed;
-  z-index: 1;
-}
 
-img{
-	border-radius: 50%;
-}
 
 .Lpic{
 
@@ -383,7 +146,7 @@ img{
   0% {
     /*transform: translateX(0);*/
 	opacity: 1;
-
+	
   }
   100% {
     opacity: 0.3;
@@ -399,7 +162,7 @@ img{
   0% {
     /*transform: translateX(0);*/
 	opacity: 0.3;
-
+	
   }
   100% {
     opacity: 1;
@@ -463,14 +226,14 @@ img{
 @keyframes moveleft {
   0% {
     transform: translateX(0);
-
+	
   }
-
+  
   100% {
     opacity: 0.4;
     transform: translateX(-20vw);
   }
-
+  
 }
 
 @keyframes right_to_left {
@@ -492,60 +255,6 @@ form{
     margin-left: 0;
   }
 }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
-}
-
-
-/* Add padding to containers */
-
-div{
-
-  width:100%;
-  font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
-
-color: #FFFFFF;
-
-}
-.alltutors, .mytutors{
-position:absolute;
-display: inline-block;
-width:100%;
-    max-width:100%;
-
-  }
-.container{
-
-}
-/*
-*{
-  overflow-x:hidden;
-}
-*/
-/* Full-width input fields
- overflow-x: hidden;
- overflow: hidden;
-  overflow-y: hidden;
-  overflow-x: hidden;
-
- overflow-x: hidden;
-
-
-.mytutors{
-	transition: transform 1s;
-}
-
-.mytutors:hover{
-	transform: translateX(100%);
-	display: none;
-}
-*/
 input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
@@ -560,13 +269,10 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
-/* Overwrite default styles of hr */
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
-
-/* Set a style for the submit button */
 .registerbtn {
     background-color: #4CAF50;
     color: white;
@@ -593,21 +299,16 @@ a {
     text-align: center;
 }
 
-/* Custom dropdown */
-.custom-dropdown {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 10px; /* demo only */
+.select_box{
+    margin-top: 190px;
 }
-
 .custom-dropdown select {
   cursor:pointer;
   background-color: #2980b9;
   color: #fff;
   font-size: inherit;
   padding: .5em;
-  padding-right: 2.5em;
+  padding-right: 2.5em; 
   border: 0;
   margin: 0;
   border-radius: 3px;
@@ -633,39 +334,11 @@ a {
   margin-top: -.5em;
 }
 
-.custom-dropdown::before { /*  Custom dropdown arrow cover */
-  width: 2em;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  border-radius: 0 3px 3px 0;
-}
-
-.custom-dropdown select[disabled] {
-  color: rgba(0,0,0,.3);
-}
-
-.custom-dropdown select[disabled]::after {
-  color: rgba(0,0,0,.1);
-}
-
-.custom-dropdown::before {
-  background-color: rgba(0,0,0,.15);
-}
-
-.custom-dropdown::after {
-  color: rgba(0,0,0,.4);
-}
-
-
-
-/*########################################################*/
-
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
 body {
-  background: #ffffff;
+  background: #ffffff; 
   color: #414141;
   font: 400 17px/2em 'Source Sans Pro', sans-serif;
 }
@@ -674,20 +347,14 @@ body {
   cursor: pointer;
   position : relative;
   max-width:  20em;
-  margin: 0.7em auto;
+    
   width: 100%;
 }
 
-.select,
-.label {
-  color: #414141;
-  display: block;
-  font: 400 17px/2em 'Source Sans Pro', sans-serif;
-}
 
 .select {
-  width: 100%;
-  position: absolute;
+ 
+  
   top: 0;
   padding: 5px 0;
   height: 40px;
@@ -697,12 +364,9 @@ body {
   border: 0 none;
 }
 .select-box1 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
+  background: #ececec;
+  
+    margin-left: 50%;  
 
   width: 537px;
   height: 113px;
@@ -717,45 +381,36 @@ body {
   font-size: 40px;
   line-height: 48px;
   text-align: center;
-
   color: #FFFFFF;
 
 
 }
-
 .label {
   position: relative;
-  padding: 25px 15px;
-  /* cursor: pointer; */
-  border-radius: 20px;
-  background: #131235;
-  width:537px;
-  height: 110px;
-  display: block;
-
+  
+  cursor: pointer;
 }
 .open .label::after {
    content: "▲";
 }
 .label::after {
-  content: "▼";
+ content: "▼";
   font-size: 30px;
-  position: absolute;
-  right: 0;
-  top: 0;
+  /* cursor: pointer; */
+  right:0;
+  top:0;
   padding: 25px 15px;
    border-left: 50px solid #fff;
+
 }
 
 .button {
-  position: absolute;
-  box-sizing: border-box;
-  position: absolute;
-  width: 537px;
-  height: 111px;
-  margin-top: 8%;
-  margin-left: 34.5%;
 
+  width: 600px;
+  height: 111px;
+  margin: 0 auto;
+  margin-top: 8%;
+  
   background: #92B6D8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
@@ -770,8 +425,17 @@ body {
   text-align: center;
   color: #FFFFFF;
 
+
+
 }
 
+.button:hover {
+    background: rgb(53, 167, 110); 
+}
+.button active{
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+}
 
 
 
@@ -797,14 +461,6 @@ body {
   background-position: 0;
 }
 
-p{
-    padding-left: 4%;
-    padding-right: 4%;
-    background-color: #ffffff; /* Фоновый цвет*/
-    border: 2px solid #D4D4D4; /* Ширина и цвет границ*/
-    border-radius: 10px; /* Радиус границ*/
-    box-shadow: 0 0 15px #A9A9A9; /* Размер и цвет тени блока*/
-}
 
 img{
     /*  background-size: cover;
@@ -816,12 +472,35 @@ overflow: hidden;
 
 }
 
- .mytutors{
 
+.button_next
+{ 
+    height: 70px;
+    margin-top:70vh;
+    border-radius: 35px;
+}
+
+.button_next:hover {
+    background: gray; 
 }
 
 
-@media only screen
+.button_back
+{ 
+    height: 70px;
+    margin-top: 70vh;
+    border-radius: 35px;
+}
+
+
+
+
+
+.button_back:hover {
+    background: gray; 
+}
+
+@media only screen 
 and (min-width : 900px) {
 .nxt{
 
@@ -846,77 +525,21 @@ and (min-width : 900px) {
   opacity: 1;
   width: 80vw;
   transform: translate(10vw, 0);
-
+  
   z-index:1;
 }
-.outline {
-    font-size: 50%;
-    font-family: "Helvetica";
-    margin-top: 4%;
-    width: 40%;   height: 10%; /* Размеры */
-    background: #fc0; /* Цвет фона */
-    outline: 2px solid #000; /* Чёрная рамка */
-    border: 3px solid #fff; /* Белая рамка */
-    border-radius: 10px; /* Радиус скругления */
-   }
 
-.button_next
-{
-    margin: 0 auto;
-    display: block;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    padding: .8em 1em calc(.8em + 3px);
-    border-radius: 3px;
-    background: rgb(117, 181, 230);
-    box-shadow: 0 -3px rgb(71, 133, 181); inset;
-    transition: 0.2s;
-    top:90%;
-    left:50%;
-    z-index:99999999;
-    border-radius: 50px;
-    position: fixed;
-}
-
-.button_next:hover {
-    background: rgb(71, 133, 181);
-}
-.button_next active{
-    background: rgb(117, 181, 230);
-    box-shadow: 0 3px rgb(117, 181, 230) inset;
 }
 
 
-.button_back
-{
-    margin: 0 auto;
-    display: block;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    padding: .8em 1em calc(.8em + 3px);
-    border-radius: 3px;
-    background: rgb(117, 181, 230);
-    box-shadow: 0 -3px rgb(71, 133, 181); inset;
-    transition: 0.2s;
-    top:90%;
-    left:38%;
-    z-index:99999999;
-    border-radius: 50px;
-    position: fixed;
-}
-
-.button_back:hover {
-    background: rgb(71, 133, 181);
-}
+/*
 .button_back active{
     background: rgb(117, 181, 230);
     box-shadow: 0 3px rgb(117, 181, 230) inset;
 }
-
+*/
 }
-@media only screen
+@media only screen 
 and (max-width : 540px) {
 
 
@@ -928,80 +551,36 @@ and (max-width : 540px) {
   opacity: 0.2;
   transform: translateX(-90vw);
 }
+.lesha_div{
+  width:100%;
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
 
+  color: #FFFFFF;
+}
 .outline {
     text-align: center;
     font-size: 50%;
     font-family: "Helvetica";
     padding-top: 1.5%;
-    width: 100%;
+    width: 100%;  
     height: 100%;
     background: #fc0;
     outline: 2px solid #000;
     border: 3px solid #fff;
     border-radius: 20px;
    }
-.button_next
-{
-    margin: 0 auto;
-    display: none;
-    font-weight:700 ;
-    color: white;
-    text-decoration: none;
-    padding: .8em 1em calc(.8em + 3px);
-    border-radius: 3px;
-    background: rgb(117, 181, 230);
-    box-shadow: 0 -3px rgb(71, 133, 181); inset;
-    transition: 0.2s;
-    top:80vh;
-    left:57vw;
-     z-index:99999999;
-    border-radius: 50px;
-    position: fixed;
 
 
-
-}
-
-.button_next:hover {
-    background: rgb(71, 133, 181);
-}
-.button_next active{
-    background: rgb(117, 181, 230);
-    box-shadow: 0 3px rgb(117, 181, 230) inset;
-}
-
-.button_back
-{
-    margin: 0 auto;
-    display: none;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    padding: .8em 1em calc(.8em + 3px);
-    border-radius: 3px;
-    background: rgb(117, 181, 230);
-    box-shadow: 0 -3px rgb(71, 133, 181); inset;
-    transition: 0.2s;
-    top:80vh;
-    left:10vw;
-    z-index:99999999;
-    border-radius: 50px;
-    position: fixed;
-}
-
-.button_back:hover {
-    background: rgb(71, 133, 181);
-}
-.button_back active{
-    background: rgb(117, 181, 230);
-    box-shadow: 0 3px rgb(117, 181, 230) inset;
-}
-}
 
 .fixed
 {
     position:fixed;
     top: 100px;
     left:100px;
+}
 }
