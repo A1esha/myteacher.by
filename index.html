@@ -1,15 +1,191 @@
 <!DOCTYPE html>
-<html>
+
+
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
 	<meta http-equiv="X-UA-Compatible" content="ia-edge">
-	<title>Doc</title>
-	<link rel="stylesheet" type="text/css" href="./css/reset.css">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+	<link rel="stylesheet" href="./css/reset.css">
+
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./half.css">
+	<script src="./js/nav.js"></script>
+	
 </head>
+
 <body>
-	<div class="form">
+	<!--add navigation script -->
+	<header class="header">
+		<div class = "wrapper center">
+
+			<div class = "header__wrapper">
+				<div class = "header__logo">
+					<a href="/" class="header__logo-link">
+
+				 	<img src="./img/jpg/shity_logo.jpg"
+					alt = "Young.by| Поиск репетиторов" class = "logo_img"> 
+
+					</a>
+				</div>
+				
+				<nav class="header__nav">
+					<ul class = "header__list">
+						<li class="header__item">
+							Почему мы? 
+						</li>
+
+						<li class="header__item">
+							Выбор репетитора 
+						</li>
+						<li class="header__item">
+							Отзывы 
+						</li>
+						<li class="header__last_item">
+							Наша команда
+						</li>
+					</ul>
+				</nav>	
+
+
+
+
+			</div>
+		
+
+		</div>
+
+	</header>
+
+
+	<main>
+		<div class = "wrapper">
+			<div class = "our_credo">
+			
+				<div class = "credo">
+
+				<h1 class = "credo_caption">
+				Мы - команда лучших студентов в Беларуси, делаем революцию в сфере репетиторства.
+				</h1>
+				<p class = "just_text">
+				Мы нашли способ сделать качественое обучение с репетитором на 30% дешевле.
+				</p>
+				
+				<div class = "first-button">
+					<p class = "first-button-text">
+						Выбор репетитора
+					</p>
+				</div>
+			</div>
+			
+
+			<div class = "strengths">
+				<div class = "center">
+					<div class = "add_align">
+						<h class="headline why_better">
+							Почему мы лучше других?
+						</h>
+					</div>
+					
+					
+					<div class = "in_row">
+						<img src="./img/png/cards.png" alt="" class="cards choice_wrap put_left endl" >
+
+
+
+						<div class = "choice choice_wrap put_right endl" >
+							<h class = "headline">
+								Выбор
+							</h>
+							<br><br>
+							<p class = "regular">
+									Вы можете выбрать <mark class = "highlight">преподавателя, который нравится именно Вам</mark>, среди десятков возможных опций. Вы никогда не найдете столько профессиональных репетиторов среди своих знакомых.
+							</p>
+						</div>
+
+					</div>
+
+				<br>
+				<div class = "prices">
+						<div class = "in_row">
+							
+							<div class = "price_text endl put_left">
+								<h class = "headline headline_price">
+									Цены
+								</h>
+								<br><br>
+								<p class = "regular">
+	Люди недооценивают компетентность талантливых студентов, поэтому то качественное образование, которое раньше можно было получить только заплатив большие деньги знакомым репетиторам, с нами вы получите на <mark class = "highlight"> 30 процентов дешевле.</mark>
+								</p>
+							</div>
+							<img src="./img/png/percent.png" alt="30 процентов" class = "percent_pic endl put_right">
+
+
+
+						</div>
+					</div>
+
+				<br>
+
+				<div class = "competence">
+						<div class = "in_row">
+							
+							
+							<img src="./img/svg/medal.svg" alt="Качество" class = "competence_pic endl">
+
+	<div class = "competence_text endl put_right">
+								<h class = "headline headline_price">
+									Качество
+								</h>
+								<br><br>
+								<p class = "regular">
+	Вам будут преподавать люди, которые
+	поступили в <mark class = "highlight">вузы</mark>, в которые вы хотите поступить. Люди, которые сдали <mark class = "highlight">ЦТ на 100 баллов</mark>. Люди, которые владеют языком на <mark class = "highlight"> C1 уровне</mark>. Люди, которые победили олимпиады, о которых вы мечтаете. 
+
+
+								</p>
+							</div>
+
+
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+			
+
+
+
+			
+		</div>
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</main>
+
+	
+<div class="form">
 		<h1 class="info__nickname">
 			Забавская Валерия
 		</h1>
@@ -38,9 +214,8 @@
 							</div>
 						</div>
 						<div class="info__progress-bar">
-							<svg width = "700" height = "29">
-								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
-							</svg>
+							<div id="info__progress-1" class="info__progress-value">
+							</div>
 						</div>
 					</div>
 				</li>
@@ -59,9 +234,9 @@
 							</div>
 						</div>
 						<div class="info__progress-bar">
-							<svg width = "700" height = "29">
-								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
-							</svg>
+							<div id="info__progress-2"
+							class="info__progress-value">
+							</div>
 						</div>
 					</div>
 				</li>
@@ -82,9 +257,8 @@
 
 						</div>
 						<div class="info__progress-bar">
-							<svg width = "700" height = "29">
-								<rect x = "0" y = "0" width = "700" height = "29" rx="15" ry="15" class ="info__progress-bar-rect"/>
-							</svg>
+							<div id="info__progress-3"class="info__progress-value">
+							</div>
 						</div>
 					</div>
 				</li>
@@ -184,7 +358,7 @@
 								<div class="recommendation__star">
 									<a class="recommendation__star-link">
 										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
+									 </a>
 								</div>			
 							</div>
 							<div class="recommendation__date">
@@ -346,5 +520,70 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="socials">
+		<div class="socials__inside">
+			<div class="socials__icons">
+				<div class="socials__icon">
+					<a class="icon__youtube-link">
+						<img src="./img/svg/youtube.svg" class="icon__youtube-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__instagram-link">
+						<img src="./img/svg/instagram.svg" class="icon__instagram-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__tiktok-link">
+						<img src="./img/svg/tiktok.svg" class="icon__tiktok-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__telegram-link">
+						<img src="./img/svg/telegram.svg" class="icon__telegram-pic"></img>
+					</a>
+				</div>
+			</div>
+			<div class="socials__copyright">
+				<div class="socials__copyright-value">
+					COPYRIGHT 2022 - YOUNG.BY - ALL RIGHTS RESERVED
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	     let stars = 0;
+	     var progress__bar_maxval = [];
+	     progress__bar_maxval.push(50);
+	     progress__bar_maxval.push(5);
+	     progress__bar_maxval.push(20);
+	     function fill__progress__bar(i, cnt){
+	     		let name = "info__progress-" + String(i+1);
+	     		cnt = Math.max(cnt, 0);
+	     		cnt = Math.min(cnt,progress__bar_maxval[i]);
+	     		let value = 700*(cnt/progress__bar_maxval[i]);
+	     		document.getElementById(name).style.width=String(value)+'px';
+	     		if(i == 0){
+	     			document.getElementById(name).style.backgroundColor='#63CE51';
+	     		}
+	     		else if(i == 1){
+	  			  document.getElementById(name).style.backgroundColor='#FFC800';
+	  			}
+	  			else{
+	  			 	document.getElementById(name).style.backgroundColor='#1AA5F3';
+	  			}
+	     }
+	     fill__progress__bar(0,35);
+	     fill__progress__bar(1,4.85);
+	     fill__progress__bar(2,20);
+	</script>
+
+
+
+
+
 </body>
+
+
 </html>
