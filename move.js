@@ -1,11 +1,15 @@
 
 
 function moveup(){
-	window. scroll({
-	top: 0,
+
+let elem = document.getElementsByClassName("dots")[0];
+elem.scrollIntoView({behavior: "smooth"});
+/*	window. scroll({
+	top: rect.x,
 	left: 0,
 	behavior: 'smooth'
 	});
+*/
 }
 
 
