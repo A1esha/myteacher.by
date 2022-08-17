@@ -217,15 +217,7 @@
     font-style: italic;
 }
 
-html{
-    box-sizing: border-box;
-}
-*, *::before, *::after{
-    box-sizing: inherit;
-}
-*{
-    margin: 0 auto;
-}
+
 .wrapper{
   
     margin: 0 auto;
@@ -285,13 +277,15 @@ li {
     background-size: cover;
     height: 85vh;
     width: 85vw;
+  /*  margin-left: 7.5vw;
+    margin-right: 7.5vw; */
+}
+/*.center{
     margin-left: 7.5vw;
     margin-right: 7.5vw;
 }
-.center{
-    margin-left: 7.5vw;
-    margin-right: 7.5vw;
-}
+*/
+
 .credo_caption{
 
 width: 70vw;
@@ -378,9 +372,11 @@ color: #131235;
 .choice_wrap{
     margin-top: 40px;
 }
-.regular{
-    font-size: 30px;
-}
+
+
+
+
+
 .headline_price{
     padding-left:0;
     text-align:left;
@@ -394,6 +390,9 @@ color: #131235;
 .price_text{
     width: 600px;
 
+}
+.regular{
+    font-size: 30px;
 }
 .endl{
   margin-top: 40px;
@@ -419,3 +418,92 @@ color: #131235;
 
 
 }
+
+@media only screen 
+and (max-width : 1450px){
+    .regular{
+        font-size: 25px;
+    }
+    .price_text{
+        width: 500px;
+    }
+
+    .competence_text{
+        width: 500px;
+    }
+    .choice{
+        width: 500px;
+    }
+
+
+}
+
+    {
+    .regular{
+        font-size: 32px;
+    }
+    .price_text{
+        width: 700px;
+    }
+    .percent_pic{
+        margin-right: 120px;
+
+    }
+    .competence_text{
+        width: 800px;
+    }
+    .choice{
+        width: 800px;
+    }
+    .first-button{
+        width: 600px;
+        height: 135px;
+        background: #FBF1F0;
+        border-radius: 20px;
+
+        margin-left: 40px;
+        margin-top: 110px;
+    }
+
+    .just_text{
+    width: 538px;
+    margin-top : 80px;
+
+
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 38px;
+
+    margin-left: 40px;
+
+    color: #FFFFFF;
+
+
+    }
+
+    .headline{
+
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+
+    color: #131235;
+
+    }
+    .endl{
+        margin-top: 100px;
+    }
+    .first-button-text{
+        font-size: 50px;
+        padding-top: 40px;
+    }
+    .credo_caption{
+        font-size: 80px;
+    }
+}
+
+
+
