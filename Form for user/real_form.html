@@ -218,7 +218,7 @@
         if(cnt != 1) 
             return false;
         let indx = email.indexOf('@');
-        let indx1 = email.indexOf('.');
+        let indx1 = email.lastIndexOf('.');
         if(indx1 == email.length)
             return false;
         let name = email.substr(0, indx);
