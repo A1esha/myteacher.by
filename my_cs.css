@@ -26,6 +26,9 @@ ol{
 	
 	
 }
+.tutor__block{
+    overflow-x: hidden;
+}
 .choose__grade{
     margin-top: 190px;
 }
