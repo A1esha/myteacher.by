@@ -4,6 +4,10 @@
 *:after {
   box-sizing: border-box;
 }
+:root{
+  --wid: 1900px;
+  --hei: 1200px;
+}
 .div-thing{
     width: 50px;
     text-overflow: ellipsis;
@@ -346,8 +350,7 @@ body {
 .select-box {
   cursor: pointer;
   position : relative;
-  max-width:  20em;
-    
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -366,9 +369,9 @@ body {
 .select-box1 {
   background: #ececec;
   
-    margin-left: 50%;  
-
-  width: 537px;
+    
+  margin-top: 150px;
+  width: 540px;
   height: 113px;
 
 
