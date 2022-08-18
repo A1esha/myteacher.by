@@ -375,6 +375,7 @@ body{
     text-align: center;
     display: block;
     margin: 0 auto;
+
 }
 .recommend__table{
  margin-top: 186px;
@@ -382,13 +383,14 @@ display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 100px;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  justify-content: space-between;
+   width: 100%;
 }
 .recommend__table-ul{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: center;
 }
 .recommend__recommendation-li{
     margin-right: 2.5vw;
@@ -447,10 +449,10 @@ display: flex;
     padding-bottom: 15px;
 }
 .recommend__left-button{
-    margin-right: 2vw;
+   padding-left: 20px;
 }
 .recommend__right-button{
-    margin-left: 2vw;
+    padding-right: 20px
 }
 
 .team{
@@ -477,20 +479,17 @@ display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
      margin-top: 147px;
+     justify-content: center;
+}
 
-}
-.team__stuff-pseudo{
-    display: block;
-    margin: 0 auto;
-    width: 68vw;
-}
 .stuff__person{
     margin-right: 108px;
     width: 377px;
+    margin-top: 30px;
 }
 .stuff__person:last-child{
     margin-right: 0px;
-}
+}   
 .stuff__name{
     font-weight: 700;
     font-size: 40px;
@@ -519,7 +518,7 @@ display: flex;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding-left: 32vw;
+    justify-content: center;
     padding-top: 43px;
 }
 .socials__icon{
@@ -535,7 +534,7 @@ display: flex;
     letter-spacing: 0em;
     height: 87px;
     margin-top: 16px;
-    padding-left: 27vw;
+    text-align: center;
 }
 .socials__copyright-value{
     padding-top: 20px;
@@ -614,5 +613,27 @@ and (max-width: 1550px){
     .stuff__person{
         width: 250px;
     }
-
 }
+
+@media only screen
+and (max-width 1263px){
+    .pers2{
+        margin-right: 0px;
+    }
+}
+@media only screen
+and (max-width 2000px){
+    .pers2{
+        margin-right: 108px;
+    }
+    .pers3{
+        margin-right: 0px;
+    }
+}
+@media only screen
+and (max-width 4600px){
+    .pers3{
+        margin-right: 108px;
+    }
+}
+
