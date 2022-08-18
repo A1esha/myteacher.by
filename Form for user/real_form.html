@@ -32,12 +32,16 @@
     </script>
      <button class="open-form-button" onclick="ShowForm()">Оставить отзыв</button>
     <div class="contact__form" id = "Review-form">
+        <div class="contact__close">
+            <div class="re-close-btn" onclick = "CloseForm()"></div>
+        </div>
         <div class="contact__info">
+               
                 <div class="contact__field">
                     <div class="contact__field-caption">
                         Ваше имя
                     </div>
-                    <input type="text" class = "contact__field-value" placeholder = "Введите имя..." name = "reviewer-name"
+                <input type="text" class = "contact__field-value" placeholder = "Введите имя..." name = "reviewer-name"
                     id = "reviewer-name" required>
                     <span id="required-field-name" class="re-required-field" style="display:block;"></span>
                     
