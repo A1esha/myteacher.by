@@ -22,7 +22,10 @@
 	<script src="jquery.touchSwipe.min.js"></script>
 	<script src="findthem.js"></script>
 	<script src="my_js.js"></script>
-	<script src="move.js"></script>
+	<script src="scroll.js"></script>
+		
+
+
 </head>
 
 <body>
@@ -66,7 +69,6 @@
     
         </div>
     </div>
-
 
 
 
@@ -223,12 +225,10 @@
 
 
 	
-
+<div class = "choose__buttons">
 
 <div class="add_align">
 <form action = "#">
-
-    <div class = "add_align">
 
         <div class = "select-box">
 
@@ -256,11 +256,11 @@
 
 
           <select id="select-box2"class="select-box1 choose_grade" onchange="fun2()" >
-          <option value = "k0" class = "select-box1">Выберите класс</option>
-          <option value = "k1" class = "select-box1">1 класс</option>
-          <option value = "k2" class = "select-box1">2 класс</option>
-          <option value = "k3" class = "select-box1">3 класс</option>
-          <option value = "k4" class = "select-box1">4 класс</option>
+          <option value = "k0" >Выберите класс</option>
+          <option value = "k1">1 класс</option>
+          <option value = "k2">2 класс</option>
+          <option value = "k3">3 класс</option>
+          <option value = "k4">4 класс</option>
           <option value = "k5" class = "select-box1">5 класс</option>
           <option value = "k6" class = "select-box1">6 класс</option>
           <option value = "k7" class = "select-box1">7 класс</option>
@@ -273,8 +273,6 @@
 
         </div>
 
-    </div>
-    
 
 </form>
 </div>
@@ -289,7 +287,7 @@
   Найти репетитора
 </button>
 </div>
-
+</div>
 <div id = "instruction" style="display:none"class = "instruction" >
     <h class = "headline" style="width:900px"> Листайте влево и вправо чтобы увидеть репетиторов! </h>
 </div>
@@ -299,13 +297,9 @@
 		
  </ol>
 
-<div id = "prv" style="display: none">
 
-</div>
-<div id = "nxt" style="display: none">
-</div>
 
-<div class = "in_row">
+<div class = "in_row tutor__block" >
 	<div onclick="prev()" class = "button_back" style="display:none">
 		
 		<img alt="влево"  src="./img/svg/leftarr.svg"></img>
@@ -322,7 +316,11 @@
 	</div>
 </div>
 
+<div id = "prv" style="display: none">
 
+</div>
+<div id = "nxt" style="display: none">
+</div>
 
 
 
@@ -330,156 +328,29 @@
 	</main>
 
 	
-<div class="form">
+
+
+
+
+
+
 	
 	<div class="recommend">
 		<div class="recommend__name">
 			Нас рекомендуют родители, студенты и репетиторы!
 		</div>
 		<div class="recommend__table">
-			<div class="recommend__left-button">
+			<div class="recommend__left-button" onclick="showReview(-1)">
 				<a class="recommend-left-link">
 					<img src="./img/svg/button_left.svg" class="recommend-left-pic"></img>
 				</a>
 			</div>
-			<ul class="recommend__table-ul">
-				<li class="recommend__recommendation-li">
-					<div class="recommend__recommendation">
-						<div class="recommendation__rating-date">
-							<div class="recommendation__rating">
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									 </a>
-								</div>			
-							</div>
-							<div class="recommendation__date">
-								5 дней назад
-							</div>
-						</div>
-						<div class="recommendation__name">
-							Лера Забавская Супер
-						</div>
-						<div class="recommendation__value">
-							Лера Забавская отличный педагог. Я бы отдала ей все свои деньги!
-						</div>
-						<div class="recommendation__nickname">
-							vika007
-						</div>
-					</div>
-				</li>
-				<li class="recommend__recommendation-li">
-					<div class="recommend__recommendation">
-						<div class="recommendation__rating-date">
-							<div class="recommendation__rating">
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>			
-							</div>
-							<div class="recommendation__date">
-								8 дней назад
-							</div>
-						</div>
-						<div class="recommendation__name">
-							Отличный сервис
-						</div>
-						<div class="recommendation__value">
-							Благодаря ему я подготовилась к ЦТ на 99 баллов! Фантастика! Однозначно рекомендую!
-						</div>
-						<div class="recommendation__nickname">
-							zabaleraa
-						</div>
-					</div>
-				</li>
-				<li class="recommend__recommendation-li">
-					<div class="recommend__recommendation">
-						<div class="recommendation__rating-date">
-							<div class="recommendation__rating">
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>
-								<div class="recommendation__star">
-									<a class="recommendation__star-link">
-										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
-									</a>
-								</div>			
-							</div>
-							<div class="recommendation__date">
-								2 месяца назад
-							</div>
-						</div>
-						<div class="recommendation__name">
-							Нашёл крутого репетитора!
-						</div>
-						<div class="recommendation__value">
-							На этом сайте я нашёл свою Валентину Ивановну, с которой работаем уже 1 год :)
-						</div>
-						<div class="recommendation__nickname">
-							danbalan123
-						</div>
-					</div>
-				</li>
-			</ul>
-			<div class="recommend__right-button">
+		
+			<div id = "review__div">
+
+			</div>
+
+			<div class="recommend__right-button" onclick="showReview(+1)">
 				<a class="recommend-right-link">
 					<img src="./img/svg/button_right.svg" class="recommend-right-pic"></img>
 				</a>
@@ -564,12 +435,13 @@
 			</div>
 		</div>
 	</div>
-	<script>
+	<script type = "text/javascript">
 	     let stars = 0;
 	     var progress__bar_maxval = [];
 	     progress__bar_maxval.push(50);
 	     progress__bar_maxval.push(5);
 	     progress__bar_maxval.push(20);
+	     
 	     function fill__progress__bar(i, cnt){
 	     		let name = "info__progress-" + String(i+1);
 	     		cnt = Math.max(cnt, 0);
@@ -586,11 +458,11 @@
 	  			 	document.getElementById(name).style.backgroundColor='#1AA5F3';
 	  			}
 	     }
-	     fill__progress__bar(0,35);
-	     fill__progress__bar(1,4.85);
-	     fill__progress__bar(2,20);
+	    function colorit(){
+	   
+	   }
 	</script>
-
+	<button onclick = "colorit()"> color_it </button>
     <script type="text/javascript">
         var darkLayer, reviewForm;
         function ShowForm() {
@@ -614,7 +486,6 @@
      <button class="open-form-button" onclick="ShowForm()">Оставить отзыв</button>
   
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type = "text/javascript">
 
@@ -771,9 +642,20 @@
 
         return true;
     }
-</script>
 
+
+
+
+</script>
+<script src="move.js"></script>
+<script src="reviews.js"></script>
+<script>
+init();
+</script>
 </body>
 
 
 </html>
+
+
+
