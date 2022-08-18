@@ -229,10 +229,8 @@ body{
     margin-right: 7.5vw;
 }
 .form{
-     margin-top: 89px;
-     margin-left: 100px;
-     margin-right: 45px;
-     margin-bottom: 115px;
+     margin-top: 30px;
+     margin-bottom: 45px;
     color: #000000;
     font-family: 'SF Pro Display';
     font-style: normal;
@@ -288,6 +286,7 @@ body{
     width: 700px;
     height: 29px;
     border-radius: 100px;
+    margin-top: 10px;
 }
 .info__progress-value{
     background-color:  #000000;
@@ -432,6 +431,7 @@ display: flex;
     font-weight: 700;
     font-size: 24px;
     line-height: 28.64px;
+    padding-top: 1.2vw;
 }
 .recommendation__value{
     font-weight: 400;
@@ -615,25 +615,192 @@ and (max-width: 1550px){
     }
 }
 
-@media only screen
-and (max-width 1263px){
-    .pers2{
-        margin-right: 0px;
-    }
-}
-@media only screen
-and (max-width 2000px){
-    .pers2{
-        margin-right: 108px;
-    }
-    .pers3{
-        margin-right: 0px;
-    }
-}
-@media only screen
-and (max-width 4600px){
-    .pers3{
-        margin-right: 108px;
-    }
-}
+/*
+    let's add css mobile
+*/
 
+@media only screen
+and (max-width: 1000px){
+ 
+    .info__nickname{
+        font-size: 36px;
+        line-height: 42.96px;
+    }
+    .info__profession{
+        font-size: 24px;
+        line-height: 28.64px;
+    }
+    .statistic__name{
+        font-size: 15px;
+        line-height: 18.96px;
+    }
+    .statistic__value{
+        font-size: 15px;
+        line-height: 18.96px;
+    }
+    .info__progress-bar{
+        width: 172px;
+        height: 11px;
+    }
+    .info__progress-value{
+        height: 11px;
+    }
+    .info__photo{
+        width: 146px;
+    }
+    .info__photo-pic{
+        width: 146px;
+    }
+    .info__progress-bar{
+        margin-top: 5px;
+    }
+    .info__item-name{
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .info__table{
+        margin-top: 40px;
+    }
+    .info__item-value{
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 5px;
+    }
+    .info__item{
+        margin-top: 20px;
+    }
+    .info__price_list{
+        margin-top: 5px;
+    }
+    .info__price_item-name{
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .info__price_item-value{
+        font-size: 18px;
+        line-height: 24px;
+    }
+    /* bug with 1 akademic hour*/
+    .info__button-div{
+        width: 319px;
+        height: 66px;
+        background-color: #28257A;
+    }
+    .info__button-div:hover,.info__button-div:focus,.info__button-div:active{
+        background-color: #AFADDD;
+    }
+    .info__button-text{
+        font-size: 24px;
+        line-height: 29px;
+        padding-top: 18px;
+    }
+    .form{
+        margin-bottom: 79px;
+    }
+    .recommend{
+        margin-top: 0px;
+    }
+    .recommend__name{
+        font-size: 28px;
+        line-height: 38.96px;
+    }
+    .rec1{
+        margin-right: 0px;
+    }
+    .rec2{
+        display: none;
+    }
+    .rec3{
+        display: none;
+    }
+    .recommend__left-button{
+        width: 32px;
+        padding-left: 5px;
+    }
+    .recommend-left-pic{
+        width: 32px;
+    }
+    .recommend__right-button{
+        width: 32px;
+        padding-right: 5px;
+    }
+    .recommend-right-pic{
+        width: 32px;
+    }
+    .recommend__recommendation-li{
+        max-width: 60vw;
+    }
+    .recommend__value{
+        font-size: 20px;
+        line-height: 23.87px;
+    }
+    .recommendation__star{
+        width: 20px;
+    }
+    .recommendation__star-pic{
+        width: 20px;
+    }
+    /*dont forget to add it in normal // did it*/
+    .recommendation__name{
+        padding-right: 5px;
+    }
+    .recommendation__value{
+        padding-right: 5px;
+    }
+    .recommendation__date{
+        font-size: 14px;
+        line-height: 19.09px;
+        margin-right: 5px;
+    }
+    .recommendation__nickname{
+        /*display none?*/
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .recommend__table{
+        margin-top: 50px;
+    }
+    .recommend{
+        padding-bottom: 40px;
+    }
+    .team__title{
+        font-size: 32px;
+        line-height: 40.96px;
+    }
+    .stuff__photo{
+        width: 255px;
+        border-radius: 20px;
+    }
+    .stuff__person-pic{
+        width: 255px;
+        border-radius: 20px;    
+    }
+    .stuff__person{
+        margin-right: 0px;
+        margin-top: 40px;
+    }
+    .team__stuff{
+        margin-top: 40px;
+    }
+    .stuff__name{
+        font-size: 36px;
+        line-height: 42.96px;
+        margin-top: 10px;
+    }
+    .stuff__value{
+        font-size: 24px;
+        line-height: 28.64px;
+        margin-top: 5px;
+    }   
+    .socials__icon{
+        margin-right: 15px;
+    }
+    .socials__copyright{
+        font-size: 14px;
+        line-height: 16.71px;
+        margin-top: 20px;
+    }
+    .socials__copyright-value{
+        padding-top: 0px;
+    }
+}
