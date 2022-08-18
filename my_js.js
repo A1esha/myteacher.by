@@ -36,6 +36,41 @@ function fun2() {
 function get_img(id){
 	id = (id + currentlyshow.length) % (currentlyshow.length);
 	return document.getElementById("ti"+currentlyshow[id]["Описание"]);
+}
+
+function parse_3_els(text){
+	let i = text.length - 1;
+
+	let number = 0;
+	let power = 1;
+
+	let lst = [];
+	let cnt = 0;
+	let div = 1;
+	for(; i > 0; i = i - 1){
+		if(text[i] == ' '){
+			continue;
+		}
+		if(text[i] == '.'){
+			div = power;
+			continue;
+		}
+		if(text[i] == ','){
+			lst.push(number / div);
+			cnt += 1;
+			power = 1;
+			number = 0;
+			div = 1;
+			if(cnt == 3)
+				break;
+		}else{
+			number += power * (text[i] - '0');
+			power *= 10;
+		}
+	}
+	console.log("for debug ");
+ console.log(lst);
+	return lst;
 } 
 function load(id){
 	
@@ -63,7 +98,16 @@ function load(id){
 	xhr.open('GET', text); 
 	xhr.onload = function(){
 		console.log('done')
-		cur.innerHTML = xhr.response + '<div onclick="ShowForm()" class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
+
+		let inside = xhr.response;
+		let lst = parse_3_els(inside);
+		cur.innerHTML = inside + '<div onclick="ShowForm()" class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
+		
+		//alert("started filling");
+		fill__progress__bar(0,lst[2]);
+		fill__progress__bar(1,lst[1]);
+		fill__progress__bar(2,lst[0]);
+		//alert("ended filling");
 	}
 	xhr.send();
 
@@ -73,11 +117,16 @@ function load(id){
 	xhr2.open('GET', text);
 		xhr2.onload = function(){
 		console.log('done')
-		prv.innerHTML = xhr2.response + '<div class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
+		let inside = xhr2.response;
+
+		prv.innerHTML = inside + '<div class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
 	}
 	xhr2.send();
 
 
+
+
+	//alert("success");
 
 }
 
@@ -143,6 +192,10 @@ function showTutor(pl) {
    dt = get_tutor(tutorIndex);
    dt.style.display = "block";
     
+
+
+
+
    dots[(tutorIndex)%dots.length].classList.remove("fadein");
    dots[(tutorIndex)%dots.length].classList.add("fadeout");
 
