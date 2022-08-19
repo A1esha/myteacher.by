@@ -283,7 +283,7 @@ body{
 }
 .info__progress-bar{
     background-color:  #DDDDDD;
-    width: 700px;
+    width: 500px;
     height: 29px;
     border-radius: 100px;
     margin-top: 10px;
@@ -546,7 +546,7 @@ display: flex;
 @media only screen
 and (max-width: 1550px){
     .info__progress-bar{
-        width: 500px;
+        width: 420px;
         margin-top: 10px;
     }
     .form__statistic-li{
