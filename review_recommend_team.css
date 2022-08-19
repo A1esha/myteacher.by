@@ -453,9 +453,19 @@ display: flex;
 }
 .recommend__left-button{
     margin-left: 20px;
+    width: 66px;
+    border-radius: 33px;
+}
+.recommend__left-button:hover,.recommend__left-button:focus,.recommend__left-button:active{
+    background-color: gray;
 }
 .recommend__right-button{
     margin-right: 20px;
+    width: 66px;
+    border-radius: 33px;
+}
+.recommend__right-button:hover,.recommend__right-button:focus,.recommend__right-button:active{
+    background-color: gray;
 }
 
 .team{
@@ -608,12 +618,14 @@ and (max-width: 1550px){
     }
     .recommend__left-button{
         width: 50px;
+        border-radius: 25px;
     }
     .recommend-left-pic{
         width: 50px;
     }
      .recommend__right-button{
         width: 50px;
+        border-radius: 25px;
     }
     .recommend-right-pic{
         width: 50px;
