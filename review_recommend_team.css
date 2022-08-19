@@ -309,7 +309,6 @@ body{
     margin-top : 15px;
 }
 .info__item{
-    max-width: 1186px;
     margin-top: 70px;
 }
 .info__price_item{
@@ -338,8 +337,12 @@ body{
     margin-right: auto;
     width: 537px;
     height: 113px;
-    background-color: #214C72;
+    background-color: #28257A;
     border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .info__button-text{
@@ -348,10 +351,9 @@ body{
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
-    padding-top: 24px;
 }
 .info__button-div:hover,.info__button-div:focus,.info__button-div:active{
-    background-color: #A4BFD8;
+    background-color: #AFADDD;
 }
 .recommend{
     margin-top: 104px;
@@ -394,6 +396,11 @@ display: flex;
 .recommend__recommendation-li{
     margin-right: 2.5vw;
     max-width: 20.3vw;
+    border-radius: 20px;
+  border: solid;
+  border-color: #FFFFFF;
+  border-width: 2px;
+  background-color: #FFFFFF;
 }
 .recommend__recommendation-li:last-child{
     margin-right: 0px;
@@ -408,11 +415,7 @@ display: flex;
 }
 .recommend__recommendation{
       padding-left: 1.78vw;
-      border-radius: 20px;
-      border: solid;
-      border-color: #FFFFFF;
-      border-width: 2px;
-      background-color: #FFFFFF;
+    padding-right:  3vw;
 }
 .recommendation__date{
     font-size: 20px;
@@ -449,10 +452,10 @@ display: flex;
     padding-bottom: 15px;
 }
 .recommend__left-button{
-   padding-left: 20px;
+    margin-left: 20px;
 }
 .recommend__right-button{
-    padding-right: 20px
+    margin-right: 20px;
 }
 
 .team{
@@ -502,7 +505,7 @@ display: flex;
     font-size: 36px;
     line-height: 43px;
     text-align: center;
-    color: #28257A;
+    color: #7A7A7A;
     margin-top: 10px;
 }
 
@@ -548,7 +551,9 @@ display: flex;
 .form__statistic-li:last-child{
     margin-bottom: 0px;
 }
-
+.info__rating{
+    margin-right: 2vw;
+}
 @media only screen
 and (max-width: 1550px){
     .info__progress-bar{
@@ -556,7 +561,7 @@ and (max-width: 1550px){
         margin-top: 5px;
     }
     .form__statistic-li{
-        margin-bottom: 13px;
+        margin-bottom: 5px;
     }
     .form__statistic-li:last-child{
         margin-bottom: 0px;
@@ -652,10 +657,10 @@ and (max-width: 1000px){
         height: 11px;
     }
     .info__photo{
-        width: 146px;
+        width: 130px;
     }
     .info__photo-pic{
-        width: 146px;
+        width: 130px;
     }
     .info__progress-bar{
         margin-top: 5px;
@@ -691,6 +696,7 @@ and (max-width: 1000px){
         width: 319px;
         height: 66px;
         background-color: #28257A;
+       
     }
     .info__button-div:hover,.info__button-div:focus,.info__button-div:active{
         background-color: #AFADDD;
@@ -698,7 +704,6 @@ and (max-width: 1000px){
     .info__button-text{
         font-size: 24px;
         line-height: 29px;
-        padding-top: 18px;
     }
     .form{
         margin-bottom: 79px;
@@ -721,14 +726,14 @@ and (max-width: 1000px){
     }
     .recommend__left-button{
         width: 32px;
-        padding-left: 5px;
+        margin-left: 5px;
     }
     .recommend-left-pic{
         width: 32px;
     }
     .recommend__right-button{
         width: 32px;
-        padding-right: 5px;
+        margin-right: 5px;
     }
     .recommend-right-pic{
         width: 32px;
@@ -808,5 +813,8 @@ and (max-width: 1000px){
     }
     .socials__copyright-value{
         padding-top: 0px;
+    }
+    .info__rating{
+        margin-right: 0px;
     }
 }
