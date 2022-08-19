@@ -542,12 +542,18 @@ display: flex;
 .socials__inside{
     padding-left: 3vw;
 }
+.form__statistic-li{
+    margin-bottom: 15px;
+}
+.form__statistic-li:last-child{
+    margin-bottom: 0px;
+}
 
 @media only screen
 and (max-width: 1550px){
     .info__progress-bar{
         width: 420px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
     .form__statistic-li{
         margin-bottom: 13px;
