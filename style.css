@@ -575,7 +575,7 @@ and (max-width: 1550px){
         margin-top: 5px;
     }
     .form__statistic-li{
-        margin-bottom: 5px;
+        margin-bottom: 14px;
     }
     .form__statistic-li:last-child{
         margin-bottom: 0px;
@@ -647,54 +647,54 @@ and (max-width: 1550px){
 */
 
 @media only screen
-and (max-width: 1200px){
+and (max-width: 1000px){
     
     body{
         margin-left: 2.5vw;
         margin-right: 2.5vw;
     }
     .info__nickname{
-        font-size: 36px;
-        line-height: 42.96px;
+        font-size: 40px;
+        line-height: 47.96px;
     }
     .info__profession{
-        font-size: 24px;
-        line-height: 28.64px;
+        font-size: 26px;
+        line-height: 32.64px;
     }
     .statistic__name{
-        font-size: 15px;
-        line-height: 18.96px;
+        font-size: 24px;
+        line-height: 28.48px;
     }
     .statistic__value{
-        font-size: 15px;
-        line-height: 18.96px;
+        font-size: 24px;
+        line-height: 28.48px;
     }
     .info__progress-bar{
         width: 45vw;
-        height: 11px;
+        height: 16px;
     }
     .info__progress-value{
-        height: 11px;
+        height: 16px;
     }
     .info__photo{
-        width: 30vw;
+        width: 35vw;
     }
     .info__photo-pic{
-        width: 30vw;
+        width: 35vw;
     }
     .info__progress-bar{
         margin-top: 5px;
     }
     .info__item-name{
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 32px;
+        line-height: 38.96px;
     }
     .info__table{
         margin-top: 40px;
     }
     .info__item-value{
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 30px;
         margin-top: 5px;
     }
     .info__item{
@@ -704,17 +704,17 @@ and (max-width: 1200px){
         margin-top: 5px;
     }
     .info__price_item-name{
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 30px;
     }
     .info__price_item-value{
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 30px;
     }
     /* bug with 1 akademic hour*/
     .info__button-div{
-        width: 319px;
-        height: 66px;
+        width: 420px;
+        height: 80px;
         background-color: #28257A;
         filter:  drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
        
@@ -733,8 +733,8 @@ and (max-width: 1200px){
         margin-top: 0px;
     }
     .recommend__name{
-        font-size: 28px;
-        line-height: 38.96px;
+        font-size: 34px;
+        line-height: 44.96px;
     }
     .rec1{
         margin-right: 0px;
