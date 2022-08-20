@@ -1,5 +1,6 @@
 
-let subject, grade;
+window.subject = 'not_defined';
+window.grade = 'not_defined';
 
 let currentlyshow;
 
@@ -7,7 +8,7 @@ let nowshow = 0;
 
 let dots;
     
-let first_search = false;
+let first_search = 0;
 let Lslide,Rslide,Cslide;
 
 let avai = ['prv', 'cur', 'nxt', 'sec','fir'];
@@ -18,7 +19,7 @@ function fun1() {
   var options=document.getElementById('select-box1').options;
   var sub = options[sel].text;
   
-  subject = sub;
+  window.subject = sub;
   
   document.getElementById('label1').innerHTML = sub;
 }
@@ -28,7 +29,7 @@ function fun2() {
   var options=document.getElementById('select-box2').options;
   var sub = options[sel].text;
   
-  grade = sub;
+  window.grade = sub;
   
   document.getElementById('label2').innerHTML = sub;
 }
@@ -75,6 +76,10 @@ function parse_3_els(text){
 function load(id){
 	
 	id = (id + currentlyshow.length) % currentlyshow.length;
+	
+	let form = document.getElementById('reviewer-teacher');
+  	form.value = currentlyshow[id]['Описание'];
+
 	prvid = id-1;
 	nxtid = id+1;
 
@@ -86,48 +91,33 @@ function load(id){
 	nxt = document.getElementById('nxt');
 	
 
-	var xhr = new XMLHttpRequest();
-	var xhr1 = new XMLHttpRequest();
-	var xhr2 = new XMLHttpRequest();
-	
+	var xhr = new XMLHttpRequest();	
 
 
 	text = './tutors/'+ currentlyshow[id]['Описание'].toString()+'.html';
-	
-	//alert(1);
 	xhr.open('GET', text); 
 	xhr.onload = function(){
 		console.log('done')
 
 		let inside = xhr.response;
 		let lst = parse_3_els(inside);
+
+		let i = inside.length - 1;
+		for(; i >= 0; i -= 1){
+			if(inside[i] == ' ' || inside[i] == ','
+			   || (inside[i] >= '0' && inside[i] <= '9')
+			   || inside[i] == '.'){
+				
+			}else
+				break;
+		}
+		inside = inside.substr(0 , i + 1);
 		cur.innerHTML = inside + '<div onclick="ShowForm()" class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
-		
-		//alert("started filling");
 		fill__progress__bar(0,lst[2]);
 		fill__progress__bar(1,lst[1]);
 		fill__progress__bar(2,lst[0]);
-		//alert("ended filling");
 	}
 	xhr.send();
-
-	//alert(2);
-
-	text = './tutors/'+ currentlyshow[prvid]['Описание']+'.html';
-	xhr2.open('GET', text);
-		xhr2.onload = function(){
-		console.log('done')
-		let inside = xhr2.response;
-
-		prv.innerHTML = inside + '<div class="info__button-div"><p class="info__button-text">Выбрать репетитора</p></div>';
-	}
-	xhr2.send();
-
-
-
-
-	//alert("success");
-
 }
 
 
@@ -147,10 +137,11 @@ var tutorIndex = 0;
 
 
 
-
-var first = 1;
-
 function showTutor(pl) {
+
+
+
+
 
   dots[(tutorIndex)%dots.length].classList.remove("fadeout"); 
   dots[(tutorIndex)%dots.length].classList.add("fadein");
@@ -185,10 +176,11 @@ function showTutor(pl) {
 	div.style.display = "none";	
    
 	tutorIndex += pl;
-    if (tutorIndex > currentlyshow.length) {tutorIndex = 1;}
-    if (tutorIndex < 1) {tutorIndex = currentlyshow.length;}
+    if (tutorIndex >= currentlyshow.length) {tutorIndex = 0;}
+    if (tutorIndex < 0) {tutorIndex = currentlyshow.length - 1;}
 
     load(tutorIndex);
+  
    dt = get_tutor(tutorIndex);
    dt.style.display = "block";
     
@@ -223,77 +215,59 @@ function showTutor(pl) {
 
 
 
-function represent(id){
-
-	var widget = document.getElementById("tutor-widget");
-	widget.style.display = "block";
-
-	
-	var cur = get_tutor(id);
-	var prv = get_img(id-1);
-	var nxt = get_img(id+1);
-
-
-
-	Cslide = (document.getElementsByClassName("Cslide"))[0];
-	Rslide = (document.getElementsByClassName("Rslide"))[0];
-	Lslide = (document.getElementsByClassName("Lslide"))[0];
-
-
-    Cslide.innerHTML = cur.innerHTML;
-    Lslide.innerHTML = prv.innerHTML;
-    Rslide.innerHTML = nxt.innerHTML;
-
-
-	((Lslide.getElementsByTagName("img"))[0]).classList.add("Lpic");
-
-	((Rslide.getElementsByTagName("img"))[0]).classList.add("Rpic");
-	
-	
-}
-function delete_represent(id){
-	var widget = document.getElementById("tutor-widget");
-	widget.style.display = "none";
-
-	Cslide = (document.getElementsByClassName("Cslide"))[0];
-	Rslide = (document.getElementsByClassName("Rslide"))[0];
-	Lslide = (document.getElementsByClassName("Lslide"))[0];
-
-	Cslide.innerHTML = "";
-	Rslide.innerHTML = "";
-	Lslide.innerHTML = "";
-}
-
-
 
 function chosen(){
+	let grade = window.grade;
+	let subject = window.subject;
 
-	if(first_search == true){
+
+	if(first_search > 0){
 		let dt = document.getElementsByClassName("dots");
 		dt[0].innerHTML = "";
 	}
 
-
+	if(subject == "not_defined" || grade == "not_defined"){
+		return;
+	}
 	let Candidates = Get_Candidates('Предмет', subject);
 	
-    console.log(Candidates);
-	
-	
+		
 	currentlyshow = Choose(Candidates, parseInt(grade));
-    console.log(currentlyshow);
+	//alert(1);
+	console.log(currentlyshow);
+	if(currentlyshow.length == 0){
+		/// haven't find any such a tutor
+		var xhr = new XMLHttpRequest();	
 
-	
+		(get_tutor()).style.display = "none";
+		text = './tutors/not_found.html';
+		xhr.open('GET', text); 
+		xhr.onload = function(){
+			let inside = xhr.response;
+			(get_tutor()).classList.add("alert");
+			(get_tutor()).innerHTML = inside;
+			(get_tutor()).style.display = "block";
+			
+		}
+
+		xhr.send();
+		return;
+	}
+
+
+
+	(get_tutor()).classList.remove("alert");
 	
 	(get_tutor()).style.display = "none";	
+
+	tutorIndex = 1 % currentlyshow.length;
 	load(tutorIndex);
+
+
+
+
 	(get_tutor()).style.display = "block";
-	let buttonnext = document.getElementsByClassName("button_next");
-	let buttonback = document.getElementsByClassName("button_back");
 	
-	
-	
-	buttonnext[0].style.display = "block";
-	buttonback[0].style.display = "block";
 	nowshow = 1;
 
 	let j = 0;
@@ -316,8 +290,13 @@ function chosen(){
 	dots[(tutorIndex)%dots.length].classList.add("fadeout");
 
 
-	if(first_search == false){
+	if(first_search == 1){
 	
+		//disableScroll();
+
+		//alert(2);
+		callInstruction();
+
 
 		setTimeout(()=> showTutor(+1), 1500);
 		setTimeout(()=> showTutor(-1), 2500);
@@ -326,9 +305,11 @@ function chosen(){
 		   
 		
 		setTimeout(()=> showTutor(+1), 4500);
-		   
+
+		setTimeout(()=> closeInstruction(), 4500);
+		//setTImeout(()=> enableScroll(), 4500);
 	}
-	first_search = true;
+	first_search += 1;
 
 }
 
@@ -358,3 +339,16 @@ $("select").on("change" , function() {
   label.find(".label-desc").html(selection);
     
 });
+
+
+function init(){
+window.subject='Физика';
+window.grade='1';
+first_search = 0;
+
+chosen();
+
+window.subject='not_defined';
+window.grade='not_defined';
+nav_home();
+}
