@@ -612,12 +612,6 @@ and (max-width: 1550px){
     .recommendation__date{
         font-size: 16px;
     }
-    .recommendation__name{
-        font-size: 20px;
-    }
-    .recommendation__value{
-        font-size: 20px;
-    }
     .recommend__recommendation-li{
         width: 430px;
     }
@@ -768,10 +762,10 @@ and (max-width: 1000px){
         line-height: 23.87px;
     }
     .recommendation__star{
-        width: 20px;
+        width: 30px;
     }
     .recommendation__star-pic{
-        width: 20px;
+        width: 30px;
     }
     /*dont forget to add it in normal // did it*/
     .recommendation__name{
@@ -781,13 +775,13 @@ and (max-width: 1000px){
         padding-right: 5px;
     }
     .recommendation__date{
-        font-size: 14px;
-        line-height: 19.09px;
+        font-size: 20px;
+        line-height: 26.09px;
         margin-right: 5px;
     }
     .recommendation__nickname{
         /*display none?*/
-        font-size: 14px;
+        font-size: 20px;
         margin-top: 5px;
     }
     .recommend__table{
