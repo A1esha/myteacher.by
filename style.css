@@ -326,6 +326,7 @@ body{
   font-weight: 700;  
   color: #28257A;
   margin-left: 10px;
+  background-color: white;
 }
 .info__price_list{
     margin-top: 15px;
