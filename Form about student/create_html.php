@@ -1,4 +1,3 @@
-
 <?php
    
     
@@ -82,7 +81,6 @@
                                         '.$experience.' лет
                                     </p>
                                 </div>
-
                             </div>
                             <div class="info__progress-bar">
                                 <div id="info__progress-3"class="info__progress-value">
@@ -118,20 +116,15 @@
                             <li class="info__price_item-li">
                                 <div class="info__price_item">
                                     <div class="info__price_item-name">
-                                        Единая цена -
-                                    </div>
-                                    <div class="info__price_item-value"> 
-                                        '.$cost.' рублей урок.
-                                    </div>
+                                    Единая цена -<mark class="info__price_item-value">'.$cost.' рублей урок.
+                                    </mark>
+                                </div>
                                 </div>
                             </li>
                             <li class="info__price_item-li">
                                 <div class="info__price_item">
                                     <div class="info__price_item-name">
-                                        Продолжительность урока -
-                                    </div>
-                                    <div class="info__price_item-value">
-                                        1 академический час (45 минут).
+                                    Продолжительность урока -<mark class="info__price_item-value">1 академический час (45 минут).</mark>
                                     </div>
                                 </div>
                             </li>
