@@ -23,7 +23,12 @@ function fun1() {
   
   document.getElementById('label1').innerHTML = sub;
 }
-
+function check_mobile(){
+	if($(window).width() <= 1000){
+		return true;
+	}
+	return false;
+}
 function fun2() {
   var sel=document.getElementById('select-box2').selectedIndex;
   var options=document.getElementById('select-box2').options;
@@ -285,18 +290,19 @@ function chosen(){
 	for(let xi = 0; xi < dots.length; xi += 1){
 		dots[xi].classList.add("fadein");
 	}
+	dots[(tutorIndex)%dots.length].classList.remove("fadein");
 	
-	dots[0].classList.add("active");
 	dots[(tutorIndex)%dots.length].classList.add("fadeout");
-
+	
 
 	if(first_search == 1){
 	
 		//disableScroll();
 
 		//alert(2);
-		callInstruction();
-
+		if(check_mobile() == true){
+			callInstruction();
+		}
 
 		setTimeout(()=> showTutor(+1), 1500);
 		setTimeout(()=> showTutor(-1), 2500);
@@ -305,8 +311,9 @@ function chosen(){
 		   
 		
 		setTimeout(()=> showTutor(+1), 4500);
-
-		setTimeout(()=> closeInstruction(), 4500);
+		if(check_mobile() == true){
+			setTimeout(()=> closeInstruction(), 4500);
+		}
 		//setTImeout(()=> enableScroll(), 4500);
 	}
 	first_search += 1;
