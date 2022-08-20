@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+	<meta http-equiv="X-UA-Compatible" content="ia-edge">
+
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./my_cs.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./half.css">
+	<link rel="stylesheet" href="./form.css">
+	
+	
+
+
+	<script src="jquery.touchSwipe.min.js"></script>
+	<script src="findthem.js"></script>
+
+	<script src="nav.js"></script>
+
+
+</head>
+
+<body>
+
+   <script type="text/javascript">
+        var darkLayer, reviewForm;
+        function ShowForm() {
+            
+            darkLayer = document.createElement('div'); // слой затемнения
+            darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+            document.body.appendChild(darkLayer); // включаем затемнение
+
+            reviewForm = document.getElementById('Review-form'); // находим наше "окно"
+            reviewForm.style.display = 'block'; // "включаем" его
+
+           
+        }
+        function CloseForm() {
+            darkLayer.parentNode.removeChild(darkLayer); // удаляем затемнение
+            reviewForm.style.display = 'none'; // делаем окно невидимым
+            return false;
+        }
+
+    </script>
+    
+    <div class = "center__it">
+    <div class="contact__form" id = "Review-form">
+        <div class="contact__close">
+            <div class="re-close-btn" onclick = "CloseForm()"></div>
+        </div>
+        <div class="contact__info">
+               
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Ваше имя
+                    </div>
+                <input type="text" class = "contact__field-value" placeholder = "Введите имя..." name = "reviewer-name"
+                    id = "reviewer-name" required>
+                    <span id="required-field-name" class="re-required-field" style="display:block;"></span>
+                    
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Телефон
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите телефон..." name = "reviewer-phone"
+                    id = "reviewer-phone" required>
+                    <span id="required-field-phone" class="re-required-field" style="display:block;"></span>
+                    
+                </div>
+                <div class="contact__field">
+                    <div class="contact__field-caption">
+                        Email
+                    </div>
+                    <input type="text" class = "contact__field-value" placeholder = "Введите email..." name = "reviewer-email"
+                    id = "reviewer-email" required>
+                    <span id="required-field-email" class="re-required-field" style="display:block;"></span>
+                </div>
+        </div>
+         <input type = "hidden" type = "text" name = "reviewer-teacher" id = "reviewer-teacher" >
+        <div class="contact__button">
+        
+                <input type="button" name="create" id="register" value="Отправить" class = "contact__button-submit" onclick = "CheckReview()">
+              
+    
+        </div>
+    </div>
+</div>
+
+<div class = "center__it center_horizontal">
+
+ <div id = "instruction" class = "instruction">
+
+        <div class = "contact__button">
+        <p class = "my_text">Листайте влево-вправо для просмотра репетиторов</p>
+        </div>
+
+ </div>
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type = "text/javascript">
+
+
+  function Send(){
+    var dta = {
+      phone : document.getElementById("reviewer-phone").value,
+      name : document.getElementById("reviewer-name").value,
+      email : document.getElementById("reviewer-email").value,
+      teacher : document.getElementById("reviewer-teacher").value
+
+    };
+
+    $.ajax({
+        url:'form.php',
+        type: 'post',
+        data: dta,
+        success: function()
+        {
+          Swal.fire(
+         'Ваша заявка отправлена',
+         'Наши сотрудники свяжутся с Вами в ближайшее время',
+         'success')
+          CloseForm();
+       },
+       error: function()
+               {
+               alert('Failed to send email.');
+               }
+
+      });
+  }
+
+//});
+</script>
+<script src="https://unpkg.com/imask">
+    
+    ///#WARNING maybe won't work, therefore we need to include it from file :)
+</script>
+<script>
+       document.addEventListener('DOMContentLoaded', () => {
+        const inputElement = document.querySelector('#reviewer-phone');
+        console.log(inputElement);
+        const maskOptions = {
+            mask: '+{375} (00) 000-00-00'
+        }
+         IMask(inputElement, maskOptions);
+        });
+
+    var hasPhoneError = false;
+    var hasNameError = false;
+    var hasEmailError = false;
+     var collectLightboxData = {
+          lang: 'ru',
+          requiredFieldMsg: 'Необходимое для заполнения поле',
+          wrongEmailMsg : 'Неверно указана почта'
+      }
+    document.getElementById("register").onmouseover = function() {document.getElementById("register").style.backgroundColor="#A4BFD8";console.log("onmouse");};
+    document.getElementById("register").onmouseout = function() {document.getElementById("register").style.backgroundColor="#214C72";};
+    var need_phone='+375 (22) 332-32-32';
+     function CheckReview() {
+        var phone = $('#reviewer-phone').val().trim();
+        /*phone = phone.replace(/\r\n|\r|\n/g, '<br />');*/
+        var lang = collectLightboxData.lang;
+        var name = $('#reviewer-name').val().trim();
+        var email = $('#reviewer-email').val().trim();
+        var valid = true;
+        console.log(phone);
+        if (phone.length != need_phone.length) {  
+            valid = false;
+            $('#reviewer-phone').addClass('error-field');
+            $('#required-field-phone').show();
+            $('#required-field-phone').html(collectLightboxData.requiredFieldMsg);
+            hasPhoneError = true;
+        }
+        
+       if (name.length === 0) {
+           valid = false;
+           $('#reviewer-name').addClass('error-field');
+           $('#required-field-name').show();
+           $('#required-field-name').html(collectLightboxData.requiredFieldMsg);
+           hasNameError = true;
+       }
+       if (email.length === 0) {
+           valid = false;
+           $('#reviewer-email').addClass('error-field');
+           $('#required-field-email').show();
+           $('#required-field-email').html(collectLightboxData.requiredFieldMsg);
+           hasEmailError = true;
+       }
+       if(!Validate(email)){
+            valid = false;
+            $('#reviewer-email').addClass('error-field');
+            $('#required-field-email').show();
+            $('#required-field-email').html(collectLightboxData.wrongEmailMsg);
+            hasEmailError = true;
+       }
+       document.getElementById("register").style.backgroundColor="#214C72";
+        if (valid) {
+          Send();
+        } 
+    }
+
+    $('#reviewer-phone').on('input', function (e) {
+
+        if (hasPhoneError && e.target.value.length > 0) {
+            $('#reviewer-phone').removeClass('error-field');
+            $('#required-field-phone').hide();
+            $('#required-field-phone').html('');
+            hasPhoneError = false;
+        }
+    });
+
+    $('#reviewer-name').on('input', function (e) {
+        if (hasNameError && e.target.value.length > 0) {
+            $('#reviewer-name').removeClass('error-field');
+            $('#required-field-name').hide();
+            $('#required-field-name').html('');
+            hasNameError = false;
+        }
+    });
+
+    $('#reviewer-email').on('input', function (e) {
+        if (hasEmailError && e.target.value.length > 0) {
+            hasEmailError = false;
+            $('#reviewer-email').removeClass('error-field');
+            $('#required-field-email').hide();
+            $('#required-field-email').html('');
+        }
+
+    });
+
+
+
+    function Validate(email){
+        let cnt = 0;
+        for(let i = 0; i < email.length; i++){
+            if(email[i] == '@') cnt++;
+            if(email[i] == '[' || email[i] == ']' || email[i] == '\\' || email[i] == ';' || email[i] == ',')
+                return false;
+        }
+        if(cnt != 1) 
+            return false;
+        let indx = email.indexOf('@');
+        let indx1 = email.lastIndexOf('.');
+        if(indx1 == email.length)
+            return false;
+        let name = email.substr(0, indx);
+        let domain = email.substr(indx1, indx1 - indx - 1);
+        let other = email.substr(indx1 + 1, email.length - indx1);
+        if(other.length == 0 || name.length == 0 || domain.length == 0)
+            return false;
+        /// I can add other checkers, for example add base of popular domains and others.
+
+        return true;
+    }
+</script>
+
+
+
+
+
+	<!--add navigation script  -->
+	<header class="header">
+		<div class = "wrapper center">
+
+			<div class = "header__wrapper">
+				<div class = "header__logo">
+					<a href="/" class="header__logo-link">
+
+				 	<img src="./img/jpg/shity_logo.jpg"
+					alt = "Young.by| Поиск репетиторов" class = "logo_img"> 
+
+					</a>
+				</div>
+				
+				<nav class="header__nav">
+					<ul class = "header__list">
+						<li class="header__item" onclick = "nav_why()">
+							Почему мы? 
+						</li>
+
+						<li class="header__item" onclick = "nav_choose()">
+							Выбор репетитора 
+						</li>
+						<li class="header__item" onclick = "nav_review()">
+							Отзывы 
+						</li>
+						<li class="header__last_item" onclick = "nav_team()">
+							Наша команда
+						</li>
+					</ul>
+				</nav>	
+
+
+
+
+			</div>
+		
+
+		</div>
+
+	</header>
+
+
+	<main>
+		<div class = "wrapper">
+			<div class = "our_credo">
+			
+				<div class = "credo">
+
+				<h1 class = "credo_caption">
+				Мы - команда лучших студентов в Беларуси, делаем революцию в сфере репетиторства.
+				</h1>
+				<p class = "just_text">
+				Мы нашли способ сделать качественое обучение с репетитором на 30% дешевле.
+				</p>
+				
+				<div class = "first-button" onclick = "nav_choose()" >
+							<p class = "first-button-text">
+						Выбор репетитора
+					</p>
+				</div>
+			</div>
+			
+
+			<div class = "strengths">
+				<div class = "center">
+					<div class = "add_align">
+						<h class="headline why_better">
+							Почему мы лучше других?
+						</h>
+					</div>
+					
+					
+					<div class = "in_row">
+						<img src="./img/png/cards.png" alt="" class="cards choice_wrap put_left endl" >
+
+
+
+						<div class = "choice choice_wrap put_right endl" >
+							<h class = "headline">
+								</br>
+								Выбор
+							</h>
+							<br><br>
+							<p class = "regular">
+
+									Вы можете выбрать <mark class = "highlight">преподавателя, который нравится именно Вам</mark>, среди десятков возможных опций. Вы никогда не найдете столько профессиональных репетиторов среди своих знакомых.
+							</p>
+						</div>
+
+					</div>
+
+				<br>
+				<div class = "prices">
+						<div class = "in_row">
+							
+							<div class = "price_text endl put_left">
+								<h class = "headline headline_price">
+									Цены
+								</h>
+								<br><br>
+								<p class = "regular">
+	Люди недооценивают компетентность талантливых студентов, поэтому то качественное образование, которое раньше можно было получить только заплатив большие деньги знакомым репетиторам, с нами вы получите на <mark class = "highlight"> 30 процентов дешевле.</mark>
+								</p>
+							</div>
+							<img src="./img/png/percent.png" alt="30 процентов" class = "percent_pic endl put_right">
+
+
+
+						</div>
+					</div>
+
+				<br>
+
+				<div class = "competence">
+						<div class = "in_row">
+							
+							
+							<img src="./img/svg/medal.svg" alt="Качество" class = "competence_pic endl">
+
+	<div class = "competence_text endl put_right">
+								<h class = "headline headline_price">
+									Качество
+								</h>
+								<br><br>
+								<p class = "regular">
+	Вам будут преподавать люди, которые
+	поступили в <mark class = "highlight">вузы</mark>, в которые вы хотите поступить. Люди, которые сдали <mark class = "highlight">ЦТ на 100 баллов</mark>. Люди, которые владеют языком на <mark class = "highlight"> C1 уровне</mark>. Люди, которые победили олимпиады, о которых вы мечтаете. 
+
+
+								</p>
+							</div>
+
+
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+			
+
+
+
+			
+		</div>
+
+
+
+	
+<div class = "choose__buttons">
+
+<div class="add_align">
+<form action = "#">
+
+        <div class = "select-box">
+
+          <select id="select-box1" class = "select-box1"  onchange="fun1()">
+          <option value="0" class = "select-box1">Выберите предмет</option>
+          <option value="1" class = "select-box1">Английский язык</option>
+          <option value="2" class = "select-box1">Белорусский язык</option>
+          <option value="3" class = "select-box1">Немецкий язык</option>
+          <option value="4" class = "select-box1">Польский язык</option>
+          <option value="5" class = "select-box1">Русский язык</option>
+          <option value="6" class = "select-box1">Математика</option>
+          <option value="7" class = "select-box1">Физика</option>
+          <option value="8" class = "select-box1">Информатика</option>
+          <option value="9" class = "select-box1">Программирование</option>
+          <option value="10" class = "select-box1">Биология</option>
+          <option value="11" class = "select-box1">Химия</option>
+          <option value="12" class = "select-box1">Дошкольная подготовка</option>
+          <option value="13" class = "select-box1">Начальная школа</option>
+          <option value="14" class = "select-box1">История Беларуси</option>
+          <option value ="15" class = "select-box1"> Подготовка в ЦТ</option>
+        </select>
+        </div>
+    
+        <div class="select-box add_align choose_grade">
+
+
+          <select id="select-box2"class="select-box1 choose_grade" onchange="fun2()" >
+          <option value = "k0" >Выберите класс</option>
+          <option value = "k1">1 класс</option>
+          <option value = "k2">2 класс</option>
+          <option value = "k3">3 класс</option>
+          <option value = "k4">4 класс</option>
+          <option value = "k5" class = "select-box1">5 класс</option>
+          <option value = "k6" class = "select-box1">6 класс</option>
+          <option value = "k7" class = "select-box1">7 класс</option>
+          <option value = "k8" class = "select-box1">8 класс</option>
+          <option value = "k9" class = "select-box1">9 класс</option>
+          <option value = "k10" class = "select-box1">10 класс</option>
+          <option value = "k11" class = "select-box1">11 класс</option>
+
+          </select>
+
+        </div>
+
+
+</form>
+</div>
+
+
+
+
+
+<div class = "add_align">
+<button  class = "button" id = "button" onclick="chosen()" >
+  Найти репетитора
+</button>
+</div>
+
+<div class="space">
+<br>
+</div>
+
+</div>
+
+
+
+
+
+<ol class="dots">
+        
+		
+ </ol>
+
+
+
+<div class = "in_row tutor__block" >
+	<div onclick="prev()" class = "button_back">
+		
+		<img alt="влево"  src="./img/svg/leftarr.svg"></img>
+
+	</div>
+
+	<div id = "cur" style="display: none">
+
+	</div>
+
+
+	<div onclick="next()" class = "button_next">
+		<img alt="вправо" src="./img/svg/rightarr.svg"></img>
+	</div>
+</div>
+
+<div id = "prv" style="display: none">
+
+</div>
+<div id = "nxt" style="display: none">
+</div>
+
+
+
+
+	</main>
+
+	
+
+
+
+
+
+
+	
+	<div class="recommend">
+		<div class="recommend__name">
+			Нас рекомендуют родители, студенты и репетиторы!
+		</div>
+		<div class="recommend__table">
+			<div class="recommend__left-button" onclick="showReview(-1)">
+				<a class="recommend-left-link">
+					<img src="./img/svg/button_left.svg" class="recommend-left-pic"></img>
+				</a>
+			</div>
+		
+			<div id = "review__div">
+			<ul class="recommend__table-ul">
+				<li class="recommend__recommendation-li">
+					<div class="recommend__recommendation">
+						<div class="recommendation__rating-date">
+							<div class="recommendation__rating">
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									 </a>
+								</div>			
+							</div>
+							<div class="recommendation__date">
+								5 дней назад
+							</div>
+						</div>
+						<div class="recommendation__name">
+							Лера Забавская Супер
+						</div>
+						<div class="recommendation__value">
+							Лера Забавская отличный педагог. Я бы отдала ей все свои деньги!
+						</div>
+						<div class="recommendation__nickname">
+							vika007
+						</div>
+					</div>
+				</li>
+				<li class="recommend__recommendation-li recommend__recommendation__no">
+					<div class="recommend__recommendation">
+						<div class="recommendation__rating-date">
+							<div class="recommendation__rating">
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>			
+							</div>
+							<div class="recommendation__date">
+								8 дней назад
+							</div>
+						</div>
+						<div class="recommendation__name">
+							Отличный сервис
+						</div>
+						<div class="recommendation__value">
+							Благодаря ему я подготовилась к ЦТ на 99 баллов! Фантастика! Однозначно рекомендую!
+						</div>
+						<div class="recommendation__nickname">
+							zabaleraa
+						</div>
+					</div>
+				</li>
+				<li class="recommend__recommendation-li recommend__recommendation__no">
+					<div class="recommend__recommendation">
+						<div class="recommendation__rating-date">
+							<div class="recommendation__rating">
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>
+								<div class="recommendation__star">
+									<a class="recommendation__star-link">
+										<img src="./img/svg/star.svg" class="recommendation__star-pic"></img>
+									</a>
+								</div>			
+							</div>
+							<div class="recommendation__date">
+								2 месяца назад
+							</div>
+						</div>
+						<div class="recommendation__name">
+							Нашёл крутого репетитора!
+						</div>
+						<div class="recommendation__value">
+							На этом сайте я нашёл свою Валентину Ивановну, с которой работаем уже 1 год :)
+						</div>
+						<div class="recommendation__nickname">
+							danbalan123
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			</div>
+
+			<div class="recommend__right-button" onclick="showReview(+1)">
+				<a class="recommend-right-link">
+					<img src="./img/svg/button_right.svg" class="recommend-right-pic"></img>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="team">
+		<div class="team__title">
+			О нашей команде
+		</div>
+		<div class="team__stuff-pseudo">
+	      
+			
+		</div>
+	</div>
+
+	<div class="socials">
+		<div class="socials__inside">
+			<div class="socials__icons">
+				<div class="socials__icon">
+					<a class="icon__youtube-link">
+						<img src="./img/svg/youtube.svg" class="icon__youtube-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__instagram-link">
+						<img src="./img/svg/instagram.svg" class="icon__instagram-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__tiktok-link">
+						<img src="./img/svg/tiktok.svg" class="icon__tiktok-pic"></img>
+					</a>
+				</div>
+				<div class="socials__icon">
+					<a class="icon__telegram-link">
+						<img src="./img/svg/telegram.svg" class="icon__telegram-pic"></img>
+					</a>
+				</div>
+			</div>
+			<div class="socials__copyright">
+				<div class="socials__copyright-value">
+					COPYRIGHT 2022 - YOUNG.BY - ALL RIGHTS RESERVED
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<script src="reviews.js"></script>
+<script src="move.js"></script>
+<script src="instruction.js"></script>
+<script src="my_js.js"></script>
+<script>
+init();
+</script>
+<script type="text/javascript">
+	     let stars = 0;
+	     var progress__bar_maxval = [];
+	     progress__bar_maxval.push(50);
+	     progress__bar_maxval.push(10);
+	     progress__bar_maxval.push(20);
+	     function fill__progress__bar(i, cnt){
+	     		let name = "info__progress-" + String(i+1);
+	     		cnt = Math.max(cnt, 0);
+	     		cnt = Math.min(cnt,progress__bar_maxval[i]);
+	     		let value = document.querySelector('.info__progress-bar').getBoundingClientRect().width*(cnt/progress__bar_maxval[i]);
+	     		document.getElementById(name).style.width=String(value)+'px';
+	     		if(i == 0){
+	     			document.getElementById(name).style.backgroundColor='#63CE51';
+	     		}
+	     		else if(i == 1){
+	  			  document.getElementById(name).style.backgroundColor='#FFC800';
+	  			}
+	  			else{
+	  			 	document.getElementById(name).style.backgroundColor='#1AA5F3';
+	  			}
+	     }
+	 //   fill__progress__bar(0,35);
+	  //   fill__progress__bar(0,25);
+	   //  fill__progress__bar(1,4.85);
+	   //  fill__progress__bar(2,20);
+		
+	</script>
+	
+
+<script src="team_adder.js"></script>
+</body>
+
+
+</html>
