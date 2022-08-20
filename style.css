@@ -210,7 +210,7 @@
         url('../fonts/SFProDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
         url('../fonts/SFProDisplay-BoldItalic.woff2') format('woff2'),
         url('../fonts/SFProDisplay-BoldItalic.woff') format('woff'),
-        url('..     /fonts/SFProDisplay-BoldItalic.ttf') format('truetype');
+        url('../fonts/SFProDisplay-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -229,10 +229,8 @@ body{
     margin-right: 7.5vw;
 }
 .form{
-     margin-top: 89px;
-     margin-left: 100px;
-     margin-right: 45px;
-     margin-bottom: 115px;
+     margin-top: 30px;
+     margin-bottom: 45px;
     color: #000000;
     font-family: 'SF Pro Display';
     font-style: normal;
@@ -285,9 +283,10 @@ body{
 }
 .info__progress-bar{
     background-color:  #DDDDDD;
-    width: 700px;
+    width: 500px;
     height: 29px;
     border-radius: 100px;
+    margin-top: 10px;
 }
 .info__progress-value{
     background-color:  #000000;
@@ -310,7 +309,6 @@ body{
     margin-top : 15px;
 }
 .info__item{
-    max-width: 1186px;
     margin-top: 70px;
 }
 .info__price_item{
@@ -339,8 +337,14 @@ body{
     margin-right: auto;
     width: 537px;
     height: 113px;
-    background-color: #214C72;
+    background-color: #28257A;
     border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
 }
 
 .info__button-text{
@@ -349,10 +353,9 @@ body{
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
-    padding-top: 24px;
 }
 .info__button-div:hover,.info__button-div:focus,.info__button-div:active{
-    background-color: #A4BFD8;
+    background-color: #AFADDD;
 }
 .recommend{
     margin-top: 104px;
@@ -366,7 +369,6 @@ body{
     padding-bottom: 164px;
 
 }
-
 .recommend__name{
     font-weight: 700;
     font-size: 60px;
@@ -374,6 +376,9 @@ body{
     max-width: 1402px;
     padding-top: 104px;
     text-align: center;
+    display: block;
+    margin: 0 auto;
+
 }
 .recommend__table{
  margin-top: 186px;
@@ -381,17 +386,23 @@ display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 100px;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  justify-content: space-between;
+   width: 100%;
 }
 .recommend__table-ul{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: center;
 }
 .recommend__recommendation-li{
     margin-right: 2.5vw;
     max-width: 20.3vw;
+    border-radius: 20px;
+  border: solid;
+  border-color: #FFFFFF;
+  border-width: 2px;
+  background-color: #FFFFFF;
 }
 .recommend__recommendation-li:last-child{
     margin-right: 0px;
@@ -406,11 +417,7 @@ display: flex;
 }
 .recommend__recommendation{
       padding-left: 1.78vw;
-      border-radius: 20px;
-      border: solid;
-      border-color: #FFFFFF;
-      border-width: 2px;
-      background-color: #FFFFFF;
+    padding-right:  3vw;
 }
 .recommendation__date{
     font-size: 20px;
@@ -429,6 +436,7 @@ display: flex;
     font-weight: 700;
     font-size: 24px;
     line-height: 28.64px;
+    padding-top: 1.2vw;
 }
 .recommendation__value{
     font-weight: 400;
@@ -446,10 +454,20 @@ display: flex;
     padding-bottom: 15px;
 }
 .recommend__left-button{
-    margin-right: 2vw;
+    margin-left: 20px;
+    width: 66px;
+    border-radius: 33px;
+}
+.recommend__left-button:hover,.recommend__left-button:focus,.recommend__left-button:active{
+    background-color: gray;
 }
 .recommend__right-button{
-    margin-left: 2vw;
+    margin-right: 20px;
+    width: 66px;
+    border-radius: 33px;
+}
+.recommend__right-button:hover,.recommend__right-button:focus,.recommend__right-button:active{
+    background-color: gray;
 }
 
 .team{
@@ -475,12 +493,19 @@ display: flex;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-top: 147px;
-    margin-left: 126px;
+     margin-top: 147px;
+     justify-content: center;
+}
+.stuff__photo{
+    border-radius: 40px;
+}
+.stuff__person-pic{
+    border-radius: 40px;
 }
 .stuff__person{
-    margin-right: 108px;
+    margin-right: 10vw;
     width: 377px;
+    margin-top: 30px;
 }
 .stuff__name{
     font-weight: 700;
@@ -494,7 +519,7 @@ display: flex;
     font-size: 36px;
     line-height: 43px;
     text-align: center;
-    color: #28257A;
+    color: #7A7A7A;
     margin-top: 10px;
 }
 
@@ -510,7 +535,7 @@ display: flex;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding-left: 32vw;
+    justify-content: center;
     padding-top: 43px;
 }
 .socials__icon{
@@ -526,11 +551,294 @@ display: flex;
     letter-spacing: 0em;
     height: 87px;
     margin-top: 16px;
-    padding-left: 27vw;
+    text-align: center;
 }
 .socials__copyright-value{
     padding-top: 20px;
 }
 .socials__inside{
     padding-left: 3vw;
+}
+.form__statistic-li{
+    margin-bottom: 15px;
+}
+.form__statistic-li:last-child{
+    margin-bottom: 0px;
+}
+.info__rating{
+    margin-right: 2vw;
+}
+@media only screen
+and (max-width: 1550px){
+    .info__progress-bar{
+        width: 420px;
+        margin-top: 5px;
+    }
+    .form__statistic-li{
+        margin-bottom: 5px;
+    }
+    .form__statistic-li:last-child{
+        margin-bottom: 0px;
+    }
+    .statistic__name{
+        font-size: 34px;
+    }
+    .statistic__value{
+        font-size: 34px;
+    }
+
+    .info__nickname{
+        font-size: 50px;
+    }
+    .info__profession{
+        font-size: 28px;
+    }
+    .info__item-name{
+        font-size: 50px;
+    }
+    .info__item-value{
+        font-size: 28px;
+    }
+    .recommendation__star-pic{
+        width: 25px;
+    }
+    .recommendation__star{
+        width: 25px
+    }
+    .recommend__name{
+        font-size: 50px;
+    }
+    .recommendation__date{
+        font-size: 16px;
+    }
+    .recommendation__name{
+        font-size: 20px;
+    }
+    .recommendation__value{
+        font-size: 20px;
+    }
+    .recommend__recommendation-li{
+        width: 430px;
+    }
+    .recommend__left-button{
+        width: 50px;
+        border-radius: 25px;
+    }
+    .recommend-left-pic{
+        width: 50px;
+    }
+     .recommend__right-button{
+        width: 50px;
+        border-radius: 25px;
+    }
+    .recommend-right-pic{
+        width: 50px;
+    }
+    .stuff__person-pic{
+        width: 250px;
+    }
+    .stuff__person{
+        width: 250px;
+    }
+}
+
+/*
+    let's add css mobile
+*/
+
+@media only screen
+and (max-width: 1200px){
+    
+    body{
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
+    .info__nickname{
+        font-size: 36px;
+        line-height: 42.96px;
+    }
+    .info__profession{
+        font-size: 24px;
+        line-height: 28.64px;
+    }
+    .statistic__name{
+        font-size: 15px;
+        line-height: 18.96px;
+    }
+    .statistic__value{
+        font-size: 15px;
+        line-height: 18.96px;
+    }
+    .info__progress-bar{
+        width: 45vw;
+        height: 11px;
+    }
+    .info__progress-value{
+        height: 11px;
+    }
+    .info__photo{
+        width: 30vw;
+    }
+    .info__photo-pic{
+        width: 30vw;
+    }
+    .info__progress-bar{
+        margin-top: 5px;
+    }
+    .info__item-name{
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .info__table{
+        margin-top: 40px;
+    }
+    .info__item-value{
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 5px;
+    }
+    .info__item{
+        margin-top: 20px;
+    }
+    .info__price_list{
+        margin-top: 5px;
+    }
+    .info__price_item-name{
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .info__price_item-value{
+        font-size: 18px;
+        line-height: 24px;
+    }
+    /* bug with 1 akademic hour*/
+    .info__button-div{
+        width: 319px;
+        height: 66px;
+        background-color: #28257A;
+        filter:  drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+       
+    }
+    .info__button-div:hover,.info__button-div:focus,.info__button-div:active{
+        background-color: #AFADDD;
+    }
+    .info__button-text{
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .form{
+        margin-bottom: 79px;
+    }
+    .recommend{
+        margin-top: 0px;
+    }
+    .recommend__name{
+        font-size: 28px;
+        line-height: 38.96px;
+    }
+    .rec1{
+        margin-right: 0px;
+    }
+    .rec2{
+        display: none;
+    }
+    .rec3{
+        display: none;
+    }
+    .recommend__left-button{
+        width: 32px;
+        margin-left: 5px;
+    }
+    .recommend-left-pic{
+        width: 32px;
+    }
+    .recommend__right-button{
+        width: 32px;
+        margin-right: 5px;
+    }
+    .recommend-right-pic{
+        width: 32px;
+    }
+    .recommend__recommendation-li{
+        max-width: 60vw;
+    }
+    .recommend__value{
+        font-size: 20px;
+        line-height: 23.87px;
+    }
+    .recommendation__star{
+        width: 20px;
+    }
+    .recommendation__star-pic{
+        width: 20px;
+    }
+    /*dont forget to add it in normal // did it*/
+    .recommendation__name{
+        padding-right: 5px;
+    }
+    .recommendation__value{
+        padding-right: 5px;
+    }
+    .recommendation__date{
+        font-size: 14px;
+        line-height: 19.09px;
+        margin-right: 5px;
+    }
+    .recommendation__nickname{
+        /*display none?*/
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .recommend__table{
+        margin-top: 50px;
+    }
+    .recommend{
+        padding-bottom: 40px;
+    }
+    .team__title{
+        font-size: 32px;
+        line-height: 40.96px;
+    }
+    .stuff__photo{
+        width: 255px;
+        border-radius: 20px;
+    }
+    .stuff__person-pic{
+        width: 255px;
+        border-radius: 20px;    
+    }
+    .stuff__person{
+        margin-right: 20vw;
+        margin-top: 40px;
+    }
+    .team__stuff{
+        margin-top: 40px;
+    }
+    .stuff__name{
+        font-size: 36px;
+        line-height: 42.96px;
+        margin-top: 10px;
+    }
+    .stuff__value{
+        font-size: 24px;
+        line-height: 28.64px;
+        margin-top: 5px;
+    }   
+    .socials__icon{
+        margin-right: 15px;
+    }
+    .socials__copyright{
+        font-size: 14px;
+        line-height: 16.71px;
+        margin-top: 20px;
+    }
+    .socials__copyright-value{
+        padding-top: 0px;
+    }
+    .info__rating{
+        margin-right: 0px;
+    }
+    .recommend__recommendation__no{
+        display: none;
+    }
 }
