@@ -532,4 +532,46 @@ and (min-width : 1700px){
     background-color: #F2F2F2;
 }
 
+@media only screen 
+and (max-width: 1000px){
 
+    .first-button{
+    width: 90vw;
+    height: 90px;
+    background-color: #28257A;
+
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 100px;
+    }
+    .first-button:hover{
+        background:#3F4B5B;
+    }
+    .first-button-text{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 48px;
+    color: white;
+    /* identical to box height */
+    text-align: center;
+    padding-top: 20px;
+    }
+    .credo{
+
+         height: 85vh;
+       width: 95vw;
+    }
+    .regular{
+        font-size: 40px;
+    }
+    .wrapper{
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
+    .endl{
+        margin-top: 50px;
+
+    }
+}
