@@ -649,20 +649,20 @@ and (max-width: 1000px){
         margin-right: 2.5vw;
     }
     .info__nickname{
-        font-size: 40px;
-        line-height: 47.96px;
+        font-size: 46px;
+        line-height: 50.96px;
     }
     .info__profession{
-        font-size: 26px;
-        line-height: 32.64px;
+        font-size: 28px;
+        line-height: 36.96px;
     }
     .statistic__name{
-        font-size: 24px;
-        line-height: 28.48px;
+        font-size: 30px;
+        line-height: 36.48px;
     }
     .statistic__value{
-        font-size: 24px;
-        line-height: 28.48px;
+        font-size: 30px;
+        line-height: 36.48px;
     }
     .info__progress-bar{
         width: 45vw;
@@ -681,15 +681,15 @@ and (max-width: 1000px){
         margin-top: 5px;
     }
     .info__item-name{
-        font-size: 32px;
-        line-height: 38.96px;
+        font-size: 38px;
+        line-height: 46.96px;
     }
     .info__table{
         margin-top: 40px;
     }
     .info__item-value{
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 28px;
+        line-height: 36.96px;
         margin-top: 5px;
     }
     .info__item{
@@ -699,12 +699,12 @@ and (max-width: 1000px){
         margin-top: 5px;
     }
     .info__price_item-name{
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 28px;
+        line-height: 36.96px;
     }
     .info__price_item-value{
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 28px;
+        line-height: 36.96px;
     }
     /* bug with 1 akademic hour*/
     .info__button-div{
@@ -727,9 +727,14 @@ and (max-width: 1000px){
     .recommend{
         margin-top: 0px;
     }
+    .recommendation__name{
+        font-size: 32px;
+        line-height: 32px;
+    }
+
     .recommend__name{
-        font-size: 34px;
-        line-height: 44.96px;
+        font-size: 50px;
+     
     }
     .rec1{
         margin-right: 0px;
@@ -755,11 +760,12 @@ and (max-width: 1000px){
         width: 32px;
     }
     .recommend__recommendation-li{
-        max-width: 60vw;
+        max-width: 70vw;
     }
-    .recommend__value{
-        font-size: 20px;
-        line-height: 23.87px;
+    .recommendation__value{
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 20px;
     }
     .recommendation__star{
         width: 30px;
@@ -769,6 +775,7 @@ and (max-width: 1000px){
     }
     /*dont forget to add it in normal // did it*/
     .recommendation__name{
+
         padding-right: 5px;
     }
     .recommendation__value{
@@ -781,13 +788,16 @@ and (max-width: 1000px){
     }
     .recommendation__nickname{
         /*display none?*/
-        font-size: 20px;
-        margin-top: 5px;
+        font-size: 25px;
+        margin-top: 15px;
     }
+
     .recommend__table{
+
         margin-top: 50px;
     }
     .recommend{
+
         padding-bottom: 40px;
     }
     .team__title{
@@ -820,11 +830,11 @@ and (max-width: 1000px){
         margin-top: 5px;
     }   
     .socials__icon{
-        margin-right: 15px;
+        margin-right: 40px;
     }
     .socials__copyright{
-        font-size: 14px;
-        line-height: 16.71px;
+        font-size: 20px;
+        line-height: 24.71px;
         margin-top: 20px;
     }
     .socials__copyright-value{
@@ -836,4 +846,16 @@ and (max-width: 1000px){
     .recommend__recommendation__no{
         display: none;
     }
+    .recommend__recommendation{
+        width: 70vw;
+    }
+ .recommend__recommendation-li{
+        width: 70vw;
+    }
+       
+}
+.highlight1{
+    color: red;
+    background: transparent;
+    font-weight: 1000;
 }
